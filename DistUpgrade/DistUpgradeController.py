@@ -220,6 +220,9 @@ class DistUpgradeController(object):
         # will not restore the full state (lists will be missing)
         apt_pkg.config.set("Apt::Get::List-Cleanup", "false")
 
+        # install phased updates during upgrades
+        apt_pkg.config.set("APT::Get::Always-Include-Phased-Updates", "yes")
+
         # forced obsoletes
         self.forced_obsoletes = self.config.getlist("Distro","ForcedObsoletes")
         # list of valid mirrors that we can add
