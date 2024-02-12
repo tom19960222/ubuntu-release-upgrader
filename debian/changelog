@@ -1,3 +1,14 @@
+ubuntu-release-upgrader (1:24.04.5) noble; urgency=medium
+
+  * Bump the Build-Depends on python-apt to 2.7.5
+  * Various fixes for the test suite (LP: #2051590)
+    - tests: Update expected results for formatting changes in 2.7.5
+    - DistUpgradeQuirks: Fix unused local variable 'e'
+    - Adjust test for deb822 source merging in python-apt 2.7.5
+    - Use isinstance() to check object types rather than type(...) == ..
+
+ -- Julian Andres Klode <juliank@ubuntu.com>  Mon, 12 Feb 2024 21:02:33 +0100
+
 ubuntu-release-upgrader (1:24.04.4) noble; urgency=medium
 
   * DistUpgrade: re-enable migration to deb822 on upgrade
