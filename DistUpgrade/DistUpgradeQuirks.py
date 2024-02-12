@@ -1618,7 +1618,7 @@ class DistUpgradeQuirks(object):
                     (what, where, fs, opts, a, b) = line.strip().split()
                     where = where.lower()
                     fs = fs.lower()
-                except ValueError as e:
+                except ValueError:
                     logging.debug(
                         f'line \'{line}\' in /proc/mounts not understood'
                     )
