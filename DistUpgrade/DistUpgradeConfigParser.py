@@ -60,11 +60,11 @@ class DistUpgradeConfig(SafeConfigParser):
 
     def getWithDefault(self, section, option, default):
         try:
-            if type(default) == bool:
+            if isinstance(default, bool):
                 return self.getboolean(section, option)
-            elif type(default) == float:
+            elif isinstance(default, float):
                 return self.getfloat(section, option)
-            elif type(default) == int:
+            elif isinstance(default, int):
                 return self.getint(section, option)
             return self.get(section, option)
         except (NoSectionError, NoOptionError):
