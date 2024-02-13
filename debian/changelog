@@ -1,3 +1,9 @@
+ubuntu-release-upgrader (1:24.04.7) noble; urgency=medium
+
+  * Fix some more test data for ports
+
+ -- Julian Andres Klode <juliank@ubuntu.com>  Tue, 13 Feb 2024 17:11:03 +0100
+
 ubuntu-release-upgrader (1:24.04.6) noble; urgency=medium
 
   * Fix test-case for deb822 on ports
