@@ -1006,6 +1006,8 @@ class TestDeb822SourcesUpdate(unittest.TestCase):
         # Compare the output to the expected data corresponding to the calling
         # test function.
         testdata = os.path.join(self.testdir, inspect.stack()[1][3], "expect")
+        if os.path.exists(testdata + "." + ARCH):
+            testdata = testdata + "." + ARCH
 
         for expect_path in os.listdir(testdata):
             actual_path = os.path.join(self.sourceparts_dir, expect_path)

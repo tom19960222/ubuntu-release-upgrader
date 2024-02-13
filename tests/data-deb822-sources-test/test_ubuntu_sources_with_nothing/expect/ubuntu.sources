@@ -1,11 +1,5 @@
 Types: deb
 URIs: {default_source_uri}
-Suites: {dist} {dist}-updates
-Components: main restricted
-Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
-
-Types: deb
-URIs: {security_source_uri}
-Suites: {dist}-security
+Suites: {dist} {dist}-updates {dist}-security
 Components: main restricted
 Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
