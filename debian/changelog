@@ -1,3 +1,9 @@
+ubuntu-release-upgrader (1:24.04.6) noble; urgency=medium
+
+  * Fix test-case for deb822 on ports
+
+ -- Julian Andres Klode <juliank@ubuntu.com>  Tue, 13 Feb 2024 10:04:44 +0100
+
 ubuntu-release-upgrader (1:24.04.5) noble; urgency=medium
 
   * Bump the Build-Depends on python-apt to 2.7.5
