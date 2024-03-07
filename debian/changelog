@@ -1,4 +1,4 @@
-ubuntu-release-upgrader (1:24.04.8) UNRELEASED; urgency=medium
+ubuntu-release-upgrader (1:24.04.8) noble; urgency=medium
 
   * tests: fix some more deb822 tests
   * DistUpgrade: include universe and multiverse in default components
@@ -6,7 +6,7 @@ ubuntu-release-upgrader (1:24.04.8) UNRELEASED; urgency=medium
   * DistUpgrade: remove whitespace in DistUpgraceController.py
   * Run pre-build.sh: updating po files, mirrors, and demotions.
 
- -- Nick Rosbrook <enr0n@ubuntu.com>  Thu, 07 Mar 2024 15:55:22 -0500
+ -- Nick Rosbrook <enr0n@ubuntu.com>  Thu, 07 Mar 2024 15:57:06 -0500
 
 ubuntu-release-upgrader (1:24.04.7) noble; urgency=medium
 
