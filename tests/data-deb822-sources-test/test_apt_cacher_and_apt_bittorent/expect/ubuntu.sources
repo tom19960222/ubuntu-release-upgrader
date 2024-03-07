@@ -4,7 +4,12 @@ Suites: {dist}-security
 Components: main restricted universe multiverse
 
 Types: deb
-URIs: http://localhost:9977/us.archive.ubuntu.com/ubuntu/ http://localhost:9977/archive.ubuntu.com/ubuntu/
+URIs: http://localhost:9977/us.archive.ubuntu.com/ubuntu/
+Suites: {dist}
+Components: main
+
+Types: deb
+URIs: http://localhost:9977/archive.ubuntu.com/ubuntu/
 Suites: {dist}
 Components: main
 
