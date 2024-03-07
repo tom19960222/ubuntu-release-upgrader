@@ -1,19 +1,19 @@
-# DistUpgradeController.py 
-#  
+# DistUpgradeController.py
+#
 #  Copyright (c) 2004-2022 Canonical Ltd.
-#  
+#
 #  Author: Michael Vogt <michael.vogt@ubuntu.com>
-# 
-#  This program is free software; you can redistribute it and/or 
-#  modify it under the terms of the GNU General Public License as 
+#
+#  This program is free software; you can redistribute it and/or
+#  modify it under the terms of the GNU General Public License as
 #  published by the Free Software Foundation; either version 2 of the
 #  License, or (at your option) any later version.
-# 
+#
 #  This program is distributed in the hope that it will be useful,
 #  but WITHOUT ANY WARRANTY; without even the implied warranty of
 #  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #  GNU General Public License for more details.
-# 
+#
 #  You should have received a copy of the GNU General Public License
 #  along with this program; if not, write to the Free Software
 #  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307
@@ -125,7 +125,7 @@ class NoBackportsFoundException(Exception):
 
 class DistUpgradeController(object):
     """ this is the controller that does most of the work """
-    
+
     def __init__(self, distUpgradeView, options=None, datadir=None):
         # setup the paths
         localedir = "/usr/share/locale/"
@@ -155,7 +155,7 @@ class DistUpgradeController(object):
         self.config = DistUpgradeConfig(datadir)
         self.sources_backup_ext = "."+self.config.get("Files","BackupExt")
 
-        # move some of the options stuff into the self.config, 
+        # move some of the options stuff into the self.config,
         # ConfigParser deals only with strings it seems *sigh*
         self.config.add_section("Options")
         self.config.set("Options","withNetwork", str(self.useNetwork))
@@ -190,14 +190,14 @@ class DistUpgradeController(object):
 
         # we run in full upgrade mode by default
         self._partialUpgrade = False
-        
+
         # install the quirks handler
         self.quirks = DistUpgradeQuirks(self, self.config)
 
         # install a logind sleep inhibitor
         self.inhibitor_fd = inhibit_sleep()
 
-        # setup env var 
+        # setup env var
         os.environ["RELEASE_UPGRADE_IN_PROGRESS"] = "1"
         os.environ["PYCENTRAL_FORCE_OVERWRITE"] = "1"
         os.environ["PATH"] = "%s:%s" % (os.getcwd()+"/imported",
@@ -207,7 +207,7 @@ class DistUpgradeController(object):
         # set max retries
         maxRetries = self.config.getint("Network","MaxRetries")
         apt_pkg.config.set("Acquire::Retries", str(maxRetries))
-        # max sizes for dpkgpm for large installs (see linux/limits.h and 
+        # max sizes for dpkgpm for large installs (see linux/limits.h and
         #                                          linux/binfmts.h)
         apt_pkg.config.set("Dpkg::MaxArgs", str(64*1024))
         apt_pkg.config.set("Dpkg::MaxArgBytes", str(128*1024))
@@ -317,7 +317,7 @@ class DistUpgradeController(object):
             of trouble)
         """
         pidfile = os.path.join("/var/run/release-upgrader-sshd.pid")
-        if (not os.path.exists(pidfile) and 
+        if (not os.path.exists(pidfile) and
             os.path.isdir("/proc") and
             is_child_of_process_name("sshd")):
             # check if the frontend supports ssh upgrades (see lp: #322482)
@@ -373,10 +373,10 @@ class DistUpgradeController(object):
         """ this is a helper that is run if we are started from a CD
             and we have network - we will then try to fetch a update
             of ourself
-        """  
+        """
         from .MetaRelease import MetaReleaseCore
         from .DistUpgradeFetcherSelf import DistUpgradeFetcherSelf
-        # check if we run from a LTS 
+        # check if we run from a LTS
         forceLTS=False
         if (self.release == "dapper" or
             self.release == "hardy" or
@@ -477,7 +477,7 @@ class DistUpgradeController(object):
         if not self.cache.coherence_check(self._view):
             return False
 
-        # now figure out if we need to go into desktop or 
+        # now figure out if we need to go into desktop or
         # server mode - we use a heuristic for this
         self.serverMode = self.cache.need_server_mode()
         if self.serverMode:
@@ -536,7 +536,7 @@ class DistUpgradeController(object):
 
     def _sourcesListEntryDownloadable(self, entry):
         """
-        helper that checks if a sources.list entry points to 
+        helper that checks if a sources.list entry points to
         something downloadable
         """
         logging.debug("verifySourcesListEntry: %s" % entry)
@@ -676,9 +676,9 @@ class DistUpgradeController(object):
             # check if there is actually a lists file for them available
             # and disable them if not
             elif entry.uri.startswith("cdrom:"):
-                # 
+                #
                 listdir = apt_pkg.config.find_dir("Dir::State::lists")
-                if not os.path.exists("%s/%s%s_%s_%s" % 
+                if not os.path.exists("%s/%s%s_%s_%s" %
                                       (listdir,
                                        apt_pkg.uri_to_filename(entry.uri),
                                        "dists",
@@ -742,8 +742,8 @@ class DistUpgradeController(object):
             thirdPartyMirror = not mirror_check or self.isThirdPartyMirror(entry.uri)
             if validMirror or thirdPartyMirror:
                 # disabled/security/commercial/extras are special cases
-                # we use validTo/foundToDist to figure out if we have a 
-                # main archive mirror in the sources.list or if we 
+                # we use validTo/foundToDist to figure out if we have a
+                # main archive mirror in the sources.list or if we
                 # need to add one
                 validTo = True
                 if (entry.disabled or
@@ -1604,7 +1604,7 @@ class DistUpgradeController(object):
         self._logChanges()
         self._view.processEvents()
 
-        # check if we have enough free space 
+        # check if we have enough free space
         if not self._checkFreeSpace():
             return False
 
@@ -1684,19 +1684,19 @@ class DistUpgradeController(object):
             self._view.getHtmlView().open("%s#locale=%s" % (url, lang))
         # retry the fetching in case of errors
         maxRetries = self.config.getint("Network","MaxRetries")
-        # FIXME: we get errors like 
-        #   "I wasn't able to locate file for the %s package" 
-        #  here sometimes. its unclear why and not reproducible, the 
+        # FIXME: we get errors like
+        #   "I wasn't able to locate file for the %s package"
+        #  here sometimes. its unclear why and not reproducible, the
         #  current theory is that for some reason the file is not
-        #  considered trusted at the moment 
+        #  considered trusted at the moment
         #  pkgAcquireArchive::QueueNext() runs debReleaseIndex::IsTrused()
         #  (the later just checks for the existence of the .gpg file)
-        #  OR 
+        #  OR
         #  the fact that we get a pm and fetcher here confuses something
         #  in libapt?
-        # POSSIBLE workaround: keep the list-dir locked so that 
+        # POSSIBLE workaround: keep the list-dir locked so that
         #          no apt-get update can run outside from the release
-        #          upgrader 
+        #          upgrader
         user_canceled = False
         # LP: #1102593 - In Python 3, the targets of except clauses get `del`d
         # from the current namespace after the exception is handled, so we
@@ -1972,7 +1972,7 @@ class DistUpgradeController(object):
         actions = [_("_Keep"), _("_Remove")]
         # FIXME Add an explanation about what obsolete packages are
         #explanation = _("")
-        if (len(changes) > 0 and 
+        if (len(changes) > 0 and
             self._view.confirmChanges(summary, changes, [], 0, actions, False)):
             fprogress = self._view.getAcquireProgress()
             iprogress = self._view.getInstallProgress(self.cache)
@@ -1998,8 +1998,8 @@ class DistUpgradeController(object):
         return True
 
     def runPostInstallScripts(self):
-        """ 
-        scripts that are run in any case after the distupgrade finished 
+        """
+        scripts that are run in any case after the distupgrade finished
         whether or not it was successful
 
         Cache lock is released during script runs in the event that the
@@ -2160,7 +2160,7 @@ class DistUpgradeController(object):
         for entry in sources.list:
             if entry.invalid or entry.disabled:
                 continue
-            if (entry.type == "deb" and 
+            if (entry.type == "deb" and
                 entry.disabled == False and
                 self.isMirror(entry.uri) and
                 "main" in entry.comps and
@@ -2200,20 +2200,20 @@ class DistUpgradeController(object):
         backportslist = self.config.getlist("PreRequists","Packages")
 
         # we support PreRequists/SourcesList-$arch sections here too
-        # 
-        # logic for mirror finding works list this:     
+        #
+        # logic for mirror finding works list this:
         # - use the mirror template from the config, then: [done]
-        # 
+        #
         #  - try to find known mirror (isMirror) and prepend it [done]
         #  - archive.ubuntu.com is always a fallback at the end [done]
-        # 
+        #
         # see if we find backports with that
         # - if not, try guessing based on URI, Trust and Dist   [done]
         #   in existing sources.list (internal mirror with no
         #   outside connection maybe)
-        # 
+        #
         # make sure to remove file on cancel
-        
+
         # FIXME: use the DistUpgradeFetcherCore logic
         #        in mirror_from_sources_list() here
         #        (and factor that code out into a helper)
@@ -2227,11 +2227,11 @@ class DistUpgradeController(object):
             return False
         outpath = os.path.join(apt_pkg.config.find_dir("Dir::Etc::sourceparts"), prereq_template)
         outfile = os.path.join(apt_pkg.config.find_dir("Dir::Etc::sourceparts"), prereq_template)
-        self._addPreRequistsSourcesList(prereq_template, outfile) 
+        self._addPreRequistsSourcesList(prereq_template, outfile)
         try:
             self._verifyBackports()
         except NoBackportsFoundException:
-            self._addPreRequistsSourcesList(prereq_template, outfile, dumb=True) 
+            self._addPreRequistsSourcesList(prereq_template, outfile, dumb=True)
             try:
                 self._verifyBackports()
             except NoBackportsFoundException as e:
@@ -2357,11 +2357,11 @@ class DistUpgradeController(object):
         if not self.askLivepatch():
             self.abort()
 
-        # run a "apt-get update" now, its ok to ignore errors, 
-        # because 
+        # run a "apt-get update" now, its ok to ignore errors,
+        # because
         # a) we disable any third party sources later
         # b) we check if we have valid ubuntu sources later
-        #    after we rewrite the sources.list and do a 
+        #    after we rewrite the sources.list and do a
         #    apt-get update there too
         # because the (unmodified) sources.list of the user
         # may contain bad/unreachable entries we run only
@@ -2536,7 +2536,7 @@ class DistUpgradeController(object):
 
         # done, ask for reboot
         self._view.setStep(Step.REBOOT)
-        self._view.updateStatus(_("System upgrade is complete."))            
+        self._view.updateStatus(_("System upgrade is complete."))
         get_telemetry().done()
         # FIXME should we look into /var/run/reboot-required here?
         if not inside_chroot():
@@ -2549,11 +2549,11 @@ class DistUpgradeController(object):
                 subprocess.Popen("/sbin/reboot")
             sys.exit(0)
         return True
-        
+
     def run(self):
         self._view.processEvents()
         return self.fullUpgrade()
-    
+
     def doPartialUpgrade(self):
         " partial upgrade mode, useful for repairing "
         self._view.setStep(Step.PREPARE)
