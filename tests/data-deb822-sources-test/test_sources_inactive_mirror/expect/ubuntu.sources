@@ -12,5 +12,5 @@ Components: main restricted universe multiverse
 Types: deb
 URIs: {default_source_uri}
 Suites: {to_dist} {to_dist}-updates
-Components: main restricted
+Components: main restricted universe multiverse
 Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
