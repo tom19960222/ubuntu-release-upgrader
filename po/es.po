@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2024-03-07 15:46-0500\n"
+"POT-Creation-Date: 2024-03-14 14:13-0400\n"
 "PO-Revision-Date: 2019-06-18 17:52+0000\n"
 "Last-Translator: Paco Molinero <paco@byasl.com>\n"
 "Language-Team: Spanish <traductores@gnome.org>\n"
@@ -24,7 +24,7 @@ msgstr ""
 "X-Generator: Launchpad (build c597c3229eb023b1e626162d5947141bf7befb13)\n"
 
 #. TRANSLATORS: %s is a country
-#: ../DistUpgrade/distro.py:206 ../DistUpgrade/distro.py:461
+#: ../DistUpgrade/distro.py:206 ../DistUpgrade/distro.py:474
 #, python-format
 msgid "Server for %s"
 msgstr "Servidor para %s"
