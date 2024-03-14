@@ -1,3 +1,10 @@
+ubuntu-release-upgrader (1:24.04.9) noble; urgency=medium
+
+  * Revert "tests: fix some more deb822 tests"
+  * Run pre-build.sh: updating po files, mirrors, and demotions.
+
+ -- Nick Rosbrook <enr0n@ubuntu.com>  Thu, 14 Mar 2024 14:18:50 -0400
+
 ubuntu-release-upgrader (1:24.04.8) noble; urgency=medium
 
   * tests: fix some more deb822 tests
