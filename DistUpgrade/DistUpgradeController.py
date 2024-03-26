@@ -869,13 +869,18 @@ class DistUpgradeController(object):
 
     def migratedToDeb822(self):
         """
-        Return True if all sources are deb822, and return False
-        if any (valid) non-deb822 sources are found.
+        Return an integer indicating if sources are migrated to deb822.
+        Possible return values are:
+
+            -1: not migrated to deb822 sources
+             0: partially migrated to deb822 sources
+             1: fully migrated to deb822 sources
         """
         if not have_deb822_source_entry:
-            return False
+            return -1
 
         sources = SourcesList(matcherPath=self.datadir, deb822=True)
+        deb822 = [s for s in sources if isinstance(s, Deb822SourceEntry)]
         nondeb822 = [s for s in sources if not isinstance(s, Deb822SourceEntry)]
 
         # On migration, we leave behind an empty (i.e. invalid)
@@ -887,7 +892,15 @@ class DistUpgradeController(object):
         nondeb822 = [s for s in nondeb822 \
                      if not (s.file == sourcelist_file and s.invalid)]
 
-        return not nondeb822
+        if deb822 and not nondeb822:
+            # Fully migrated to deb822 sources.
+            return 1
+        elif deb822 and nondeb822:
+            # Partially migrated. A mix of .list and .sources are configured.
+            return 0
+        else:
+            # Either no deb822 sources, or no sources at all.
+            return -1
 
     def migrateToDeb822Sources(self):
         """
@@ -1112,7 +1125,17 @@ class DistUpgradeController(object):
         # to create potential sources which can be upgraded to.
         self.sources_disabled = False
         self.found_components = {}
-        for entry in [e for e in self.sources if not (e.invalid or e.disabled)]:
+
+        sources = [
+            e for e in self.sources
+            if not any((
+                e.invalid,
+                e.disabled,
+                not isinstance(e, Deb822SourceEntry),
+            ))
+        ]
+
+        for entry in sources:
             # Disable -proposed when upgrading to -devel release.
             if self.options and self.options.devel_release:
                 logging.debug("upgrade to development release, disabling proposed")
@@ -1992,7 +2015,7 @@ class DistUpgradeController(object):
         if not self._partialUpgrade:
             self.runPostInstallScripts()
 
-        if not self.migratedToDeb822():
+        if self.migratedToDeb822() <= 0:
             self.migrateToDeb822Sources()
 
         return True
@@ -2378,18 +2401,31 @@ class DistUpgradeController(object):
             self._view.setStep(Step.MODIFY_SOURCES)
             self._view.updateStatus(_("Updating repository information"))
 
-            # If we are not yet migrated to deb822 sources, then update the
-            # sources the old way. We will migrate to deb822 sources at the
-            # end of the upgrade.
-            logging.debug("Have Deb822SourceEntry: {}"
-                          .format(have_deb822_source_entry))
-
-            if self.migratedToDeb822():
+            migrated = self.migratedToDeb822()
+            if migrated > 0:
                 logging.debug("Already migrated to deb822")
                 if not self.updateDeb822Sources():
                     self.abort()
-            elif not self.updateSourcesList():
-                self.abort()
+            else:
+                if migrated == 0:
+                    # Since software-properties started writing PPA sources as
+                    # deb822 in 23.10, it's not unlikely that a user has some
+                    # deb822 sources configured, even if using
+                    # /etc/apt/sources.list for default sources.
+                    #
+                    # Make sure to still rewrite these sources.
+                    logging.debug("Rewriting existing deb822 sources")
+
+                    self.sources = SourcesList(matcherPath=self.datadir, deb822=True)
+                    self.sources.backup(self.sources_backup_ext)
+                    self.rewriteDeb822Sources()
+                    self.sources.save()
+
+                # If we are not yet migrated to deb822 sources, then update the
+                # sources the old way. We will migrate to deb822 sources at the
+                # end of the upgrade.
+                if not self.updateSourcesList():
+                    self.abort()
 
             # then update the package index files
             if not self.doUpdate():

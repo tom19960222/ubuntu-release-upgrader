@@ -1129,11 +1129,11 @@ class TestDeb822SourcesMigration(unittest.TestCase):
             default_source_uri=d.default_source_uri,
             security_source_uri=d.security_source_uri,
         )
-        self.assertFalse(d.migratedToDeb822())
+        self.assertEqual(d.migratedToDeb822(), -1)
 
         d.migrateToDeb822Sources()
 
-        self.assertTrue(d.migratedToDeb822())
+        self.assertEqual(d.migratedToDeb822(), 1)
         self.assertSourcesMatchExpected(
             dist=di.stable(),
             default_source_uri=d.default_source_uri,
@@ -1166,11 +1166,11 @@ class TestDeb822SourcesMigration(unittest.TestCase):
             default_source_uri=d.default_source_uri,
             security_source_uri=d.security_source_uri,
         )
-        self.assertFalse(d.migratedToDeb822())
+        self.assertEqaul(d.migratedToDeb822(), -1)
 
         d.migrateToDeb822Sources()
 
-        self.assertTrue(d.migratedToDeb822())
+        self.assertEqual(d.migratedToDeb822(), 1)
         self.assertSourcesMatchExpected(
             dist=di.stable(),
             default_source_uri=d.default_source_uri,
@@ -1198,11 +1198,11 @@ class TestDeb822SourcesMigration(unittest.TestCase):
             dist=di.stable(),
             default_source_uri=d.default_source_uri,
         )
-        self.assertFalse(d.migratedToDeb822())
+        self.assertEqual(d.migratedToDeb822(), -1)
 
         d.migrateToDeb822Sources()
 
-        self.assertTrue(d.migratedToDeb822())
+        self.assertEqual(d.migratedToDeb822(), 1)
         self.assertSourcesMatchExpected(
             dist=di.stable(),
             default_source_uri=d.default_source_uri,
@@ -1220,11 +1220,11 @@ class TestDeb822SourcesMigration(unittest.TestCase):
             dist=di.stable(),
             default_source_uri=d.default_source_uri,
         )
-        self.assertFalse(d.migratedToDeb822())
+        self.assertEqual(d.migratedToDeb822(), 0)
 
         d.migrateToDeb822Sources()
 
-        self.assertTrue(d.migratedToDeb822())
+        self.assertEqual(d.migratedToDeb822(), 1)
         self.assertSourcesMatchExpected(
             dist=di.stable(),
             default_source_uri=d.default_source_uri,
@@ -1239,11 +1239,11 @@ class TestDeb822SourcesMigration(unittest.TestCase):
         d.openCache(lock=False)
 
         self.prepareTestSources()
-        self.assertFalse(d.migratedToDeb822())
+        self.assertEqual(d.migratedToDeb822(), -1)
 
         d.migrateToDeb822Sources()
 
-        self.assertTrue(d.migratedToDeb822())
+        self.assertEqual(d.migratedToDeb822(), 1)
         self.assertSourcesMatchExpected()
 
     def test_consolidate_types(self):
@@ -1262,11 +1262,11 @@ class TestDeb822SourcesMigration(unittest.TestCase):
             default_source_uri=d.default_source_uri,
             security_source_uri=d.security_source_uri,
         )
-        self.assertFalse(d.migratedToDeb822())
+        self.assertEqual(d.migratedToDeb822(), -1)
 
         d.migrateToDeb822Sources()
 
-        self.assertTrue(d.migratedToDeb822())
+        self.assertEqual(d.migratedToDeb822(), 1)
         self.assertSourcesMatchExpected(
             dist=di.stable(),
             default_source_uri=d.default_source_uri,
@@ -1285,11 +1285,11 @@ class TestDeb822SourcesMigration(unittest.TestCase):
             dist=di.stable(),
             default_source_uri=d.default_source_uri,
         )
-        self.assertFalse(d.migratedToDeb822())
+        self.assertEqual(d.migratedToDeb822(), -1)
 
         d.migrateToDeb822Sources()
 
-        self.assertTrue(d.migratedToDeb822())
+        self.assertEqual(d.migratedToDeb822(), 1)
         self.assertSourcesMatchExpected(
             dist=di.stable(),
             default_source_uri=d.default_source_uri,
@@ -1307,11 +1307,11 @@ class TestDeb822SourcesMigration(unittest.TestCase):
             dist=di.stable(),
             default_source_uri=d.default_source_uri,
         )
-        self.assertFalse(d.migratedToDeb822())
+        self.assertEqual(d.migratedToDeb822(), -1)
 
         d.migrateToDeb822Sources()
 
-        self.assertTrue(d.migratedToDeb822())
+        self.assertEqual(d.migratedToDeb822(), 1)
         self.assertSourcesMatchExpected(
             dist=di.stable(),
             default_source_uri=d.default_source_uri,
