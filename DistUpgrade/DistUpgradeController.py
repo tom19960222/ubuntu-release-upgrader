@@ -1070,11 +1070,16 @@ class DistUpgradeController(object):
         )
         e.section['Signed-By'] = '/usr/share/keyrings/ubuntu-archive-keyring.gpg'
 
+    def _allowThirdParty(self):
+        return any((
+            self.config.getWithDefault("Sources","AllowThirdParty",False),
+            "RELEASE_UPGRADER_ALLOW_THIRD_PARTY" in os.environ,
+        ))
+
     def _mirrorCheck(self):
         # skip mirror check if special environment is set
         # (useful for server admins with internal repos)
-        if (self.config.getWithDefault("Sources","AllowThirdParty",False) or
-            "RELEASE_UPGRADER_ALLOW_THIRD_PARTY" in os.environ):
+        if self._allowThirdParty():
             logging.warning("mirror check skipped, *overriden* via config")
             return True
 
@@ -1162,10 +1167,15 @@ class DistUpgradeController(object):
                           get_string_with_no_auth_from_source_entry(copy.deepcopy(entry)))
 
             # Disable sources that do not contain valid mirrors.
-            known_mirrors = [u for u in entry.uris \
-                             if self.isMirror(u) \
-                             or not mirror_check \
-                             or self.isThirdPartyMirror(u)]
+            known_mirrors = [
+                u for u in entry.uris
+                if any((
+                    self.isMirror(u),
+                    self.isThirdPartyMirror(u),
+                    not mirror_check,
+                    self._allowThirdParty(),
+                ))
+            ]
             if not known_mirrors:
                 entry.disabled = True
                 self.sources_disabled = True
