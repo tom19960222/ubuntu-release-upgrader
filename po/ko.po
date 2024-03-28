@@ -3,12 +3,12 @@
 # This file is distributed under the same license as the update-manager package.
 # darehanl <darehanl@gmail.com>, 2006.
 #
-#: ../DistUpgrade/DistUpgradeController.py:1553
+#: ../DistUpgrade/DistUpgradeController.py:1576
 msgid ""
 msgstr ""
 "Project-Id-Version: update-manager\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2024-03-14 14:13-0400\n"
+"POT-Creation-Date: 2024-03-28 15:20-0400\n"
 "PO-Revision-Date: 2019-06-18 17:54+0000\n"
 "Last-Translator: Kim Boram <boramism@gmail.com>\n"
 "Language-Team: Korean <ko@li.org>\n"
@@ -312,13 +312,13 @@ msgstr ""
 msgid "disabled on upgrade to %s"
 msgstr "%s(으)로 업그레이드 하지 않음"
 
-#: ../DistUpgrade/DistUpgradeController.py:1218
+#: ../DistUpgrade/DistUpgradeController.py:1241
 #, fuzzy
 msgid "No valid source entry found"
 msgstr "유효한 sources.list 항목 발견되지 않음"
 
-#: ../DistUpgrade/DistUpgradeController.py:1219
-#: ../DistUpgrade/DistUpgradeController.py:1287
+#: ../DistUpgrade/DistUpgradeController.py:1242
+#: ../DistUpgrade/DistUpgradeController.py:1310
 #, python-format
 msgid ""
 "While scanning your repository information no entry about %s could be "
@@ -334,13 +334,13 @@ msgstr ""
 "\n"
 "계속 하시겠습니까?"
 
-#: ../DistUpgrade/DistUpgradeController.py:1229
-#: ../DistUpgrade/DistUpgradeController.py:1297
+#: ../DistUpgrade/DistUpgradeController.py:1252
+#: ../DistUpgrade/DistUpgradeController.py:1320
 msgid "No valid mirror found"
 msgstr "올바른 미러 서버를 찾지 못함"
 
-#: ../DistUpgrade/DistUpgradeController.py:1230
-#: ../DistUpgrade/DistUpgradeController.py:1298
+#: ../DistUpgrade/DistUpgradeController.py:1253
+#: ../DistUpgrade/DistUpgradeController.py:1321
 #, python-format
 msgid ""
 "While scanning your repository information no mirror entry for the upgrade "
@@ -359,12 +359,12 @@ msgstr ""
 "'아니오'를 선택하면 업그레이드를 취소합니다."
 
 #. hm, still nothing useful ...
-#: ../DistUpgrade/DistUpgradeController.py:1250
-#: ../DistUpgrade/DistUpgradeController.py:1318
+#: ../DistUpgrade/DistUpgradeController.py:1273
+#: ../DistUpgrade/DistUpgradeController.py:1341
 msgid "Generate default sources?"
 msgstr "기본 소스 목록을 만드시겠습니까?"
 
-#: ../DistUpgrade/DistUpgradeController.py:1251
+#: ../DistUpgrade/DistUpgradeController.py:1274
 #, fuzzy, python-format
 msgid ""
 "After scanning your 'ubuntu.sources' no valid entry for '%s' was found.\n"
@@ -376,13 +376,13 @@ msgstr ""
 "'%s'에 대한 기본 항목을 추가하시겠습니까? '아니오'를 선택하면 업그레이드를 취"
 "소합니다."
 
-#: ../DistUpgrade/DistUpgradeController.py:1269
-#: ../DistUpgrade/DistUpgradeController.py:1370
+#: ../DistUpgrade/DistUpgradeController.py:1292
+#: ../DistUpgrade/DistUpgradeController.py:1393
 msgid "Third party sources disabled"
 msgstr "서드 파티 소스는 사용할 수 없습니다"
 
-#: ../DistUpgrade/DistUpgradeController.py:1270
-#: ../DistUpgrade/DistUpgradeController.py:1371
+#: ../DistUpgrade/DistUpgradeController.py:1293
+#: ../DistUpgrade/DistUpgradeController.py:1394
 msgid ""
 "Some third party entries in your sources.list were disabled. You can re-"
 "enable them after the upgrade with the 'software-properties' tool or your "
@@ -392,11 +392,11 @@ msgstr ""
 "친 후 '소프트웨어 소스' 도구나 패키지 관리자를 이용해 다시 사용 할 수 있습니"
 "다."
 
-#: ../DistUpgrade/DistUpgradeController.py:1286
+#: ../DistUpgrade/DistUpgradeController.py:1309
 msgid "No valid sources.list entry found"
 msgstr "유효한 sources.list 항목 발견되지 않음"
 
-#: ../DistUpgrade/DistUpgradeController.py:1319
+#: ../DistUpgrade/DistUpgradeController.py:1342
 #, python-format
 msgid ""
 "After scanning your 'sources.list' no valid entry for '%s' was found.\n"
@@ -408,12 +408,12 @@ msgstr ""
 "'%s'에 대한 기본 항목을 추가하시겠습니까? '아니오'를 선택하면 업그레이드를 취"
 "소합니다."
 
-#: ../DistUpgrade/DistUpgradeController.py:1354
-#: ../DistUpgrade/DistUpgradeController.py:1360
+#: ../DistUpgrade/DistUpgradeController.py:1377
+#: ../DistUpgrade/DistUpgradeController.py:1383
 msgid "Repository information invalid"
 msgstr "저장소 정보가 올바르지 않습니다"
 
-#: ../DistUpgrade/DistUpgradeController.py:1355
+#: ../DistUpgrade/DistUpgradeController.py:1378
 msgid ""
 "Upgrading the repository information resulted in a invalid file so a bug "
 "reporting process is being started."
@@ -421,7 +421,7 @@ msgstr ""
 "저장소 정보를 업데이트한 결과 올바르지 않은 파일이 생성되었습니다. 버그 보고 "
 "작업을 시작합니다."
 
-#: ../DistUpgrade/DistUpgradeController.py:1361
+#: ../DistUpgrade/DistUpgradeController.py:1384
 msgid ""
 "Upgrading the repository information resulted in a invalid file. To report a "
 "bug install apport and then execute 'apport-bug ubuntu-release-upgrader'."
@@ -430,12 +430,12 @@ msgstr ""
 "시려면 'apport'라는 프로그램을 설치한 후 'apport-bug ubuntu-release-"
 "upgrader' 명령을 실행해주십시오."
 
-#: ../DistUpgrade/DistUpgradeController.py:1413
+#: ../DistUpgrade/DistUpgradeController.py:1436
 msgid "Package in inconsistent state"
 msgid_plural "Packages in inconsistent state"
 msgstr[0] "패키지 상태가 불완전함"
 
-#: ../DistUpgrade/DistUpgradeController.py:1416
+#: ../DistUpgrade/DistUpgradeController.py:1439
 #, python-format
 msgid ""
 "The package '%s' is in an inconsistent state and needs to be reinstalled, "
@@ -449,11 +449,11 @@ msgstr[0] ""
 "'%s' 패키지는 불완전한 상태이며 다시 설치해야 하지만, 저장소에서 찾을 수 없습"
 "니다.  이 패키지를 직접 다시 설치하거나 시스템에서 제거하십시오."
 
-#: ../DistUpgrade/DistUpgradeController.py:1477
+#: ../DistUpgrade/DistUpgradeController.py:1500
 msgid "Error during update"
 msgstr "업데이트 중 오류 발생"
 
-#: ../DistUpgrade/DistUpgradeController.py:1478
+#: ../DistUpgrade/DistUpgradeController.py:1501
 msgid ""
 "A problem occurred during the update. This is usually some sort of network "
 "problem, please check your network connection and retry."
@@ -461,12 +461,12 @@ msgstr ""
 "업데이트 중 문제가 발생했습니다. 보통 네트워크 문제인 경우가 많습니다. 네트워"
 "크의 연결 상태를 확인하시고 다시 시도하십시오."
 
-#: ../DistUpgrade/DistUpgradeController.py:1521
-#: ../DistUpgrade/DistUpgradeController.py:1526
+#: ../DistUpgrade/DistUpgradeController.py:1544
+#: ../DistUpgrade/DistUpgradeController.py:1549
 msgid "EFI System Partition (ESP) not usable"
 msgstr "EFI 시스템 파티션 (ESP)은 사용할 수 없습니다"
 
-#: ../DistUpgrade/DistUpgradeController.py:1522
+#: ../DistUpgrade/DistUpgradeController.py:1545
 msgid ""
 "Your EFI System Partition (ESP) is not mounted at /boot/efi. Please ensure "
 "that it is properly configured and try again."
@@ -474,7 +474,7 @@ msgstr ""
 "EFI 시스템 파티션 (ESP)은 /boot/efi 에 마운트되지 않습니다. 올바르게 구성되었"
 "는지 확인하고 다시 시도하십시오."
 
-#: ../DistUpgrade/DistUpgradeController.py:1527
+#: ../DistUpgrade/DistUpgradeController.py:1550
 msgid ""
 "The EFI System Partition (ESP) mounted at /boot/efi is not writable. Please "
 "mount this partition read-write and try again."
@@ -482,13 +482,13 @@ msgstr ""
 "/boot/efi 에 마운트 된 EFI 시스템 파티션 (ESP)은 쓸 수 없습니다. 이 파티션을 "
 "read-write 로 마운트하고 다시 시도하십시오."
 
-#: ../DistUpgrade/DistUpgradeController.py:1534
+#: ../DistUpgrade/DistUpgradeController.py:1557
 msgid "Not enough free disk space"
 msgstr "디스크 여유 공간이 충분하지 않습니다."
 
 #. TRANSLATORS: you can change the order of the sentence,
 #. make sure to keep all {str_*} string untranslated.
-#: ../DistUpgrade/DistUpgradeController.py:1537
+#: ../DistUpgrade/DistUpgradeController.py:1560
 #, python-brace-format
 msgid ""
 "The upgrade has aborted. The upgrade needs a total of {str_total} free space "
@@ -500,12 +500,12 @@ msgstr ""
 "디스크 공간을 확보하십시오. {str_remedy}"
 
 #. specific ways to resolve lack of free space
-#: ../DistUpgrade/DistUpgradeController.py:1542
+#: ../DistUpgrade/DistUpgradeController.py:1565
 msgid ""
 "Remove temporary packages of former installations using 'sudo apt clean'."
 msgstr "'sudo apt clean'을 사용하여 이전 설치의 임시 패키지를 제거합니다."
 
-#: ../DistUpgrade/DistUpgradeController.py:1544
+#: ../DistUpgrade/DistUpgradeController.py:1567
 msgid ""
 "You can remove old kernels using 'sudo apt autoremove' and you could also "
 "set COMPRESS=xz in /etc/initramfs-tools/initramfs.conf to reduce the size of "
@@ -515,7 +515,7 @@ msgstr ""
 "크기를 줄이기 위해 /etc/initramfs-tools/initramfs.conf 에서 COMPRESS = xz를 "
 "설정할 수도 있습니다."
 
-#: ../DistUpgrade/DistUpgradeController.py:1549
+#: ../DistUpgrade/DistUpgradeController.py:1572
 msgid ""
 "Empty your trash and remove temporary packages of former installations using "
 "'sudo apt-get clean'."
@@ -523,35 +523,35 @@ msgstr ""
 "휴지통을 비우고 'sudo apt-get clean'을 사용하여 이전 설치의 임시 패키지를 제"
 "거하십시오."
 
-#: ../DistUpgrade/DistUpgradeController.py:1552
+#: ../DistUpgrade/DistUpgradeController.py:1575
 msgid "Reboot to clean up files in /tmp."
 msgstr "다시 시작해 /tmp 내 파일을 정리합니다."
 
 #. calc the dist-upgrade and see if the removals are ok/expected
 #. do the dist-upgrade
-#: ../DistUpgrade/DistUpgradeController.py:1591
-#: ../DistUpgrade/DistUpgradeController.py:2451
-#: ../DistUpgrade/DistUpgradeController.py:2503
+#: ../DistUpgrade/DistUpgradeController.py:1614
+#: ../DistUpgrade/DistUpgradeController.py:2487
+#: ../DistUpgrade/DistUpgradeController.py:2539
 msgid "Calculating the changes"
 msgstr "바뀐 내용을 계산하는 중"
 
 #. ask the user
-#: ../DistUpgrade/DistUpgradeController.py:1635
+#: ../DistUpgrade/DistUpgradeController.py:1658
 msgid "Do you want to start the upgrade?"
 msgstr "업그레이드를 시작하시겠습니까?"
 
-#: ../DistUpgrade/DistUpgradeController.py:1654
+#: ../DistUpgrade/DistUpgradeController.py:1677
 #, python-format
 msgid ""
 "Livepatch security updates are not available for Ubuntu %s. If you upgrade, "
 "Livepatch will turn off."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:1726
+#: ../DistUpgrade/DistUpgradeController.py:1749
 msgid "Upgrade canceled"
 msgstr "업그레이드 취소함"
 
-#: ../DistUpgrade/DistUpgradeController.py:1727
+#: ../DistUpgrade/DistUpgradeController.py:1750
 msgid ""
 "The upgrade will cancel now and the original system state will be restored. "
 "You can resume the upgrade at a later time."
@@ -559,12 +559,12 @@ msgstr ""
 "업그레이드를 취소합니다. 시스템은 업그레이드 이전 상태로 돌아가며 업그레이드"
 "는 이후에도 언제든지 다시 할 수 있습니다."
 
-#: ../DistUpgrade/DistUpgradeController.py:1733
-#: ../DistUpgrade/DistUpgradeController.py:1878
+#: ../DistUpgrade/DistUpgradeController.py:1756
+#: ../DistUpgrade/DistUpgradeController.py:1901
 msgid "Could not download the upgrades"
 msgstr "업그레이드 파일을 다운로드 할 수 없음"
 
-#: ../DistUpgrade/DistUpgradeController.py:1734
+#: ../DistUpgrade/DistUpgradeController.py:1757
 msgid ""
 "The upgrade has aborted. Please check your Internet connection or "
 "installation media and try again. All files downloaded so far have been kept."
@@ -574,27 +574,27 @@ msgstr ""
 
 #. FIXME: strings are not good, but we are in string freeze
 #. currently
-#: ../DistUpgrade/DistUpgradeController.py:1827
-#: ../DistUpgrade/DistUpgradeController.py:1866
-#: ../DistUpgrade/DistUpgradeController.py:1983
+#: ../DistUpgrade/DistUpgradeController.py:1850
+#: ../DistUpgrade/DistUpgradeController.py:1889
+#: ../DistUpgrade/DistUpgradeController.py:2006
 msgid "Error during commit"
 msgstr "커밋 작업 중 오류 발생"
 
 #. generate a new cache
-#: ../DistUpgrade/DistUpgradeController.py:1829
-#: ../DistUpgrade/DistUpgradeController.py:1868
-#: ../DistUpgrade/DistUpgradeController.py:2032
+#: ../DistUpgrade/DistUpgradeController.py:1852
+#: ../DistUpgrade/DistUpgradeController.py:1891
+#: ../DistUpgrade/DistUpgradeController.py:2055
 msgid "Restoring original system state"
 msgstr "시스템을 이전의 상태로 복구하고 있습니다"
 
-#: ../DistUpgrade/DistUpgradeController.py:1830
-#: ../DistUpgrade/DistUpgradeController.py:1845
-#: ../DistUpgrade/DistUpgradeController.py:1869
+#: ../DistUpgrade/DistUpgradeController.py:1853
+#: ../DistUpgrade/DistUpgradeController.py:1868
+#: ../DistUpgrade/DistUpgradeController.py:1892
 msgid "Could not install the upgrades"
 msgstr "업그레이드를 설치하지 못했습니다."
 
 #. invoke the frontend now and show a error message
-#: ../DistUpgrade/DistUpgradeController.py:1835
+#: ../DistUpgrade/DistUpgradeController.py:1858
 msgid ""
 "The upgrade has aborted. Your system could be in an unusable state. A "
 "recovery will run now (dpkg --configure -a)."
@@ -602,7 +602,7 @@ msgstr ""
 "업그레이드를 중단했습니다. 시스템에 치명적인 오류가 발생했을 수 있습니다. 복"
 "구(dpkg --configure -a) 명령을 실행하겠습니다."
 
-#: ../DistUpgrade/DistUpgradeController.py:1840
+#: ../DistUpgrade/DistUpgradeController.py:1863
 #, python-format
 msgid ""
 "\n"
@@ -619,7 +619,7 @@ msgstr ""
 "문해 버그를 보고해주십시오.\n"
 "%s"
 
-#: ../DistUpgrade/DistUpgradeController.py:1879
+#: ../DistUpgrade/DistUpgradeController.py:1902
 msgid ""
 "The upgrade has aborted. Please check your Internet connection or "
 "installation media and try again. "
@@ -627,24 +627,24 @@ msgstr ""
 "업그레이드를 중단했습니다. 인터넷 연결이나 설치 매체를 확인한 후 다시 시도하"
 "십시오. "
 
-#: ../DistUpgrade/DistUpgradeController.py:1907
+#: ../DistUpgrade/DistUpgradeController.py:1930
 msgid "Searching for obsolete software"
 msgstr "못 쓰게 된 소프트웨어를 검색하는 중"
 
-#: ../DistUpgrade/DistUpgradeController.py:1971
+#: ../DistUpgrade/DistUpgradeController.py:1994
 msgid "Remove obsolete packages?"
 msgstr "사용하지 못하게 된 패키지를 제거하시겠습니까?"
 
-#: ../DistUpgrade/DistUpgradeController.py:1972
+#: ../DistUpgrade/DistUpgradeController.py:1995
 #: ../data/gtkbuilder/DistUpgrade.ui.h:8
 msgid "_Keep"
 msgstr "유지(_K)"
 
-#: ../DistUpgrade/DistUpgradeController.py:1972
+#: ../DistUpgrade/DistUpgradeController.py:1995
 msgid "_Remove"
 msgstr "제거(_R)"
 
-#: ../DistUpgrade/DistUpgradeController.py:1984
+#: ../DistUpgrade/DistUpgradeController.py:2007
 msgid ""
 "A problem occurred during the clean-up. Please see the below message for "
 "more information. "
@@ -654,34 +654,34 @@ msgstr ""
 
 #. FIXME: instead of error out, fetch and install it
 #. here
-#: ../DistUpgrade/DistUpgradeController.py:2070
+#: ../DistUpgrade/DistUpgradeController.py:2093
 msgid "Required depends is not installed"
 msgstr "필요한 의존 프로그램을 설치하지 않았습니다."
 
-#: ../DistUpgrade/DistUpgradeController.py:2071
+#: ../DistUpgrade/DistUpgradeController.py:2094
 #, python-format
 msgid "The required dependency '%s' is not installed. "
 msgstr "필요한 의존 프로그램 '%s'을(를) 설치하지 않습니다. "
 
 #. coherence check (check for ubuntu-desktop, brokenCache etc)
 #. then open the cache (again)
-#: ../DistUpgrade/DistUpgradeController.py:2304
-#: ../DistUpgrade/DistUpgradeController.py:2399
+#: ../DistUpgrade/DistUpgradeController.py:2327
+#: ../DistUpgrade/DistUpgradeController.py:2435
 msgid "Checking package manager"
 msgstr "패키지 관리자 확인 중"
 
-#: ../DistUpgrade/DistUpgradeController.py:2310
-#: ../DistUpgrade/DistUpgradeController.py:2316
+#: ../DistUpgrade/DistUpgradeController.py:2333
+#: ../DistUpgrade/DistUpgradeController.py:2339
 msgid "Preparing the upgrade failed"
 msgstr "업그레이드 준비에 실패했습니다"
 
-#: ../DistUpgrade/DistUpgradeController.py:2311
+#: ../DistUpgrade/DistUpgradeController.py:2334
 msgid ""
 "Preparing the system for the upgrade failed so a bug reporting process is "
 "being started."
 msgstr "시스템 업그레이드 준비를 실패했습니다. 버그 보고 작업을 시작합니다."
 
-#: ../DistUpgrade/DistUpgradeController.py:2317
+#: ../DistUpgrade/DistUpgradeController.py:2340
 msgid ""
 "Preparing the system for the upgrade failed. To report a bug install apport "
 "and then execute 'apport-bug ubuntu-release-upgrader'."
@@ -690,12 +690,12 @@ msgstr ""
 "'apport'라는 프로그램을 설치한 후 'apport-bug ubuntu-release-upgrader' 명령"
 "을 실행해주십시오."
 
-#: ../DistUpgrade/DistUpgradeController.py:2334
-#: ../DistUpgrade/DistUpgradeController.py:2344
+#: ../DistUpgrade/DistUpgradeController.py:2357
+#: ../DistUpgrade/DistUpgradeController.py:2367
 msgid "Getting upgrade prerequisites failed"
 msgstr "업그레이드 사전 작업에 실패했습니다"
 
-#: ../DistUpgrade/DistUpgradeController.py:2335
+#: ../DistUpgrade/DistUpgradeController.py:2358
 msgid ""
 "The system was unable to get the prerequisites for the upgrade. The upgrade "
 "will abort now and restore the original system state.\n"
@@ -707,7 +707,7 @@ msgstr ""
 "\n"
 "추가적으로, 버그 보고 작업을 시작합니다."
 
-#: ../DistUpgrade/DistUpgradeController.py:2345
+#: ../DistUpgrade/DistUpgradeController.py:2368
 msgid ""
 "The system was unable to get the prerequisites for the upgrade. The upgrade "
 "will abort now and restore the original system state.\n"
@@ -721,15 +721,15 @@ msgstr ""
 "버그를 보고하시려면 'apport'라는 프로그램을 설치한 후 'apport-bug ubuntu-"
 "release-upgrader' 명령을 실행해주십시오."
 
-#: ../DistUpgrade/DistUpgradeController.py:2379
+#: ../DistUpgrade/DistUpgradeController.py:2402
 msgid "Updating repository information"
 msgstr "저장소 정보 업데이트 중"
 
-#: ../DistUpgrade/DistUpgradeController.py:2428
+#: ../DistUpgrade/DistUpgradeController.py:2464
 msgid "Invalid package information"
 msgstr "올바르지 않은 패키지 정보"
 
-#: ../DistUpgrade/DistUpgradeController.py:2429
+#: ../DistUpgrade/DistUpgradeController.py:2465
 #, python-format
 msgid ""
 "After updating your package information, the essential package '%s' could "
@@ -746,79 +746,79 @@ msgstr ""
 "수 있습니다.\n"
 "과도한 부하로 인해 발생한 경우에는 잠시 후 다시 업그레이드를  시작해주십시오."
 
-#: ../DistUpgrade/DistUpgradeController.py:2458
-#: ../DistUpgrade/DistUpgradeController.py:2569
+#: ../DistUpgrade/DistUpgradeController.py:2494
+#: ../DistUpgrade/DistUpgradeController.py:2605
 msgid "Fetching"
 msgstr "가져오는 중"
 
-#: ../DistUpgrade/DistUpgradeController.py:2465
-#: ../DistUpgrade/DistUpgradeController.py:2488
-#: ../DistUpgrade/DistUpgradeController.py:2518
-#: ../DistUpgrade/DistUpgradeController.py:2573
+#: ../DistUpgrade/DistUpgradeController.py:2501
+#: ../DistUpgrade/DistUpgradeController.py:2524
+#: ../DistUpgrade/DistUpgradeController.py:2554
+#: ../DistUpgrade/DistUpgradeController.py:2609
 msgid "Upgrading"
 msgstr "업그레이드 중"
 
-#: ../DistUpgrade/DistUpgradeController.py:2467
+#: ../DistUpgrade/DistUpgradeController.py:2503
 msgid "Upgrade infeasible"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:2468
+#: ../DistUpgrade/DistUpgradeController.py:2504
 msgid ""
 "The upgrade could not be completed, there were errors during the upgrade "
 "process."
 msgstr ""
 
 #. don't abort here, because it would restore the sources.list
-#: ../DistUpgrade/DistUpgradeController.py:2491
-#: ../DistUpgrade/DistUpgradeController.py:2507
+#: ../DistUpgrade/DistUpgradeController.py:2527
+#: ../DistUpgrade/DistUpgradeController.py:2543
 msgid "Upgrade incomplete"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:2492
-#: ../DistUpgrade/DistUpgradeController.py:2508
+#: ../DistUpgrade/DistUpgradeController.py:2528
+#: ../DistUpgrade/DistUpgradeController.py:2544
 msgid ""
 "The upgrade has partially completed but there were errors during the upgrade "
 "process."
 msgstr ""
 
 #. don't abort here, because it would restore the sources.list
-#: ../DistUpgrade/DistUpgradeController.py:2523
-#: ../DistUpgrade/DistUpgradeController.py:2575
-#: ../DistUpgrade/DistUpgradeController.py:2581
-#: ../DistUpgrade/DistUpgradeController.py:2592
+#: ../DistUpgrade/DistUpgradeController.py:2559
+#: ../DistUpgrade/DistUpgradeController.py:2611
+#: ../DistUpgrade/DistUpgradeController.py:2617
+#: ../DistUpgrade/DistUpgradeController.py:2628
 msgid "Upgrade complete"
 msgstr "업그레이드 완료"
 
-#: ../DistUpgrade/DistUpgradeController.py:2524
-#: ../DistUpgrade/DistUpgradeController.py:2576
-#: ../DistUpgrade/DistUpgradeController.py:2582
+#: ../DistUpgrade/DistUpgradeController.py:2560
+#: ../DistUpgrade/DistUpgradeController.py:2612
+#: ../DistUpgrade/DistUpgradeController.py:2618
 msgid ""
 "The upgrade has completed but there were errors during the upgrade process."
 msgstr "업그레이드를 완료했지만 업그레이드 과정 중 오류가 발생하였습니다."
 
-#: ../DistUpgrade/DistUpgradeController.py:2539
+#: ../DistUpgrade/DistUpgradeController.py:2575
 msgid "System upgrade is complete."
 msgstr "시스템 업그레이드를 완료했습니다."
 
-#: ../DistUpgrade/DistUpgradeController.py:2593
+#: ../DistUpgrade/DistUpgradeController.py:2629
 msgid "The partial upgrade was completed."
 msgstr "부분 업그레이드를 완료했습니다."
 
-#: ../DistUpgrade/DistUpgradeController.py:2614
+#: ../DistUpgrade/DistUpgradeController.py:2650
 msgid "Lock screen disabled"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:2615
+#: ../DistUpgrade/DistUpgradeController.py:2651
 msgid ""
 "Your lock screen has been disabled and will remain disabled during the "
 "upgrade."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:2623
+#: ../DistUpgrade/DistUpgradeController.py:2659
 msgid "Unable to disable lock screen"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:2624
+#: ../DistUpgrade/DistUpgradeController.py:2660
 msgid ""
 "It is highly recommended that the lock screen be disabled during the upgrade "
 "to prevent later issues. Please ensure your screen lock is disabled before "
@@ -1015,12 +1015,12 @@ msgstr "'%s'(을)를 '%s' 드라이브에 넣어주십시오."
 msgid "Media Change"
 msgstr "미디어 바꾸기"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:242
+#: ../DistUpgrade/DistUpgradeQuirks.py:244
 msgid "Your graphics hardware may not be fully supported in Ubuntu 14.04."
 msgstr ""
 "사용 중인 그래픽 카드가 우분투 14.04 버전을 완전히 지원하지 않을 수 있습니다."
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:244
+#: ../DistUpgrade/DistUpgradeQuirks.py:246
 msgid ""
 "Running the 'unity' desktop environment is not fully supported by your "
 "graphics hardware. You will maybe end up in a very slow environment after "
@@ -1035,11 +1035,11 @@ msgstr ""
 "UpdateManagerWarningForUnity3D 페이지를 확인하십시오. 업그레이드를 계속하시겠"
 "습니까?"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:268
+#: ../DistUpgrade/DistUpgradeQuirks.py:270
 msgid "Your graphics hardware may not be fully supported in Ubuntu 12.04 LTS."
 msgstr "그래픽 카드가 우분투 12.04 장기 지원판을 지원하지 않습니다."
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:270
+#: ../DistUpgrade/DistUpgradeQuirks.py:272
 msgid ""
 "The support in Ubuntu 12.04 LTS for your Intel graphics hardware is limited "
 "and you may encounter problems after the upgrade. For more information see "
@@ -1051,7 +1051,7 @@ msgstr ""
 "Bugs/UpdateManagerWarningForI8xx 페이지를 확인해주십시오. 업그레이드를 계속 "
 "진행하시겠습니까?"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:290
+#: ../DistUpgrade/DistUpgradeQuirks.py:292
 msgid ""
 "Upgrading may reduce desktop effects, and performance in games and other "
 "graphically intensive programs."
@@ -1059,7 +1059,7 @@ msgstr ""
 "업그레이드로 인해 데스크탑 효과나 게임, 그래픽 관련 프로그램의 성능이 줄어들 "
 "수 있습니다."
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:294
+#: ../DistUpgrade/DistUpgradeQuirks.py:296
 msgid ""
 "This computer is currently using the AMD 'fglrx' graphics driver. No version "
 "of this driver is available that works with your hardware in Ubuntu 10.04 "
@@ -1071,12 +1071,12 @@ msgstr ""
 "이버는 우분투 10.04 LTS을 지원하는 버전이 없습니다.\n"
 "계속 진행하시겠습니까?"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:333
-#: ../DistUpgrade/DistUpgradeQuirks.py:402
+#: ../DistUpgrade/DistUpgradeQuirks.py:335
+#: ../DistUpgrade/DistUpgradeQuirks.py:404
 msgid "Sorry, no more upgrades for this system"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:334
+#: ../DistUpgrade/DistUpgradeQuirks.py:336
 #, python-format
 msgid ""
 "There will not be any further Ubuntu releases for this system's 'i386' "
@@ -1085,11 +1085,11 @@ msgid ""
 "Updates for Ubuntu %s will continue until %s."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:349
+#: ../DistUpgrade/DistUpgradeQuirks.py:351
 msgid "No ARMv6 CPU"
 msgstr "ARMv6 CPU 아님"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:350
+#: ../DistUpgrade/DistUpgradeQuirks.py:352
 msgid ""
 "Your system uses an ARM CPU that is older than the ARMv6 architecture. All "
 "packages in karmic were built with optimizations requiring ARMv6 as the "
@@ -1101,12 +1101,12 @@ msgstr ""
 "합니다. 현재 하드웨어로는 새로운 우분투 버전으로 시스템을 업그레이드 할 수 없"
 "습니다."
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:370
+#: ../DistUpgrade/DistUpgradeQuirks.py:372
 msgid ""
 "Sorry, this storage driver is not supported in kernels for newer releases"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:372
+#: ../DistUpgrade/DistUpgradeQuirks.py:374
 #, python-format
 msgid ""
 "There will not be any further Ubuntu releases that provide kernel support "
@@ -1116,7 +1116,7 @@ msgid ""
 "driver, remove the directory %s and try again."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:403
+#: ../DistUpgrade/DistUpgradeQuirks.py:405
 #, python-format
 msgid ""
 "There will not be any further Ubuntu releases for this system's POWER8 "
@@ -1125,11 +1125,11 @@ msgid ""
 "Updates for Ubuntu %s will continue until %s."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:421
+#: ../DistUpgrade/DistUpgradeQuirks.py:423
 msgid "No init available"
 msgstr "init 사용 불가"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:422
+#: ../DistUpgrade/DistUpgradeQuirks.py:424
 msgid ""
 "Your system appears to be a virtualised environment without an init daemon, "
 "e.g. Linux-VServer. Ubuntu 10.04 LTS cannot function within this type of "
@@ -1144,11 +1144,11 @@ msgstr ""
 "\n"
 "계속 진행하시겠습니까?"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:463
+#: ../DistUpgrade/DistUpgradeQuirks.py:465
 msgid "The Robot Operating System (ROS) is installed"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:464
+#: ../DistUpgrade/DistUpgradeQuirks.py:466
 msgid ""
 "It appears that ROS is currently installed. Each ROS release is very strict "
 "about the versions of Ubuntu it supports, and Ubuntu upgrades can fail if "
@@ -1165,11 +1165,11 @@ msgid ""
 "Are you sure you want to continue?"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:657
+#: ../DistUpgrade/DistUpgradeQuirks.py:659
 msgid "Connection to the Snap Store failed"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:658
+#: ../DistUpgrade/DistUpgradeQuirks.py:660
 msgid ""
 "You have the package lxd installed but your system is unable to reach the "
 "Snap Store. lxd is now provided via a snap and the release upgrade will fail "
@@ -1179,11 +1179,11 @@ msgid ""
 "may want to configure a Snap Store proxy."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:673
+#: ../DistUpgrade/DistUpgradeQuirks.py:675
 msgid "Connection to Snap Store failed"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:674
+#: ../DistUpgrade/DistUpgradeQuirks.py:676
 msgid ""
 "Your system does not have a connection to the Snap Store. For the best "
 "upgrade experience make sure that your system can connect to api.snapcraft."
@@ -1191,11 +1191,11 @@ msgid ""
 "Do you still want to continue with the upgrade?"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:683
+#: ../DistUpgrade/DistUpgradeQuirks.py:685
 msgid "Outdated snapd package"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:684
+#: ../DistUpgrade/DistUpgradeQuirks.py:686
 msgid ""
 "Your system does not have the latest version of snapd. Please update the "
 "version of snapd on your system to improve the upgrade experience.\n"
@@ -1204,36 +1204,36 @@ msgstr ""
 
 #. now perform direct API calls to the store, requesting size
 #. information for each of the snaps needing installation
-#: ../DistUpgrade/DistUpgradeQuirks.py:709
+#: ../DistUpgrade/DistUpgradeQuirks.py:711
 msgid "Calculating snap size requirements"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:740
+#: ../DistUpgrade/DistUpgradeQuirks.py:742
 msgid "Processing snap replacements"
 msgstr ""
 
 #. TODO: This status should be updated, but the time of
 #. this change to snap switch is post-translation freeze.
-#: ../DistUpgrade/DistUpgradeQuirks.py:748
+#: ../DistUpgrade/DistUpgradeQuirks.py:750
 #, python-format
 msgid "refreshing snap %s"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:752
+#: ../DistUpgrade/DistUpgradeQuirks.py:754
 #, python-format
 msgid "removing snap %s"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:755
+#: ../DistUpgrade/DistUpgradeQuirks.py:757
 #, python-format
 msgid "installing snap %s"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:784
+#: ../DistUpgrade/DistUpgradeQuirks.py:786
 msgid "PAE not enabled"
 msgstr "PAE 기능을 사용하지 않고 있습니다."
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:785
+#: ../DistUpgrade/DistUpgradeQuirks.py:787
 msgid ""
 "Your system uses a CPU that does not have PAE enabled. Ubuntu only supports "
 "non-PAE systems up to Ubuntu 12.04. To upgrade to a later version of Ubuntu, "
@@ -1246,11 +1246,11 @@ msgstr ""
 "\n"
 "다음 페이지를 확인하십시오: http://help.ubuntu.com/community/EnablingPAE"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1081
+#: ../DistUpgrade/DistUpgradeQuirks.py:1083
 msgid "universe component not enabled"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1082
+#: ../DistUpgrade/DistUpgradeQuirks.py:1084
 #, python-format
 msgid ""
 "You have the package %s installed which is a python2 package. python2 has "
@@ -1262,16 +1262,16 @@ msgid ""
 "universe component in /etc/apt/sources.list or remove %s"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1194
+#: ../DistUpgrade/DistUpgradeQuirks.py:1196
 msgid "Checking for installed snaps"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1641
+#: ../DistUpgrade/DistUpgradeQuirks.py:1643
 #, fuzzy
 msgid "Cannot upgrade this system"
 msgstr "업그레이드할 수 없음"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1642
+#: ../DistUpgrade/DistUpgradeQuirks.py:1644
 msgid ""
 "Due to a bug in grub, this system cannot be safely upgraded at this time.\n"
 "\n"
