@@ -3,6 +3,7 @@ ubuntu-release-upgrader (1:24.04.10) noble; urgency=medium
   * DistUpgrade: rewrite any deb822 sources even if sources.list still used
     (LP: #2058938)
   * DistUpgradeQuirks: re-enable tracker-extract-3 quirk (LP: #2049907)
+  * DistUpgrade: fix allowance of third-party mirrors for deb822 sources
   * Run pre-build.sh: updating mirrors, demotions, and translations.
 
  -- Nick Rosbrook <enr0n@ubuntu.com>  Thu, 28 Mar 2024 15:25:39 -0400
