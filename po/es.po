@@ -6,12 +6,12 @@
 # Jorge Bernal <koke@sindominio.net>, 2005.
 # Paco Molinero <paco@byasl.com>, 2011.
 #
-#: ../DistUpgrade/DistUpgradeController.py:1576
+#: ../DistUpgrade/DistUpgradeController.py:1586
 msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2024-03-28 15:20-0400\n"
+"POT-Creation-Date: 2024-03-28 16:36-0400\n"
 "PO-Revision-Date: 2019-06-18 17:52+0000\n"
 "Last-Translator: Paco Molinero <paco@byasl.com>\n"
 "Language-Team: Spanish <traductores@gnome.org>\n"
@@ -345,13 +345,13 @@ msgstr ""
 msgid "disabled on upgrade to %s"
 msgstr "(desactivado al actualizar a %s)"
 
-#: ../DistUpgrade/DistUpgradeController.py:1241
+#: ../DistUpgrade/DistUpgradeController.py:1251
 #, fuzzy
 msgid "No valid source entry found"
 msgstr "No se ha encontrado una entrada sources.list válida"
 
-#: ../DistUpgrade/DistUpgradeController.py:1242
-#: ../DistUpgrade/DistUpgradeController.py:1310
+#: ../DistUpgrade/DistUpgradeController.py:1252
+#: ../DistUpgrade/DistUpgradeController.py:1320
 #, python-format
 msgid ""
 "While scanning your repository information no entry about %s could be "
@@ -368,13 +368,13 @@ msgstr ""
 "\n"
 "¿Desea continuar de todas formas?"
 
-#: ../DistUpgrade/DistUpgradeController.py:1252
-#: ../DistUpgrade/DistUpgradeController.py:1320
+#: ../DistUpgrade/DistUpgradeController.py:1262
+#: ../DistUpgrade/DistUpgradeController.py:1330
 msgid "No valid mirror found"
 msgstr "No se ha encontrado un servidor espejo válido"
 
-#: ../DistUpgrade/DistUpgradeController.py:1253
-#: ../DistUpgrade/DistUpgradeController.py:1321
+#: ../DistUpgrade/DistUpgradeController.py:1263
+#: ../DistUpgrade/DistUpgradeController.py:1331
 #, python-format
 msgid ""
 "While scanning your repository information no mirror entry for the upgrade "
@@ -394,12 +394,12 @@ msgstr ""
 "Si elige «No», se cancelará la actualización."
 
 #. hm, still nothing useful ...
-#: ../DistUpgrade/DistUpgradeController.py:1273
-#: ../DistUpgrade/DistUpgradeController.py:1341
+#: ../DistUpgrade/DistUpgradeController.py:1283
+#: ../DistUpgrade/DistUpgradeController.py:1351
 msgid "Generate default sources?"
 msgstr "¿Generar orígenes predeterminados?"
 
-#: ../DistUpgrade/DistUpgradeController.py:1274
+#: ../DistUpgrade/DistUpgradeController.py:1284
 #, fuzzy, python-format
 msgid ""
 "After scanning your 'ubuntu.sources' no valid entry for '%s' was found.\n"
@@ -413,13 +413,13 @@ msgstr ""
 "¿Se deben añadir entradas predeterminadas para «%s»? Si selecciona «No», la "
 "actualización se cancelará."
 
-#: ../DistUpgrade/DistUpgradeController.py:1292
-#: ../DistUpgrade/DistUpgradeController.py:1393
+#: ../DistUpgrade/DistUpgradeController.py:1302
+#: ../DistUpgrade/DistUpgradeController.py:1403
 msgid "Third party sources disabled"
 msgstr "Desactivados los orígenes de terceros"
 
-#: ../DistUpgrade/DistUpgradeController.py:1293
-#: ../DistUpgrade/DistUpgradeController.py:1394
+#: ../DistUpgrade/DistUpgradeController.py:1303
+#: ../DistUpgrade/DistUpgradeController.py:1404
 msgid ""
 "Some third party entries in your sources.list were disabled. You can re-"
 "enable them after the upgrade with the 'software-properties' tool or your "
@@ -429,11 +429,11 @@ msgstr ""
 "list». Puede volver a activarlas tras la actualización con la herramienta "
 "«Orígenes del software», o con su gestor de paquetes."
 
-#: ../DistUpgrade/DistUpgradeController.py:1309
+#: ../DistUpgrade/DistUpgradeController.py:1319
 msgid "No valid sources.list entry found"
 msgstr "No se ha encontrado una entrada sources.list válida"
 
-#: ../DistUpgrade/DistUpgradeController.py:1342
+#: ../DistUpgrade/DistUpgradeController.py:1352
 #, python-format
 msgid ""
 "After scanning your 'sources.list' no valid entry for '%s' was found.\n"
@@ -447,12 +447,12 @@ msgstr ""
 "¿Se deben añadir entradas predeterminadas para «%s»? Si selecciona «No», la "
 "actualización se cancelará."
 
-#: ../DistUpgrade/DistUpgradeController.py:1377
-#: ../DistUpgrade/DistUpgradeController.py:1383
+#: ../DistUpgrade/DistUpgradeController.py:1387
+#: ../DistUpgrade/DistUpgradeController.py:1393
 msgid "Repository information invalid"
 msgstr "Información de repositorio no válida"
 
-#: ../DistUpgrade/DistUpgradeController.py:1378
+#: ../DistUpgrade/DistUpgradeController.py:1388
 msgid ""
 "Upgrading the repository information resulted in a invalid file so a bug "
 "reporting process is being started."
@@ -461,7 +461,7 @@ msgstr ""
 "archivo no válido por lo que se está iniciando un proceso de notificación de "
 "errores."
 
-#: ../DistUpgrade/DistUpgradeController.py:1384
+#: ../DistUpgrade/DistUpgradeController.py:1394
 msgid ""
 "Upgrading the repository information resulted in a invalid file. To report a "
 "bug install apport and then execute 'apport-bug ubuntu-release-upgrader'."
@@ -470,13 +470,13 @@ msgstr ""
 "archivo no válido. Para informar de un error instale apport y después "
 "ejecute «apport-bug ubuntu-release-upgrader»."
 
-#: ../DistUpgrade/DistUpgradeController.py:1436
+#: ../DistUpgrade/DistUpgradeController.py:1446
 msgid "Package in inconsistent state"
 msgid_plural "Packages in inconsistent state"
 msgstr[0] "Paquete en un estado inconsistente"
 msgstr[1] "Paquetes en un estado inconsistente"
 
-#: ../DistUpgrade/DistUpgradeController.py:1439
+#: ../DistUpgrade/DistUpgradeController.py:1449
 #, python-format
 msgid ""
 "The package '%s' is in an inconsistent state and needs to be reinstalled, "
@@ -495,11 +495,11 @@ msgstr[1] ""
 "pero no se encuentran en ningún repositorio. Reinstale los paquetes "
 "manualmente o desinstálelos del sistema."
 
-#: ../DistUpgrade/DistUpgradeController.py:1500
+#: ../DistUpgrade/DistUpgradeController.py:1510
 msgid "Error during update"
 msgstr "Error durante la actualización"
 
-#: ../DistUpgrade/DistUpgradeController.py:1501
+#: ../DistUpgrade/DistUpgradeController.py:1511
 msgid ""
 "A problem occurred during the update. This is usually some sort of network "
 "problem, please check your network connection and retry."
@@ -508,12 +508,12 @@ msgstr ""
 "tipo de problema en la red, por lo que le recomendamos que compruebe su "
 "conexión de red y vuelva a intentarlo."
 
-#: ../DistUpgrade/DistUpgradeController.py:1544
-#: ../DistUpgrade/DistUpgradeController.py:1549
+#: ../DistUpgrade/DistUpgradeController.py:1554
+#: ../DistUpgrade/DistUpgradeController.py:1559
 msgid "EFI System Partition (ESP) not usable"
 msgstr "Partición de sistema EFI (ESP) no utilizable"
 
-#: ../DistUpgrade/DistUpgradeController.py:1545
+#: ../DistUpgrade/DistUpgradeController.py:1555
 msgid ""
 "Your EFI System Partition (ESP) is not mounted at /boot/efi. Please ensure "
 "that it is properly configured and try again."
@@ -521,7 +521,7 @@ msgstr ""
 "La partición de sistema EFI (ESP) no está montada en /boot/efi. Cerciórese "
 "de que esté configurada adecuadamente y vuelva a intentarlo."
 
-#: ../DistUpgrade/DistUpgradeController.py:1550
+#: ../DistUpgrade/DistUpgradeController.py:1560
 msgid ""
 "The EFI System Partition (ESP) mounted at /boot/efi is not writable. Please "
 "mount this partition read-write and try again."
@@ -529,13 +529,13 @@ msgstr ""
 "No se puede escribir en la partición de sistema EFI (ESP) montada en /boot/"
 "efi. Monte la partición en modo lectura/escritura y vuelva a intentarlo."
 
-#: ../DistUpgrade/DistUpgradeController.py:1557
+#: ../DistUpgrade/DistUpgradeController.py:1567
 msgid "Not enough free disk space"
 msgstr "No hay espacio suficiente en el disco"
 
 #. TRANSLATORS: you can change the order of the sentence,
 #. make sure to keep all {str_*} string untranslated.
-#: ../DistUpgrade/DistUpgradeController.py:1560
+#: ../DistUpgrade/DistUpgradeController.py:1570
 #, python-brace-format
 msgid ""
 "The upgrade has aborted. The upgrade needs a total of {str_total} free space "
@@ -547,14 +547,14 @@ msgstr ""
 "{str_needed} de espacio libre adicional en «{str_dir}». {str_remedy}"
 
 #. specific ways to resolve lack of free space
-#: ../DistUpgrade/DistUpgradeController.py:1565
+#: ../DistUpgrade/DistUpgradeController.py:1575
 msgid ""
 "Remove temporary packages of former installations using 'sudo apt clean'."
 msgstr ""
 "Elimine los paquetes temporales de instalaciones anteriores mediante «sudo "
 "apt clean»."
 
-#: ../DistUpgrade/DistUpgradeController.py:1567
+#: ../DistUpgrade/DistUpgradeController.py:1577
 msgid ""
 "You can remove old kernels using 'sudo apt autoremove' and you could also "
 "set COMPRESS=xz in /etc/initramfs-tools/initramfs.conf to reduce the size of "
@@ -564,7 +564,7 @@ msgstr ""
 "establecer COMPRESS=xz en /etc/initramfs-tools/initramfs.conf para reducir "
 "el tamaño de su initramfs."
 
-#: ../DistUpgrade/DistUpgradeController.py:1572
+#: ../DistUpgrade/DistUpgradeController.py:1582
 msgid ""
 "Empty your trash and remove temporary packages of former installations using "
 "'sudo apt-get clean'."
@@ -572,24 +572,24 @@ msgstr ""
 "Vacíe la papelera y elimine los paquetes temporales de instalaciones "
 "anteriores haciendo «sudo apt clean»."
 
-#: ../DistUpgrade/DistUpgradeController.py:1575
+#: ../DistUpgrade/DistUpgradeController.py:1585
 msgid "Reboot to clean up files in /tmp."
 msgstr "Reinicie para vaciar la carpeta /tmp."
 
 #. calc the dist-upgrade and see if the removals are ok/expected
 #. do the dist-upgrade
-#: ../DistUpgrade/DistUpgradeController.py:1614
-#: ../DistUpgrade/DistUpgradeController.py:2487
-#: ../DistUpgrade/DistUpgradeController.py:2539
+#: ../DistUpgrade/DistUpgradeController.py:1624
+#: ../DistUpgrade/DistUpgradeController.py:2497
+#: ../DistUpgrade/DistUpgradeController.py:2549
 msgid "Calculating the changes"
 msgstr "Calculando los cambios"
 
 #. ask the user
-#: ../DistUpgrade/DistUpgradeController.py:1658
+#: ../DistUpgrade/DistUpgradeController.py:1668
 msgid "Do you want to start the upgrade?"
 msgstr "¿Quiere comenzar la actualización?"
 
-#: ../DistUpgrade/DistUpgradeController.py:1677
+#: ../DistUpgrade/DistUpgradeController.py:1687
 #, python-format
 msgid ""
 "Livepatch security updates are not available for Ubuntu %s. If you upgrade, "
@@ -598,11 +598,11 @@ msgstr ""
 "Las actualizaciones de seguridad de Livepatch no están disponibles para "
 "Ubuntu %s. Si actualiza, Livepatch se apagará."
 
-#: ../DistUpgrade/DistUpgradeController.py:1749
+#: ../DistUpgrade/DistUpgradeController.py:1759
 msgid "Upgrade canceled"
 msgstr "Actualización cancelada"
 
-#: ../DistUpgrade/DistUpgradeController.py:1750
+#: ../DistUpgrade/DistUpgradeController.py:1760
 msgid ""
 "The upgrade will cancel now and the original system state will be restored. "
 "You can resume the upgrade at a later time."
@@ -610,12 +610,12 @@ msgstr ""
 "La actualización se cancelará ahora y el sistema volverá a su estado "
 "original. Puede reanudar la actualización posteriormente."
 
-#: ../DistUpgrade/DistUpgradeController.py:1756
-#: ../DistUpgrade/DistUpgradeController.py:1901
+#: ../DistUpgrade/DistUpgradeController.py:1766
+#: ../DistUpgrade/DistUpgradeController.py:1911
 msgid "Could not download the upgrades"
 msgstr "No se han podido descargar las actualizaciones"
 
-#: ../DistUpgrade/DistUpgradeController.py:1757
+#: ../DistUpgrade/DistUpgradeController.py:1767
 msgid ""
 "The upgrade has aborted. Please check your Internet connection or "
 "installation media and try again. All files downloaded so far have been kept."
@@ -626,27 +626,27 @@ msgstr ""
 
 #. FIXME: strings are not good, but we are in string freeze
 #. currently
-#: ../DistUpgrade/DistUpgradeController.py:1850
-#: ../DistUpgrade/DistUpgradeController.py:1889
-#: ../DistUpgrade/DistUpgradeController.py:2006
+#: ../DistUpgrade/DistUpgradeController.py:1860
+#: ../DistUpgrade/DistUpgradeController.py:1899
+#: ../DistUpgrade/DistUpgradeController.py:2016
 msgid "Error during commit"
 msgstr "Error durante la confirmación"
 
 #. generate a new cache
-#: ../DistUpgrade/DistUpgradeController.py:1852
-#: ../DistUpgrade/DistUpgradeController.py:1891
-#: ../DistUpgrade/DistUpgradeController.py:2055
+#: ../DistUpgrade/DistUpgradeController.py:1862
+#: ../DistUpgrade/DistUpgradeController.py:1901
+#: ../DistUpgrade/DistUpgradeController.py:2065
 msgid "Restoring original system state"
 msgstr "Restaurando el estado original del sistema"
 
-#: ../DistUpgrade/DistUpgradeController.py:1853
-#: ../DistUpgrade/DistUpgradeController.py:1868
-#: ../DistUpgrade/DistUpgradeController.py:1892
+#: ../DistUpgrade/DistUpgradeController.py:1863
+#: ../DistUpgrade/DistUpgradeController.py:1878
+#: ../DistUpgrade/DistUpgradeController.py:1902
 msgid "Could not install the upgrades"
 msgstr "No se han podido instalar las actualizaciones"
 
 #. invoke the frontend now and show a error message
-#: ../DistUpgrade/DistUpgradeController.py:1858
+#: ../DistUpgrade/DistUpgradeController.py:1868
 msgid ""
 "The upgrade has aborted. Your system could be in an unusable state. A "
 "recovery will run now (dpkg --configure -a)."
@@ -655,7 +655,7 @@ msgstr ""
 "estado no utilizable. Ahora se llevará a cabo una recuperación (dpkg --"
 "configure -a)."
 
-#: ../DistUpgrade/DistUpgradeController.py:1863
+#: ../DistUpgrade/DistUpgradeController.py:1873
 #, python-format
 msgid ""
 "\n"
@@ -672,7 +672,7 @@ msgstr ""
 "en /var/log/dist-upgrade/ al informe.\n"
 "%s"
 
-#: ../DistUpgrade/DistUpgradeController.py:1902
+#: ../DistUpgrade/DistUpgradeController.py:1912
 msgid ""
 "The upgrade has aborted. Please check your Internet connection or "
 "installation media and try again. "
@@ -680,24 +680,24 @@ msgstr ""
 "La actualización se ha cancelado. Compruebe su conexión a Internet o el "
 "soporte de instalación y vuelva a intentarlo. "
 
-#: ../DistUpgrade/DistUpgradeController.py:1930
+#: ../DistUpgrade/DistUpgradeController.py:1940
 msgid "Searching for obsolete software"
 msgstr "Buscando paquetes obsoletos"
 
-#: ../DistUpgrade/DistUpgradeController.py:1994
+#: ../DistUpgrade/DistUpgradeController.py:2004
 msgid "Remove obsolete packages?"
 msgstr "¿Desinstalar los paquetes obsoletos?"
 
-#: ../DistUpgrade/DistUpgradeController.py:1995
+#: ../DistUpgrade/DistUpgradeController.py:2005
 #: ../data/gtkbuilder/DistUpgrade.ui.h:8
 msgid "_Keep"
 msgstr "_Conservar"
 
-#: ../DistUpgrade/DistUpgradeController.py:1995
+#: ../DistUpgrade/DistUpgradeController.py:2005
 msgid "_Remove"
 msgstr "_Eliminar"
 
-#: ../DistUpgrade/DistUpgradeController.py:2007
+#: ../DistUpgrade/DistUpgradeController.py:2017
 msgid ""
 "A problem occurred during the clean-up. Please see the below message for "
 "more information. "
@@ -707,28 +707,28 @@ msgstr ""
 
 #. FIXME: instead of error out, fetch and install it
 #. here
-#: ../DistUpgrade/DistUpgradeController.py:2093
+#: ../DistUpgrade/DistUpgradeController.py:2103
 msgid "Required depends is not installed"
 msgstr "La dependencia requerida no está instalada"
 
-#: ../DistUpgrade/DistUpgradeController.py:2094
+#: ../DistUpgrade/DistUpgradeController.py:2104
 #, python-format
 msgid "The required dependency '%s' is not installed. "
 msgstr "La dependencia requerida «%s» no está instalada. "
 
 #. coherence check (check for ubuntu-desktop, brokenCache etc)
 #. then open the cache (again)
-#: ../DistUpgrade/DistUpgradeController.py:2327
-#: ../DistUpgrade/DistUpgradeController.py:2435
+#: ../DistUpgrade/DistUpgradeController.py:2337
+#: ../DistUpgrade/DistUpgradeController.py:2445
 msgid "Checking package manager"
 msgstr "Comprobando el gestor de paquetes"
 
-#: ../DistUpgrade/DistUpgradeController.py:2333
-#: ../DistUpgrade/DistUpgradeController.py:2339
+#: ../DistUpgrade/DistUpgradeController.py:2343
+#: ../DistUpgrade/DistUpgradeController.py:2349
 msgid "Preparing the upgrade failed"
 msgstr "Falló la preparación de la actualización"
 
-#: ../DistUpgrade/DistUpgradeController.py:2334
+#: ../DistUpgrade/DistUpgradeController.py:2344
 msgid ""
 "Preparing the system for the upgrade failed so a bug reporting process is "
 "being started."
@@ -736,7 +736,7 @@ msgstr ""
 "Falló la preparación del sistema para actualizarse, de manera que se ha "
 "iniciado el proceso de informe de errores."
 
-#: ../DistUpgrade/DistUpgradeController.py:2340
+#: ../DistUpgrade/DistUpgradeController.py:2350
 msgid ""
 "Preparing the system for the upgrade failed. To report a bug install apport "
 "and then execute 'apport-bug ubuntu-release-upgrader'."
@@ -744,12 +744,12 @@ msgstr ""
 "Falló al preparar el sistema para la actualización. Para informar de un "
 "error instale apport y después ejecute «apport-bug ubuntu-release-upgrader»."
 
-#: ../DistUpgrade/DistUpgradeController.py:2357
 #: ../DistUpgrade/DistUpgradeController.py:2367
+#: ../DistUpgrade/DistUpgradeController.py:2377
 msgid "Getting upgrade prerequisites failed"
 msgstr "Ha fallado la obtención de los requisitos previos de la actualización"
 
-#: ../DistUpgrade/DistUpgradeController.py:2358
+#: ../DistUpgrade/DistUpgradeController.py:2368
 msgid ""
 "The system was unable to get the prerequisites for the upgrade. The upgrade "
 "will abort now and restore the original system state.\n"
@@ -762,7 +762,7 @@ msgstr ""
 "\n"
 "Adicionalmente, se está iniciando un proceso de notificación de errores."
 
-#: ../DistUpgrade/DistUpgradeController.py:2368
+#: ../DistUpgrade/DistUpgradeController.py:2378
 msgid ""
 "The system was unable to get the prerequisites for the upgrade. The upgrade "
 "will abort now and restore the original system state.\n"
@@ -777,15 +777,15 @@ msgstr ""
 "Para informar de un error instale apport y después ejecute «apport-bug "
 "ubuntu-release-upgrader»."
 
-#: ../DistUpgrade/DistUpgradeController.py:2402
+#: ../DistUpgrade/DistUpgradeController.py:2412
 msgid "Updating repository information"
 msgstr "Actualizando la información del repositorio"
 
-#: ../DistUpgrade/DistUpgradeController.py:2464
+#: ../DistUpgrade/DistUpgradeController.py:2474
 msgid "Invalid package information"
 msgstr "Información sobre los paquetes no válida"
 
-#: ../DistUpgrade/DistUpgradeController.py:2465
+#: ../DistUpgrade/DistUpgradeController.py:2475
 #, python-format
 msgid ""
 "After updating your package information, the essential package '%s' could "
@@ -804,23 +804,23 @@ msgstr ""
 "En caso de tratarse de una sobrecarga de la réplica, debe esperar para "
 "reintentar la actualización más tarde."
 
-#: ../DistUpgrade/DistUpgradeController.py:2494
-#: ../DistUpgrade/DistUpgradeController.py:2605
+#: ../DistUpgrade/DistUpgradeController.py:2504
+#: ../DistUpgrade/DistUpgradeController.py:2615
 msgid "Fetching"
 msgstr "Descargando"
 
-#: ../DistUpgrade/DistUpgradeController.py:2501
-#: ../DistUpgrade/DistUpgradeController.py:2524
-#: ../DistUpgrade/DistUpgradeController.py:2554
-#: ../DistUpgrade/DistUpgradeController.py:2609
+#: ../DistUpgrade/DistUpgradeController.py:2511
+#: ../DistUpgrade/DistUpgradeController.py:2534
+#: ../DistUpgrade/DistUpgradeController.py:2564
+#: ../DistUpgrade/DistUpgradeController.py:2619
 msgid "Upgrading"
 msgstr "Actualizando"
 
-#: ../DistUpgrade/DistUpgradeController.py:2503
+#: ../DistUpgrade/DistUpgradeController.py:2513
 msgid "Upgrade infeasible"
 msgstr "Actualización inviable"
 
-#: ../DistUpgrade/DistUpgradeController.py:2504
+#: ../DistUpgrade/DistUpgradeController.py:2514
 msgid ""
 "The upgrade could not be completed, there were errors during the upgrade "
 "process."
@@ -829,13 +829,13 @@ msgstr ""
 "proceso de actualización."
 
 #. don't abort here, because it would restore the sources.list
-#: ../DistUpgrade/DistUpgradeController.py:2527
-#: ../DistUpgrade/DistUpgradeController.py:2543
+#: ../DistUpgrade/DistUpgradeController.py:2537
+#: ../DistUpgrade/DistUpgradeController.py:2553
 msgid "Upgrade incomplete"
 msgstr "Actualización incompleta"
 
-#: ../DistUpgrade/DistUpgradeController.py:2528
-#: ../DistUpgrade/DistUpgradeController.py:2544
+#: ../DistUpgrade/DistUpgradeController.py:2538
+#: ../DistUpgrade/DistUpgradeController.py:2554
 msgid ""
 "The upgrade has partially completed but there were errors during the upgrade "
 "process."
@@ -844,33 +844,33 @@ msgstr ""
 "durante el proceso de actualización."
 
 #. don't abort here, because it would restore the sources.list
-#: ../DistUpgrade/DistUpgradeController.py:2559
-#: ../DistUpgrade/DistUpgradeController.py:2611
-#: ../DistUpgrade/DistUpgradeController.py:2617
-#: ../DistUpgrade/DistUpgradeController.py:2628
+#: ../DistUpgrade/DistUpgradeController.py:2569
+#: ../DistUpgrade/DistUpgradeController.py:2621
+#: ../DistUpgrade/DistUpgradeController.py:2627
+#: ../DistUpgrade/DistUpgradeController.py:2638
 msgid "Upgrade complete"
 msgstr "Actualización completada"
 
-#: ../DistUpgrade/DistUpgradeController.py:2560
-#: ../DistUpgrade/DistUpgradeController.py:2612
-#: ../DistUpgrade/DistUpgradeController.py:2618
+#: ../DistUpgrade/DistUpgradeController.py:2570
+#: ../DistUpgrade/DistUpgradeController.py:2622
+#: ../DistUpgrade/DistUpgradeController.py:2628
 msgid ""
 "The upgrade has completed but there were errors during the upgrade process."
 msgstr "La actualización se completó pero hubo errores durante el proceso."
 
-#: ../DistUpgrade/DistUpgradeController.py:2575
+#: ../DistUpgrade/DistUpgradeController.py:2585
 msgid "System upgrade is complete."
 msgstr "La actualización del sistema se ha completado."
 
-#: ../DistUpgrade/DistUpgradeController.py:2629
+#: ../DistUpgrade/DistUpgradeController.py:2639
 msgid "The partial upgrade was completed."
 msgstr "La actualización parcial se ha completado."
 
-#: ../DistUpgrade/DistUpgradeController.py:2650
+#: ../DistUpgrade/DistUpgradeController.py:2660
 msgid "Lock screen disabled"
 msgstr "Pantalla de bloqueo desactivada"
 
-#: ../DistUpgrade/DistUpgradeController.py:2651
+#: ../DistUpgrade/DistUpgradeController.py:2661
 #, fuzzy
 msgid ""
 "Your lock screen has been disabled and will remain disabled during the "
@@ -879,11 +879,11 @@ msgstr ""
 "Su pantalla de bloqueo ha sido desactivada y seguirá así hasta que reinicie "
 "el sistema."
 
-#: ../DistUpgrade/DistUpgradeController.py:2659
+#: ../DistUpgrade/DistUpgradeController.py:2669
 msgid "Unable to disable lock screen"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:2660
+#: ../DistUpgrade/DistUpgradeController.py:2670
 msgid ""
 "It is highly recommended that the lock screen be disabled during the upgrade "
 "to prevent later issues. Please ensure your screen lock is disabled before "

@@ -3,12 +3,12 @@
 # This file is distributed under the same license as the update-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2006.
 #
-#: ../DistUpgrade/DistUpgradeController.py:1576
+#: ../DistUpgrade/DistUpgradeController.py:1586
 msgid ""
 msgstr ""
 "Project-Id-Version: update-manager\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2024-03-28 15:20-0400\n"
+"POT-Creation-Date: 2024-03-28 16:36-0400\n"
 "PO-Revision-Date: 2019-06-18 17:52+0000\n"
 "Last-Translator: Bagus Herlambang <bagus@vfemail.net>\n"
 "Language-Team: Indonesian <id@li.org>\n"
@@ -331,13 +331,13 @@ msgstr "Bukan untuk manusia dalam tahap pengembangan rilis %s"
 msgid "disabled on upgrade to %s"
 msgstr "dimatikan untuk melakukan peningkatan ke %s"
 
-#: ../DistUpgrade/DistUpgradeController.py:1241
+#: ../DistUpgrade/DistUpgradeController.py:1251
 #, fuzzy
 msgid "No valid source entry found"
 msgstr "Tidak ditemukan entri sources.list yang valid"
 
-#: ../DistUpgrade/DistUpgradeController.py:1242
-#: ../DistUpgrade/DistUpgradeController.py:1310
+#: ../DistUpgrade/DistUpgradeController.py:1252
+#: ../DistUpgrade/DistUpgradeController.py:1320
 #, python-format
 msgid ""
 "While scanning your repository information no entry about %s could be "
@@ -353,13 +353,13 @@ msgstr ""
 "\n"
 "Apakah Anda tetap ingin melanjutkan?"
 
-#: ../DistUpgrade/DistUpgradeController.py:1252
-#: ../DistUpgrade/DistUpgradeController.py:1320
+#: ../DistUpgrade/DistUpgradeController.py:1262
+#: ../DistUpgrade/DistUpgradeController.py:1330
 msgid "No valid mirror found"
 msgstr "Tidak menemukan mirror yang valid"
 
-#: ../DistUpgrade/DistUpgradeController.py:1253
-#: ../DistUpgrade/DistUpgradeController.py:1321
+#: ../DistUpgrade/DistUpgradeController.py:1263
+#: ../DistUpgrade/DistUpgradeController.py:1331
 #, python-format
 msgid ""
 "While scanning your repository information no mirror entry for the upgrade "
@@ -379,12 +379,12 @@ msgstr ""
 "Bila Anda memilih 'Tidak' peningkatan akan dibatalkan."
 
 #. hm, still nothing useful ...
-#: ../DistUpgrade/DistUpgradeController.py:1273
-#: ../DistUpgrade/DistUpgradeController.py:1341
+#: ../DistUpgrade/DistUpgradeController.py:1283
+#: ../DistUpgrade/DistUpgradeController.py:1351
 msgid "Generate default sources?"
 msgstr "Membuat sumber baku?"
 
-#: ../DistUpgrade/DistUpgradeController.py:1274
+#: ../DistUpgrade/DistUpgradeController.py:1284
 #, fuzzy, python-format
 msgid ""
 "After scanning your 'ubuntu.sources' no valid entry for '%s' was found.\n"
@@ -398,13 +398,13 @@ msgstr ""
 "Perlukah entri baku bagi '%s' ditambahkan? Bila Anda memilih 'Tidak', "
 "peningkatan akan dibatalkan."
 
-#: ../DistUpgrade/DistUpgradeController.py:1292
-#: ../DistUpgrade/DistUpgradeController.py:1393
+#: ../DistUpgrade/DistUpgradeController.py:1302
+#: ../DistUpgrade/DistUpgradeController.py:1403
 msgid "Third party sources disabled"
 msgstr "Sumber dari pihak ketiga dimatikan"
 
-#: ../DistUpgrade/DistUpgradeController.py:1293
-#: ../DistUpgrade/DistUpgradeController.py:1394
+#: ../DistUpgrade/DistUpgradeController.py:1303
+#: ../DistUpgrade/DistUpgradeController.py:1404
 msgid ""
 "Some third party entries in your sources.list were disabled. You can re-"
 "enable them after the upgrade with the 'software-properties' tool or your "
@@ -414,11 +414,11 @@ msgstr ""
 "dapat mengaktifkan kembali setelah peningkatan versi dengan alat 'software-"
 "properties' atau pengelola paket anda."
 
-#: ../DistUpgrade/DistUpgradeController.py:1309
+#: ../DistUpgrade/DistUpgradeController.py:1319
 msgid "No valid sources.list entry found"
 msgstr "Tidak ditemukan entri sources.list yang valid"
 
-#: ../DistUpgrade/DistUpgradeController.py:1342
+#: ../DistUpgrade/DistUpgradeController.py:1352
 #, python-format
 msgid ""
 "After scanning your 'sources.list' no valid entry for '%s' was found.\n"
@@ -432,18 +432,18 @@ msgstr ""
 "Perlukah entri baku bagi '%s' ditambahkan? Bila Anda memilih 'Tidak', "
 "peningkatan akan dibatalkan."
 
-#: ../DistUpgrade/DistUpgradeController.py:1377
-#: ../DistUpgrade/DistUpgradeController.py:1383
+#: ../DistUpgrade/DistUpgradeController.py:1387
+#: ../DistUpgrade/DistUpgradeController.py:1393
 msgid "Repository information invalid"
 msgstr "Informasi gudang tidak valid"
 
-#: ../DistUpgrade/DistUpgradeController.py:1378
+#: ../DistUpgrade/DistUpgradeController.py:1388
 msgid ""
 "Upgrading the repository information resulted in a invalid file so a bug "
 "reporting process is being started."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:1384
+#: ../DistUpgrade/DistUpgradeController.py:1394
 msgid ""
 "Upgrading the repository information resulted in a invalid file. To report a "
 "bug install apport and then execute 'apport-bug ubuntu-release-upgrader'."
@@ -452,12 +452,12 @@ msgstr ""
 "melaporkan kutu pasanglah apport lalu jalankan 'apport-bug ubuntu-release-"
 "upgrader'."
 
-#: ../DistUpgrade/DistUpgradeController.py:1436
+#: ../DistUpgrade/DistUpgradeController.py:1446
 msgid "Package in inconsistent state"
 msgid_plural "Packages in inconsistent state"
 msgstr[0] "Paket dalam keadaan tidak konsisten"
 
-#: ../DistUpgrade/DistUpgradeController.py:1439
+#: ../DistUpgrade/DistUpgradeController.py:1449
 #, python-format
 msgid ""
 "The package '%s' is in an inconsistent state and needs to be reinstalled, "
@@ -472,11 +472,11 @@ msgstr[0] ""
 "tapi tidak ditemukan arsip untuknya. Silakan pasang ulang paket secara "
 "manual atau hapuslah dari sistem."
 
-#: ../DistUpgrade/DistUpgradeController.py:1500
+#: ../DistUpgrade/DistUpgradeController.py:1510
 msgid "Error during update"
 msgstr "Kesalahan pada waktu pemutakhiran"
 
-#: ../DistUpgrade/DistUpgradeController.py:1501
+#: ../DistUpgrade/DistUpgradeController.py:1511
 msgid ""
 "A problem occurred during the update. This is usually some sort of network "
 "problem, please check your network connection and retry."
@@ -484,12 +484,12 @@ msgstr ""
 "Terjadi masalah pada waktu pemutakhiran. Ini biasanya karena masalah "
 "jaringan, silakan periksa koneksi jaringan anda dan ulangi."
 
-#: ../DistUpgrade/DistUpgradeController.py:1544
-#: ../DistUpgrade/DistUpgradeController.py:1549
+#: ../DistUpgrade/DistUpgradeController.py:1554
+#: ../DistUpgrade/DistUpgradeController.py:1559
 msgid "EFI System Partition (ESP) not usable"
 msgstr "EFI System Partition (ESP) tak dapat digunakan"
 
-#: ../DistUpgrade/DistUpgradeController.py:1545
+#: ../DistUpgrade/DistUpgradeController.py:1555
 msgid ""
 "Your EFI System Partition (ESP) is not mounted at /boot/efi. Please ensure "
 "that it is properly configured and try again."
@@ -497,7 +497,7 @@ msgstr ""
 "EFI System Partition (ESP) Anda tidak dikait ke /boot/efi. Harap pastikan "
 "bahwa itu terkonfigurasi secara benar dan coba lagi."
 
-#: ../DistUpgrade/DistUpgradeController.py:1550
+#: ../DistUpgrade/DistUpgradeController.py:1560
 msgid ""
 "The EFI System Partition (ESP) mounted at /boot/efi is not writable. Please "
 "mount this partition read-write and try again."
@@ -505,13 +505,13 @@ msgstr ""
 "EFI System Partition (ESP) yang dikait ke /boot/efi tidak dapat ditulisi. "
 "Harap kait partisi ini baca-tulis dan coba lagi."
 
-#: ../DistUpgrade/DistUpgradeController.py:1557
+#: ../DistUpgrade/DistUpgradeController.py:1567
 msgid "Not enough free disk space"
 msgstr "Kapasitas cakram tidak mencukupi"
 
 #. TRANSLATORS: you can change the order of the sentence,
 #. make sure to keep all {str_*} string untranslated.
-#: ../DistUpgrade/DistUpgradeController.py:1560
+#: ../DistUpgrade/DistUpgradeController.py:1570
 #, python-brace-format
 msgid ""
 "The upgrade has aborted. The upgrade needs a total of {str_total} free space "
@@ -523,13 +523,13 @@ msgstr ""
 "tambahan pada '{str_dir}'. {str_remedy}"
 
 #. specific ways to resolve lack of free space
-#: ../DistUpgrade/DistUpgradeController.py:1565
+#: ../DistUpgrade/DistUpgradeController.py:1575
 msgid ""
 "Remove temporary packages of former installations using 'sudo apt clean'."
 msgstr ""
 "Hapus paket temporer dari instalasi sebelumnya memakai 'sudo apt clean'."
 
-#: ../DistUpgrade/DistUpgradeController.py:1567
+#: ../DistUpgrade/DistUpgradeController.py:1577
 msgid ""
 "You can remove old kernels using 'sudo apt autoremove' and you could also "
 "set COMPRESS=xz in /etc/initramfs-tools/initramfs.conf to reduce the size of "
@@ -539,7 +539,7 @@ msgstr ""
 "dapat menata COMPRESS=xz dalam /etc/initramfs-tools/initramfs.conf untuk "
 "mengurangi ukuran initramfs Anda."
 
-#: ../DistUpgrade/DistUpgradeController.py:1572
+#: ../DistUpgrade/DistUpgradeController.py:1582
 msgid ""
 "Empty your trash and remove temporary packages of former installations using "
 "'sudo apt-get clean'."
@@ -547,24 +547,24 @@ msgstr ""
 "Kosongkan tong sampah Anda dan hapus paket-paket temporer dari instalasi "
 "sebelumnya memakai 'sudo apt-get clean'."
 
-#: ../DistUpgrade/DistUpgradeController.py:1575
+#: ../DistUpgrade/DistUpgradeController.py:1585
 msgid "Reboot to clean up files in /tmp."
 msgstr "Boot ulang untuk membersihkan berkas-berkas dalam /tmp."
 
 #. calc the dist-upgrade and see if the removals are ok/expected
 #. do the dist-upgrade
-#: ../DistUpgrade/DistUpgradeController.py:1614
-#: ../DistUpgrade/DistUpgradeController.py:2487
-#: ../DistUpgrade/DistUpgradeController.py:2539
+#: ../DistUpgrade/DistUpgradeController.py:1624
+#: ../DistUpgrade/DistUpgradeController.py:2497
+#: ../DistUpgrade/DistUpgradeController.py:2549
 msgid "Calculating the changes"
 msgstr "Menghitung perubahan"
 
 #. ask the user
-#: ../DistUpgrade/DistUpgradeController.py:1658
+#: ../DistUpgrade/DistUpgradeController.py:1668
 msgid "Do you want to start the upgrade?"
 msgstr "Apakah anda ingin memulai pemutakhiran?"
 
-#: ../DistUpgrade/DistUpgradeController.py:1677
+#: ../DistUpgrade/DistUpgradeController.py:1687
 #, python-format
 msgid ""
 "Livepatch security updates are not available for Ubuntu %s. If you upgrade, "
@@ -573,11 +573,11 @@ msgstr ""
 "Pemutakhiran keamanan Livepatch tidak tersedia bagi Ubuntu %s. Bila Anda "
 "meningkatkan versi, Livepatch akan dimatikan."
 
-#: ../DistUpgrade/DistUpgradeController.py:1749
+#: ../DistUpgrade/DistUpgradeController.py:1759
 msgid "Upgrade canceled"
 msgstr "Peningkatan dibatalkan"
 
-#: ../DistUpgrade/DistUpgradeController.py:1750
+#: ../DistUpgrade/DistUpgradeController.py:1760
 msgid ""
 "The upgrade will cancel now and the original system state will be restored. "
 "You can resume the upgrade at a later time."
@@ -585,12 +585,12 @@ msgstr ""
 "Peningkatan kini akan dibatalkan dan keadaan sistem asli akan dikembalikan. "
 "Anda dapat meneruskan peningkatan di lain waktu."
 
-#: ../DistUpgrade/DistUpgradeController.py:1756
-#: ../DistUpgrade/DistUpgradeController.py:1901
+#: ../DistUpgrade/DistUpgradeController.py:1766
+#: ../DistUpgrade/DistUpgradeController.py:1911
 msgid "Could not download the upgrades"
 msgstr "Tidak dapat mengunduh pemutakhiran"
 
-#: ../DistUpgrade/DistUpgradeController.py:1757
+#: ../DistUpgrade/DistUpgradeController.py:1767
 msgid ""
 "The upgrade has aborted. Please check your Internet connection or "
 "installation media and try again. All files downloaded so far have been kept."
@@ -601,27 +601,27 @@ msgstr ""
 
 #. FIXME: strings are not good, but we are in string freeze
 #. currently
-#: ../DistUpgrade/DistUpgradeController.py:1850
-#: ../DistUpgrade/DistUpgradeController.py:1889
-#: ../DistUpgrade/DistUpgradeController.py:2006
+#: ../DistUpgrade/DistUpgradeController.py:1860
+#: ../DistUpgrade/DistUpgradeController.py:1899
+#: ../DistUpgrade/DistUpgradeController.py:2016
 msgid "Error during commit"
 msgstr "Kesalahan pada waktu commit"
 
 #. generate a new cache
-#: ../DistUpgrade/DistUpgradeController.py:1852
-#: ../DistUpgrade/DistUpgradeController.py:1891
-#: ../DistUpgrade/DistUpgradeController.py:2055
+#: ../DistUpgrade/DistUpgradeController.py:1862
+#: ../DistUpgrade/DistUpgradeController.py:1901
+#: ../DistUpgrade/DistUpgradeController.py:2065
 msgid "Restoring original system state"
 msgstr "Sistem dikembalikan ke keadaan awal"
 
-#: ../DistUpgrade/DistUpgradeController.py:1853
-#: ../DistUpgrade/DistUpgradeController.py:1868
-#: ../DistUpgrade/DistUpgradeController.py:1892
+#: ../DistUpgrade/DistUpgradeController.py:1863
+#: ../DistUpgrade/DistUpgradeController.py:1878
+#: ../DistUpgrade/DistUpgradeController.py:1902
 msgid "Could not install the upgrades"
 msgstr "Tidak dapat menginstal pemutakhiran"
 
 #. invoke the frontend now and show a error message
-#: ../DistUpgrade/DistUpgradeController.py:1858
+#: ../DistUpgrade/DistUpgradeController.py:1868
 msgid ""
 "The upgrade has aborted. Your system could be in an unusable state. A "
 "recovery will run now (dpkg --configure -a)."
@@ -630,7 +630,7 @@ msgstr ""
 "dapat dipakai. Suatu pemulihan akan dijalankan sekarang (dpkg --configure -"
 "a)."
 
-#: ../DistUpgrade/DistUpgradeController.py:1863
+#: ../DistUpgrade/DistUpgradeController.py:1873
 #, python-format
 msgid ""
 "\n"
@@ -641,7 +641,7 @@ msgid ""
 "%s"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:1902
+#: ../DistUpgrade/DistUpgradeController.py:1912
 msgid ""
 "The upgrade has aborted. Please check your Internet connection or "
 "installation media and try again. "
@@ -649,24 +649,24 @@ msgstr ""
 "Peningkatan telah digugurkan. Silakan periksa koneksi Internet atau media "
 "pemasangan Anda dan coba lagi. "
 
-#: ../DistUpgrade/DistUpgradeController.py:1930
+#: ../DistUpgrade/DistUpgradeController.py:1940
 msgid "Searching for obsolete software"
 msgstr "Mencari perangkat lunak usang"
 
-#: ../DistUpgrade/DistUpgradeController.py:1994
+#: ../DistUpgrade/DistUpgradeController.py:2004
 msgid "Remove obsolete packages?"
 msgstr "Hapus paket usang?"
 
-#: ../DistUpgrade/DistUpgradeController.py:1995
+#: ../DistUpgrade/DistUpgradeController.py:2005
 #: ../data/gtkbuilder/DistUpgrade.ui.h:8
 msgid "_Keep"
 msgstr "_Simpan"
 
-#: ../DistUpgrade/DistUpgradeController.py:1995
+#: ../DistUpgrade/DistUpgradeController.py:2005
 msgid "_Remove"
 msgstr "_Hapus"
 
-#: ../DistUpgrade/DistUpgradeController.py:2007
+#: ../DistUpgrade/DistUpgradeController.py:2017
 msgid ""
 "A problem occurred during the clean-up. Please see the below message for "
 "more information. "
@@ -676,34 +676,34 @@ msgstr ""
 
 #. FIXME: instead of error out, fetch and install it
 #. here
-#: ../DistUpgrade/DistUpgradeController.py:2093
+#: ../DistUpgrade/DistUpgradeController.py:2103
 msgid "Required depends is not installed"
 msgstr "Dependensi yang dibutuhkan belum terpasang."
 
-#: ../DistUpgrade/DistUpgradeController.py:2094
+#: ../DistUpgrade/DistUpgradeController.py:2104
 #, python-format
 msgid "The required dependency '%s' is not installed. "
 msgstr "Dependensi yang dibutuhkan '%s' belum terpasang. "
 
 #. coherence check (check for ubuntu-desktop, brokenCache etc)
 #. then open the cache (again)
-#: ../DistUpgrade/DistUpgradeController.py:2327
-#: ../DistUpgrade/DistUpgradeController.py:2435
+#: ../DistUpgrade/DistUpgradeController.py:2337
+#: ../DistUpgrade/DistUpgradeController.py:2445
 msgid "Checking package manager"
 msgstr "Memeriksa manajer paket"
 
-#: ../DistUpgrade/DistUpgradeController.py:2333
-#: ../DistUpgrade/DistUpgradeController.py:2339
+#: ../DistUpgrade/DistUpgradeController.py:2343
+#: ../DistUpgrade/DistUpgradeController.py:2349
 msgid "Preparing the upgrade failed"
 msgstr "Persiapan peningkatan versi gagal"
 
-#: ../DistUpgrade/DistUpgradeController.py:2334
+#: ../DistUpgrade/DistUpgradeController.py:2344
 msgid ""
 "Preparing the system for the upgrade failed so a bug reporting process is "
 "being started."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:2340
+#: ../DistUpgrade/DistUpgradeController.py:2350
 msgid ""
 "Preparing the system for the upgrade failed. To report a bug install apport "
 "and then execute 'apport-bug ubuntu-release-upgrader'."
@@ -711,12 +711,12 @@ msgstr ""
 "Penyiapan sistem untuk peningkatan gagal. Untuk melaporkan kutu pasanglah "
 "apport lalu jalankan 'apport-bug ubuntu-release-upgrader'."
 
-#: ../DistUpgrade/DistUpgradeController.py:2357
 #: ../DistUpgrade/DistUpgradeController.py:2367
+#: ../DistUpgrade/DistUpgradeController.py:2377
 msgid "Getting upgrade prerequisites failed"
 msgstr "Gagal mendapatkan persiapan upgrade"
 
-#: ../DistUpgrade/DistUpgradeController.py:2358
+#: ../DistUpgrade/DistUpgradeController.py:2368
 msgid ""
 "The system was unable to get the prerequisites for the upgrade. The upgrade "
 "will abort now and restore the original system state.\n"
@@ -724,7 +724,7 @@ msgid ""
 "Additionally, a bug reporting process is being started."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:2368
+#: ../DistUpgrade/DistUpgradeController.py:2378
 msgid ""
 "The system was unable to get the prerequisites for the upgrade. The upgrade "
 "will abort now and restore the original system state.\n"
@@ -738,15 +738,15 @@ msgstr ""
 "Untuk melaporkan kutu pasanglah apport lalu jalankan 'apport-bug ubuntu-"
 "release-upgrader'."
 
-#: ../DistUpgrade/DistUpgradeController.py:2402
+#: ../DistUpgrade/DistUpgradeController.py:2412
 msgid "Updating repository information"
 msgstr "Memutakhirkan informasi gudang"
 
-#: ../DistUpgrade/DistUpgradeController.py:2464
+#: ../DistUpgrade/DistUpgradeController.py:2474
 msgid "Invalid package information"
 msgstr "Informasi paket tidak valid"
 
-#: ../DistUpgrade/DistUpgradeController.py:2465
+#: ../DistUpgrade/DistUpgradeController.py:2475
 #, python-format
 msgid ""
 "After updating your package information, the essential package '%s' could "
@@ -758,23 +758,23 @@ msgid ""
 "later."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:2494
-#: ../DistUpgrade/DistUpgradeController.py:2605
+#: ../DistUpgrade/DistUpgradeController.py:2504
+#: ../DistUpgrade/DistUpgradeController.py:2615
 msgid "Fetching"
 msgstr "Menjemput"
 
-#: ../DistUpgrade/DistUpgradeController.py:2501
-#: ../DistUpgrade/DistUpgradeController.py:2524
-#: ../DistUpgrade/DistUpgradeController.py:2554
-#: ../DistUpgrade/DistUpgradeController.py:2609
+#: ../DistUpgrade/DistUpgradeController.py:2511
+#: ../DistUpgrade/DistUpgradeController.py:2534
+#: ../DistUpgrade/DistUpgradeController.py:2564
+#: ../DistUpgrade/DistUpgradeController.py:2619
 msgid "Upgrading"
 msgstr "Meng-upgrade"
 
-#: ../DistUpgrade/DistUpgradeController.py:2503
+#: ../DistUpgrade/DistUpgradeController.py:2513
 msgid "Upgrade infeasible"
 msgstr "Peningkatan tidak layak"
 
-#: ../DistUpgrade/DistUpgradeController.py:2504
+#: ../DistUpgrade/DistUpgradeController.py:2514
 msgid ""
 "The upgrade could not be completed, there were errors during the upgrade "
 "process."
@@ -783,13 +783,13 @@ msgstr ""
 "peningkatan."
 
 #. don't abort here, because it would restore the sources.list
-#: ../DistUpgrade/DistUpgradeController.py:2527
-#: ../DistUpgrade/DistUpgradeController.py:2543
+#: ../DistUpgrade/DistUpgradeController.py:2537
+#: ../DistUpgrade/DistUpgradeController.py:2553
 msgid "Upgrade incomplete"
 msgstr "Peningkatan tidak lengkap"
 
-#: ../DistUpgrade/DistUpgradeController.py:2528
-#: ../DistUpgrade/DistUpgradeController.py:2544
+#: ../DistUpgrade/DistUpgradeController.py:2538
+#: ../DistUpgrade/DistUpgradeController.py:2554
 msgid ""
 "The upgrade has partially completed but there were errors during the upgrade "
 "process."
@@ -797,34 +797,34 @@ msgstr ""
 "Peningkatan berakhir sebagian tapi ada kesalahan selama proses peningkatan."
 
 #. don't abort here, because it would restore the sources.list
-#: ../DistUpgrade/DistUpgradeController.py:2559
-#: ../DistUpgrade/DistUpgradeController.py:2611
-#: ../DistUpgrade/DistUpgradeController.py:2617
-#: ../DistUpgrade/DistUpgradeController.py:2628
+#: ../DistUpgrade/DistUpgradeController.py:2569
+#: ../DistUpgrade/DistUpgradeController.py:2621
+#: ../DistUpgrade/DistUpgradeController.py:2627
+#: ../DistUpgrade/DistUpgradeController.py:2638
 msgid "Upgrade complete"
 msgstr "Peningkatan versi selesai"
 
-#: ../DistUpgrade/DistUpgradeController.py:2560
-#: ../DistUpgrade/DistUpgradeController.py:2612
-#: ../DistUpgrade/DistUpgradeController.py:2618
+#: ../DistUpgrade/DistUpgradeController.py:2570
+#: ../DistUpgrade/DistUpgradeController.py:2622
+#: ../DistUpgrade/DistUpgradeController.py:2628
 msgid ""
 "The upgrade has completed but there were errors during the upgrade process."
 msgstr ""
 "Peningkatan telah lengkap tetapi ada masalah selama proses peningkatan."
 
-#: ../DistUpgrade/DistUpgradeController.py:2575
+#: ../DistUpgrade/DistUpgradeController.py:2585
 msgid "System upgrade is complete."
 msgstr "Upgrade sistem telah selesai."
 
-#: ../DistUpgrade/DistUpgradeController.py:2629
+#: ../DistUpgrade/DistUpgradeController.py:2639
 msgid "The partial upgrade was completed."
 msgstr "Pemutakhiran parsial selesai."
 
-#: ../DistUpgrade/DistUpgradeController.py:2650
+#: ../DistUpgrade/DistUpgradeController.py:2660
 msgid "Lock screen disabled"
 msgstr "Layar kunci dinonaktifkan"
 
-#: ../DistUpgrade/DistUpgradeController.py:2651
+#: ../DistUpgrade/DistUpgradeController.py:2661
 #, fuzzy
 msgid ""
 "Your lock screen has been disabled and will remain disabled during the "
@@ -833,11 +833,11 @@ msgstr ""
 "Layar kunci Anda telah dinonaktifkan dan tetap akan non aktif sampai Anda "
 "reboot."
 
-#: ../DistUpgrade/DistUpgradeController.py:2659
+#: ../DistUpgrade/DistUpgradeController.py:2669
 msgid "Unable to disable lock screen"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:2660
+#: ../DistUpgrade/DistUpgradeController.py:2670
 msgid ""
 "It is highly recommended that the lock screen be disabled during the upgrade "
 "to prevent later issues. Please ensure your screen lock is disabled before "
