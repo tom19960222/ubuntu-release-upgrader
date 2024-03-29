@@ -78,7 +78,6 @@ libasound2-plugins
 libboost-atomic1.74-dev
 libboost-atomic1.74.0
 libboost-chrono1.74-dev
-libboost-chrono1.74.0
 libboost-context1.74.0
 libboost-date-time1.74-dev
 libboost-date-time1.74.0
@@ -140,7 +139,6 @@ libglm-doc
 libglusterfs-dev
 libglusterfs0
 libgnome-bluetooth-dev
-libgnome-bluetooth13
 libgnome-games-support-1-3
 libgnome-games-support-1-dev
 libgnome-games-support-common
@@ -163,7 +161,6 @@ liblua5.3-dev
 libmessaging-menu-dev
 libmessaging-menu0
 libmirserver-dev
-libmlir-14
 libmlir-14-dev
 libmoox-struct-perl
 libnamespace-autoclean-perl
@@ -208,7 +205,6 @@ libtsan0-arm64-cross
 libtsan0-ppc64el-cross
 libtype-tiny-perl
 libtype-tiny-xs-perl
-libunwind-14
 libunwind-14-dev
 libunwind-setjmp0
 libunwind-setjmp0-dev
