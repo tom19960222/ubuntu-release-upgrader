@@ -1166,7 +1166,7 @@ class TestDeb822SourcesMigration(unittest.TestCase):
             default_source_uri=d.default_source_uri,
             security_source_uri=d.security_source_uri,
         )
-        self.assertEqaul(d.migratedToDeb822(), -1)
+        self.assertEqual(d.migratedToDeb822(), -1)
 
         d.migrateToDeb822Sources()
 
