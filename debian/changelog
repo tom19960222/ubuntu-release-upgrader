@@ -1,3 +1,13 @@
+ubuntu-release-upgrader (1:24.04.12) noble; urgency=medium
+
+  [ Calvin Mwadime Makokha ]
+  * fix(regex): fix invalid escape sequence error (LP: #2053038)
+
+  [ Nick Rosbrook ]
+  * Run pre-build.sh: updating mirrors, demotions, and translations.
+
+ -- Nick Rosbrook <enr0n@ubuntu.com>  Tue, 02 Apr 2024 11:01:32 -0400
+
 ubuntu-release-upgrader (1:24.04.11) noble; urgency=medium
 
   * test: fix typo assertEqaul (LP: #2059784)
