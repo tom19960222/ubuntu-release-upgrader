@@ -30,8 +30,8 @@ def _verify(message, translated):
     helper that verifies that the message and the translated 
     message have the same number (and type) of % args
     """
-    arguments_in_message = message.count("%") - message.count("\%")
-    arguments_in_translation = translated.count("%") - translated.count("\%")
+    arguments_in_message = message.count(r"%") - message.count(r"\%")
+    arguments_in_translation = translated.count(r"%") - translated.count(r"\%")
     return arguments_in_message == arguments_in_translation
 
 

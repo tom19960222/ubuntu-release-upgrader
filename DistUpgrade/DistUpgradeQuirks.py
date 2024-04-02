@@ -399,7 +399,7 @@ class DistUpgradeQuirks(object):
         with open("/proc/cpuinfo") as f:
             cpuinfo = f.read()
 
-            if re.search("^cpu\s*:\s*POWER8", cpuinfo, re.MULTILINE):
+            if re.search(r"^cpu\s*:\s*POWER8", cpuinfo, re.MULTILINE):
                 logging.error("POWER8 processor detected")
                 summary = _("Sorry, no more upgrades for this system")
                 msg = _("There will not be any further Ubuntu releases "
@@ -447,7 +447,7 @@ class DistUpgradeQuirks(object):
                 "ros-environment",
                 "ros-workspace"):
             ros_package_patterns.add(
-                re.compile("ros-[^\-]+-%s" % package_name))
+                re.compile(r"ros-[^\-]+-%s" % package_name))
 
         ros_is_installed = False
         for pkg in cache:
@@ -556,7 +556,7 @@ class DistUpgradeQuirks(object):
             return False
         with open("/proc/cpuinfo") as f:
             cpuinfo = f.read()
-        if re.search("^Processor\s*:\s*ARMv[45]", cpuinfo,
+        if re.search(r"^Processor\s*:\s*ARMv[45]", cpuinfo,
                      re.MULTILINE):
             return False
         return True
@@ -641,11 +641,11 @@ class DistUpgradeQuirks(object):
         connected = Popen(["snap", "debug", "connectivity"], stdout=PIPE,
                           stderr=PIPE, env=snap_env,
                           universal_newlines=True).communicate()
-        if re.search("^ \* PASS", connected[0], re.MULTILINE):
+        if re.search(r"^ \* PASS", connected[0], re.MULTILINE):
             self._snapstore_reachable = True
             return
         # can't connect
-        elif re.search("^ \*.*unreachable", connected[0], re.MULTILINE):
+        elif re.search(r"^ \*.*unreachable", connected[0], re.MULTILINE):
             logging.error("No snap store connectivity")
             old_lxd_deb_installed = False
             cache = self.controller.cache
@@ -779,7 +779,7 @@ class DistUpgradeQuirks(object):
         pae = 0
         with open('/proc/cpuinfo') as f:
             cpuinfo = f.read()
-        if re.search("^flags\s+:.* pae ", cpuinfo, re.MULTILINE):
+        if re.search(r"^flags\s+:.* pae ", cpuinfo, re.MULTILINE):
             pae = 1
         if not pae:
             logging.error("no pae in /proc/cpuinfo")
@@ -1201,7 +1201,7 @@ class DistUpgradeQuirks(object):
                                          universal_newlines=True,
                                          stdout=subprocess.PIPE).communicate()
             self._view.processEvents()
-            if re.search("^installed: ", snap_info[0], re.MULTILINE):
+            if re.search(r"^installed: ", snap_info[0], re.MULTILINE):
                 logging.debug("Snap %s is installed" % snap)
                 # its not tracking the release channel so don't switch
                 if not re.search(r"^tracking:.*%s" % from_channel,
@@ -1235,7 +1235,7 @@ class DistUpgradeQuirks(object):
                                          universal_newlines=True,
                                          stdout=subprocess.PIPE).communicate()
             self._view.processEvents()
-            if re.search("^installed: ", snap_info[0], re.MULTILINE):
+            if re.search(r"^installed: ", snap_info[0], re.MULTILINE):
                 logging.debug("Snap %s is installed" % snap)
                 # its not tracking the release channel so don't remove
                 if not re.search(r"^tracking:.*%s" % from_channel,
