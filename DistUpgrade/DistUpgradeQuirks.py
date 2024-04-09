@@ -182,6 +182,7 @@ class DistUpgradeQuirks(object):
         """ run right before calculating the dist-upgrade """
         logging.debug("running Quirks.PreDistUpgradeCache")
         # self._install_python_is_python2()
+        self._maybe_remove_gpg_wks_server()
 
     # individual quirks handler that run *after* the dist-upgrade was
     # calculated in the cache
@@ -1646,3 +1647,38 @@ class DistUpgradeQuirks(object):
                   "See https://launchpad.net/bugs/2039172.")
             )
             self.controller.abort()
+
+    def _maybe_remove_gpg_wks_server(self):
+        """
+        Prevent postfix from being unnecessarily installed, and leading to a
+        debconf prompt (LP: #2060578).
+        """
+        # We want to use attributes of the cache that are only exposed in
+        # apt_pkg.Cache, not the higher level apt.Cache. Hence we operate on
+        # apt.Cache._cache.
+        cache = self.controller.cache._cache
+
+        try:
+            if not cache['gpg-wks-server'].current_ver:
+                # Not installed, nothing to do.
+                return
+
+            provides_mta = cache['mail-transport-agent'].provides_list
+            installed_mta = [
+                ver for _, _, ver in provides_mta
+                if ver.parent_pkg.current_ver
+            ]
+        except KeyError:
+            # Something wasn't in the cache, ignore.
+            return
+
+        if not any(installed_mta):
+            logging.info(
+                'No mail-transport-agent installed, '
+                'marking gpg-wks-server for removal'
+            )
+
+            self.controller.cache['gpg-wks-server'].mark_delete(auto_fix=False)
+            apt.ProblemResolver(self.controller.cache).protect(
+                self.controller.cache['gpg-wks-server']
+            )
