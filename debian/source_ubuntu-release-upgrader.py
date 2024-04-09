@@ -58,7 +58,7 @@ def add_info(report, ui):
             ['stat', '-c', '%a:%u:%g:%s:%y:%x:%n'] + reports)
     problem_type = report.get("ProblemType", None)
     if problem_type == 'Crash':
-        tmpdir = re.compile('ubuntu-release-upgrader-\w+')
+        tmpdir = re.compile(r'ubuntu-release-upgrader-\w+')
         tb = report.get("Traceback", None)
         if tb:
             dupe_sig = ''
