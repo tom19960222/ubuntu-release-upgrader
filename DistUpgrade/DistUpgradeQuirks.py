@@ -124,6 +124,7 @@ class DistUpgradeQuirks(object):
         self._test_and_fail_on_aufs()
         self._test_and_fail_on_power8()
         self._test_and_fail_on_bios_with_xfs_boot()
+        self._test_and_fail_on_armhf_raspi()
 
         cache = self.controller.cache
         self._test_and_warn_if_ros_installed(cache)
@@ -1682,3 +1683,46 @@ class DistUpgradeQuirks(object):
             apt.ProblemResolver(self.controller.cache).protect(
                 self.controller.cache['gpg-wks-server']
             )
+
+    def _test_and_fail_on_armhf_raspi(self):
+        """
+        Test and fail if running armhf on a Raspberry Pi. Starting with Ubuntu
+        24.04, armhf is not well supported on Raspberry Pi. Hence, prevent
+        upgrades on such platforms. LP: #2060220.
+        """
+        if all((
+            self.arch == 'armhf',
+            'linux-image-raspi' in self.controller.cache,
+            self.controller.cache['linux-image-raspi'].is_installed
+        )):
+            logging.error('Detected Raspberry Pi kernel on armhf')
+
+            di = distro_info.UbuntuDistroInfo()
+            releases = {
+                r.series: r
+                for r in di.get_all('object')
+            }
+            from_release = releases.get(self.controller.fromDist)
+
+            if from_release is not None:
+                updates_end = from_release.eol.strftime('%B %Y')
+                updates_end_msg = _(
+                    f'Updates for Ubuntu {from_release.version} will '
+                    f'continue until {updates_end}.'
+                )
+            else:
+                # This shouldn't happen. But rather than crash the upgrader,
+                # just don't show the second part of the message.
+                updates_end_msg = ''
+
+            self._view.error(
+                _(
+                    'Sorry, cannot upgrade this system to 24.04 LTS'
+                ),
+                _(
+                    'The Raspberry Pi kernel for Ubuntu 24.04 LTS '
+                    'does not support the armhf architecture.\n\n'
+
+                ) + updates_end_msg,
+            )
+            self.controller.abort()

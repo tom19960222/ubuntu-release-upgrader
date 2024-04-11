@@ -1023,6 +1023,35 @@ cgroup2 /sys/fs/cgroup cgroup2 rw,nosuid,nodev,noexec,relatime 0 0
                 )
                 mock_file.assert_called_with('/proc/mounts')
 
+    def test_raspi_armhf_abort_upgrade(self):
+        for arch in ('armhf', 'arm64'):
+            with mock.patch(
+                'DistUpgrade.DistUpgradeQuirks.get_arch'
+            ) as mock_get_arch:
+
+                mock_get_arch.return_value = arch
+
+                controller = mock.Mock()
+                config = mock.Mock()
+                q = DistUpgradeQuirks(controller, config)
+                q.controller.fromDist = 'jammy'
+                q.controller.toDist = 'noble'
+                controller.cache = {
+                    'linux-image-raspi':
+                        make_mock_pkg(
+                            name='linux-image-raspi',
+                            is_installed=True,
+                        )
+                }
+
+                q._test_and_fail_on_armhf_raspi()
+
+                self.assertEqual(
+                    len(controller.abort.mock_calls),
+                    1 if arch == 'armhf' else 0,
+                    f'arch = {arch}',
+                )
+
 
 if __name__ == "__main__":
     import logging
