@@ -1,3 +1,13 @@
+ubuntu-release-upgrader (1:24.04.13) noble; urgency=medium
+
+  * DistUpgradeQuirks: add quirk to remove gpg-wks-server (LP: #2060578)
+  * DistUpgradeQuirks: prevent upgrades on armhf running raspi kernels
+    (LP: #2060220)
+  * debian: fix SyntaxWarning in apport hook
+  * Run pre-build.sh: updating mirrors, demotions, and translations.
+
+ -- Nick Rosbrook <enr0n@ubuntu.com>  Thu, 11 Apr 2024 18:10:33 -0400
+
 ubuntu-release-upgrader (1:24.04.12) noble; urgency=medium
 
   [ Calvin Mwadime Makokha ]
