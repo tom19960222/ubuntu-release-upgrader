@@ -1697,11 +1697,13 @@ class DistUpgradeQuirks(object):
         24.04, armhf is not well supported on Raspberry Pi. Hence, prevent
         upgrades on such platforms. LP: #2060220.
         """
-        if all((
-            self.arch == 'armhf',
-            'linux-image-raspi' in self.controller.cache,
+        if self.arch != 'armhf':
+            return
+
+        if (
+            'linux-image-raspi' in self.controller.cache and
             self.controller.cache['linux-image-raspi'].is_installed
-        )):
+        ):
             logging.error('Detected Raspberry Pi kernel on armhf')
 
             di = distro_info.UbuntuDistroInfo()
