@@ -112,7 +112,7 @@ class DistUpgradeQuirks(object):
     def PreCacheOpen(self):
         """ run before the apt cache is opened the first time """
         logging.debug("running Quirks.PreCacheOpen")
-        self._add_apport_ignore_tracker_extract()
+        self._add_apport_ignore_list()
 
     # individual quirks handler that run *after* the cache is opened
     def noblePostInitialUpdate(self):
@@ -164,7 +164,7 @@ class DistUpgradeQuirks(object):
     def PostCleanup(self):
         " run after cleanup "
         logging.debug("running Quirks.PostCleanup")
-        self._remove_apport_ignore_tracker_extract()
+        self._remove_apport_ignore_list()
 
     # run right before the first packages get installed
     def StartUpgrade(self):
@@ -530,23 +530,30 @@ class DistUpgradeQuirks(object):
             self._view.getInstallProgress(self.controller.cache)
         )
 
-    def _add_apport_ignore_tracker_extract(self):
-        path = '/etc/apport/blacklist.d/upgrade-quirk-tracker-extract-3'
+    def _add_apport_ignore_list(self):
+        ignore_list = [
+            '/usr/libexec/tracker-extract-3',  # LP: #2012638
+            '/usr/sbin/update-apt-xapian-index',  # LP: #2058227
+        ]
+
+        path = '/etc/apport/blacklist.d/upgrade-quirks-ignore-list'
 
         try:
             os.makedirs(os.path.dirname(path), exist_ok=True)
             with open(path, 'w') as f:
-                f.write('/usr/libexec/tracker-extract-3\n')
-        except Exception as e:
-            logging.debug('Failed to create {}: {}'.format(path, e))
+                for bin in ignore_list:
+                    f.write(f'{bin}\n')
 
-    def _remove_apport_ignore_tracker_extract(self):
-        path = '/etc/apport/blacklist.d/upgrade-quirk-tracker-extract-3'
+        except Exception as e:
+            logging.debug(f'Failed to create {path}: {e}')
+
+    def _remove_apport_ignore_list(self):
+        path = '/etc/apport/blacklist.d/upgrade-quirks-ignore-list'
 
         try:
             os.remove(path)
         except Exception as e:
-            logging.debug('Failed to remove {}: {}'.format(path, e))
+            logging.debug(f'Failed to remove {path}: {e}')
 
     def _checkArmCPU(self):
         """
