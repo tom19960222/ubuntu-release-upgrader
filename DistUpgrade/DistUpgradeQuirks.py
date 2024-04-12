@@ -184,6 +184,7 @@ class DistUpgradeQuirks(object):
         logging.debug("running Quirks.PreDistUpgradeCache")
         # self._install_python_is_python2()
         self._maybe_remove_gpg_wks_server()
+        self._install_t64_replacement_packages()
 
     # individual quirks handler that run *after* the dist-upgrade was
     # calculated in the cache
@@ -1735,3 +1736,62 @@ class DistUpgradeQuirks(object):
                 ) + updates_end_msg,
             )
             self.controller.abort()
+
+    def _install_t64_replacement_packages(self):
+        """
+        LP: #2061175
+        """
+        for package in self.controller.cache:
+            if not package.is_installed:
+                continue
+
+            if package.candidate and package.candidate.downloadable:
+                continue
+
+            # If we get here, then it means that this package is installed
+            # and its candidate version is obsolete (i.e. not downloadable).
+            # Now, we need to find a replacement for it.
+            logging.debug(f'Searching for replacement for {package.name}')
+
+            reverse_depends_list = [
+                (dep.dep_type_untranslated, dep.parent_ver)
+                for dep in package._pkg.rev_depends_list
+            ]
+
+            provides_list = [ver for _, _, ver in package._pkg.provides_list]
+
+            for ver in provides_list:
+                if ('Replaces', ver) not in reverse_depends_list:
+                    continue
+
+                if (
+                    ('Breaks', ver) not in reverse_depends_list and
+                    ('Conflicts', ver) not in reverse_depends_list
+                ):
+                    continue
+
+                replacement = apt.Package(
+                    self.controller.cache,
+                    ver.parent_pkg
+                )
+
+                if replacement.candidate._cand != ver:
+                    continue
+
+                logging.debug(
+                    f'Found replacement {replacement.name} '
+                    f'for {package.name}'
+                )
+
+                replacement.mark_install(auto_fix=False, auto_inst=False)
+                package.mark_delete(auto_fix=False)
+                apt.ProblemResolver(self.controller.cache).protect(package)
+
+                # We found a replacement. Exit the loop.
+                break
+
+            else:
+                # We did not find a replacement in the provides list.
+                logging.debug(
+                    f'Failed to find a replacement for {package.name}'
+                )
