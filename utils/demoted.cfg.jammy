@@ -18,6 +18,7 @@ crmsh-doc
 default-jdk-doc
 dh-elpa-helper
 evolution-data-server-dev
+freerdp2-dev
 g++-11
 g++-11-aarch64-linux-gnu
 g++-11-arm-linux-gnueabihf
@@ -233,7 +234,6 @@ libgo-11-dev
 libgo-12-dev
 libgo19
 libgo21
-libgoa-backend-1.0-1
 libgoa-backend-1.0-dev
 libgom-1.0-dev
 libgpod-dev
@@ -253,13 +253,11 @@ libibus-1.0-dev
 libimobiledevice-dev
 libio-prompt-tiny-perl
 libio-prompter-perl
-libjavascriptcoregtk-4.0-dev
 libjavascriptcoregtk-4.1-dev
 libjcat-dev
 liblasso3-dev
 liblist-moreutils-perl
 liblist-moreutils-xs-perl
-libllvm14
 liblua5.3-0
 liblua5.3-0-dbg
 liblua5.3-dev
@@ -290,7 +288,6 @@ libpeas-dev
 libpfm4
 libpfm4-dev
 libpinyin-utils
-libplist3
 libpoppler-glib-dev
 libproxy-dev
 libpulse-dev
@@ -338,11 +335,12 @@ libunwind-14-dev
 libunwind-setjmp0
 libunwind-setjmp0-dev
 libupower-glib-dev
+libuwac0-dev
 libvolume-key-dev
 libvte-2.91-dev
 libwacom-bin
 libwant-perl
-libwebkit2gtk-4.0-dev
+libwinpr2-dev
 libwnck-3-dev
 libx32asan6
 libx32gcc-11-dev
@@ -380,7 +378,6 @@ python-secretstorage-doc
 python-waitress-doc
 python-webtest-doc
 python3-anyjson
-python3-distutils
 python3-extras
 python3-future
 python3-jaraco.classes
@@ -407,3 +404,4 @@ python3-webtest
 rhythmbox-dev
 ubiquity-slideshow-ubuntu
 ubuntu-wallpapers-jammy
+winpr-utils
