@@ -1,3 +1,17 @@
+ubuntu-release-upgrader (1:24.04.14) noble; urgency=medium
+
+  [ Brian Murray ]
+  * Set prompt to lts because 24.04 is one (LP: #2061214)
+
+  [ Nick Rosbrook ]
+  * DistUpgradeQuirks: tell apport to ignore update-apt-xapian-index
+    (LP: #2058227)
+  * DistUpgradeQuirk: fix check for linux-image-raspi in cache (LP: #2061181)
+  * DistUpgradeQuirks: handle t64 replacement packages (LP: #2061175)
+  * Run pre-build.sh: updating mirrors, demotions, and translations.
+
+ -- Nick Rosbrook <enr0n@ubuntu.com>  Mon, 15 Apr 2024 15:02:26 -0400
+
 ubuntu-release-upgrader (1:24.04.13) noble; urgency=medium
 
   * DistUpgradeQuirks: add quirk to remove gpg-wks-server (LP: #2060578)
