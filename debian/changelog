@@ -1,3 +1,14 @@
+ubuntu-release-upgrader (1:24.04.16) noble; urgency=medium
+
+  [ Nathan Pratta Teodosio ]
+  * DistUpgrade: readfp was replaced by read_file in configparser.
+    (LP: #2062435)
+
+  [ Nick Rosbrook ]
+  * Run pre-build.sh: updating mirrors, demotions, and translations.
+
+ -- Nick Rosbrook <enr0n@ubuntu.com>  Fri, 19 Apr 2024 15:44:24 -0400
+
 ubuntu-release-upgrader (1:24.04.15) noble; urgency=medium
 
   * DistUpgrade.cfg.jammy: keep {netfilter,iptables}-persistent installed
