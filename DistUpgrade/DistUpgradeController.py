@@ -412,7 +412,7 @@ class DistUpgradeController(object):
             if os.path.exists(debian_defaults):
                 config = SafeConfigParser()
                 with open(debian_defaults) as f:
-                    config.readfp(f)
+                    config.read_file(f)
                 try:
                     expected_default = config.get('DEFAULT', 'default-version')
                 except NoOptionError:
