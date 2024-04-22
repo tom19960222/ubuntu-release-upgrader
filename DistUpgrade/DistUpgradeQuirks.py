@@ -185,6 +185,7 @@ class DistUpgradeQuirks(object):
         # self._install_python_is_python2()
         self._maybe_remove_gpg_wks_server()
         self._install_t64_replacement_packages()
+        self._handle_ufw_breaks()
 
     # individual quirks handler that run *after* the dist-upgrade was
     # calculated in the cache
@@ -1795,3 +1796,39 @@ class DistUpgradeQuirks(object):
                 logging.debug(
                     f'Failed to find a replacement for {package.name}'
                 )
+
+    def _handle_ufw_breaks(self):
+        """
+        LP: #2061891
+        """
+
+        # This is only required for upgrades from jammy.
+        if self.controller.fromDist != 'jammy':
+            return
+
+        try:
+            ufw = self.controller.cache['ufw']
+        except KeyError:
+            return
+
+        if not ufw.is_installed:
+            return
+
+        remove_ufw = False
+        for name in ('netfilter-persistent', 'iptables-persistent'):
+            try:
+                pkg = self.controller.cache[name]
+            except KeyError:
+                continue
+
+            if pkg.is_installed:
+                logging.info(
+                    f'Keeping {name}, and removing ufw as a result.'
+                )
+
+                pkg.mark_install(auto_fix=False, auto_inst=False)
+                remove_ufw = True
+
+        if remove_ufw:
+            ufw.mark_delete(auto_fix=False)
+            apt.ProblemResolver(self.controller.cache).protect(ufw)
