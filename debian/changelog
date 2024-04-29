@@ -1,3 +1,19 @@
+ubuntu-release-upgrader (1:24.04.17) noble; urgency=medium
+
+  [ Nick Rosbrook ]
+  * Revert "DistUpgrade.cfg.jammy: keep {netfilter,iptables}-persistent installed"
+  * DistUpgradeQuirks: keep {netfilter,iptables}-persistent instead of ufw
+    (LP: #2061891)
+
+  [ Julian Andres Klode ]
+  * DistUpgrade.cfg.jammy: Add systemd-resolved to PostUpgradeInstall
+    (LP: #2063464)
+  * Transition the automatically installed bit to t64 libraries, and
+    do not write automatically installed bit in simulation (LP: #2064090)
+  * Run pre-build.sh: updating mirrors, demotions, and translations.
+
+ -- Julian Andres Klode <juliank@ubuntu.com>  Mon, 29 Apr 2024 16:26:40 +0200
+
 ubuntu-release-upgrader (1:24.04.16) noble; urgency=medium
 
   [ Nathan Pratta Teodosio ]
