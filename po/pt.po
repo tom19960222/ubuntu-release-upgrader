@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: update-manager\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2024-04-19 15:40-0400\n"
+"POT-Creation-Date: 2024-04-29 16:03+0200\n"
 "PO-Revision-Date: 2019-06-18 17:55+0000\n"
 "Last-Translator: Brian Murray <brian@ubuntu.com>\n"
 "Language-Team: Ubuntu Portuguese Team <ubuntu-pt.org>\n"
@@ -576,8 +576,8 @@ msgstr "Reinicie para limpar os ficheiros em /tmp."
 #. calc the dist-upgrade and see if the removals are ok/expected
 #. do the dist-upgrade
 #: ../DistUpgrade/DistUpgradeController.py:1624
-#: ../DistUpgrade/DistUpgradeController.py:2497
-#: ../DistUpgrade/DistUpgradeController.py:2549
+#: ../DistUpgrade/DistUpgradeController.py:2503
+#: ../DistUpgrade/DistUpgradeController.py:2555
 msgid "Calculating the changes"
 msgstr "A aplicar as alterações"
 
@@ -608,7 +608,7 @@ msgstr ""
 "retomar esta actualização posteriormente."
 
 #: ../DistUpgrade/DistUpgradeController.py:1766
-#: ../DistUpgrade/DistUpgradeController.py:1911
+#: ../DistUpgrade/DistUpgradeController.py:1917
 msgid "Could not download the upgrades"
 msgstr "Impossível descarregar as atualizações"
 
@@ -623,27 +623,27 @@ msgstr ""
 
 #. FIXME: strings are not good, but we are in string freeze
 #. currently
-#: ../DistUpgrade/DistUpgradeController.py:1860
-#: ../DistUpgrade/DistUpgradeController.py:1899
-#: ../DistUpgrade/DistUpgradeController.py:2016
+#: ../DistUpgrade/DistUpgradeController.py:1866
+#: ../DistUpgrade/DistUpgradeController.py:1905
+#: ../DistUpgrade/DistUpgradeController.py:2022
 msgid "Error during commit"
 msgstr "Erro ao submeter"
 
 #. generate a new cache
-#: ../DistUpgrade/DistUpgradeController.py:1862
-#: ../DistUpgrade/DistUpgradeController.py:1901
-#: ../DistUpgrade/DistUpgradeController.py:2065
+#: ../DistUpgrade/DistUpgradeController.py:1868
+#: ../DistUpgrade/DistUpgradeController.py:1907
+#: ../DistUpgrade/DistUpgradeController.py:2071
 msgid "Restoring original system state"
 msgstr "A restaurar o estado original do sistema"
 
-#: ../DistUpgrade/DistUpgradeController.py:1863
-#: ../DistUpgrade/DistUpgradeController.py:1878
-#: ../DistUpgrade/DistUpgradeController.py:1902
+#: ../DistUpgrade/DistUpgradeController.py:1869
+#: ../DistUpgrade/DistUpgradeController.py:1884
+#: ../DistUpgrade/DistUpgradeController.py:1908
 msgid "Could not install the upgrades"
 msgstr "Impossível instalar as atualizações"
 
 #. invoke the frontend now and show a error message
-#: ../DistUpgrade/DistUpgradeController.py:1868
+#: ../DistUpgrade/DistUpgradeController.py:1874
 msgid ""
 "The upgrade has aborted. Your system could be in an unusable state. A "
 "recovery will run now (dpkg --configure -a)."
@@ -651,7 +651,7 @@ msgstr ""
 "A atualização foi abortada. O seu sistema pode encontrar-se num estado não "
 "utilizável. Uma recuperação vai correr agora (dpkg --configure -a)."
 
-#: ../DistUpgrade/DistUpgradeController.py:1873
+#: ../DistUpgrade/DistUpgradeController.py:1879
 #, python-format
 msgid ""
 "\n"
@@ -668,7 +668,7 @@ msgstr ""
 "dist-upgrade/ ao relatório de bug.\n"
 "%s"
 
-#: ../DistUpgrade/DistUpgradeController.py:1912
+#: ../DistUpgrade/DistUpgradeController.py:1918
 msgid ""
 "The upgrade has aborted. Please check your Internet connection or "
 "installation media and try again. "
@@ -676,24 +676,24 @@ msgstr ""
 "A atualização de versão foi abortada. Por favor, verifique a sua ligação à "
 "Internet ou o seu meio de instalação e tente novamente. "
 
-#: ../DistUpgrade/DistUpgradeController.py:1940
+#: ../DistUpgrade/DistUpgradeController.py:1946
 msgid "Searching for obsolete software"
 msgstr "À procura de software obsoleto"
 
-#: ../DistUpgrade/DistUpgradeController.py:2004
+#: ../DistUpgrade/DistUpgradeController.py:2010
 msgid "Remove obsolete packages?"
 msgstr "Remover pacotes obsoletos?"
 
-#: ../DistUpgrade/DistUpgradeController.py:2005
+#: ../DistUpgrade/DistUpgradeController.py:2011
 #: ../data/gtkbuilder/DistUpgrade.ui.h:8
 msgid "_Keep"
 msgstr "_Manter"
 
-#: ../DistUpgrade/DistUpgradeController.py:2005
+#: ../DistUpgrade/DistUpgradeController.py:2011
 msgid "_Remove"
 msgstr "_Remover"
 
-#: ../DistUpgrade/DistUpgradeController.py:2017
+#: ../DistUpgrade/DistUpgradeController.py:2023
 msgid ""
 "A problem occurred during the clean-up. Please see the below message for "
 "more information. "
@@ -703,28 +703,28 @@ msgstr ""
 
 #. FIXME: instead of error out, fetch and install it
 #. here
-#: ../DistUpgrade/DistUpgradeController.py:2103
+#: ../DistUpgrade/DistUpgradeController.py:2109
 msgid "Required depends is not installed"
 msgstr "A dependência requerida não foi instalada"
 
-#: ../DistUpgrade/DistUpgradeController.py:2104
+#: ../DistUpgrade/DistUpgradeController.py:2110
 #, python-format
 msgid "The required dependency '%s' is not installed. "
 msgstr "A dependência '%s' requerida não foi instalada. "
 
 #. coherence check (check for ubuntu-desktop, brokenCache etc)
 #. then open the cache (again)
-#: ../DistUpgrade/DistUpgradeController.py:2337
-#: ../DistUpgrade/DistUpgradeController.py:2445
+#: ../DistUpgrade/DistUpgradeController.py:2343
+#: ../DistUpgrade/DistUpgradeController.py:2451
 msgid "Checking package manager"
 msgstr "A verificar gestor de pacotes"
 
-#: ../DistUpgrade/DistUpgradeController.py:2343
 #: ../DistUpgrade/DistUpgradeController.py:2349
+#: ../DistUpgrade/DistUpgradeController.py:2355
 msgid "Preparing the upgrade failed"
 msgstr "A preparação da atualização de versão falhou"
 
-#: ../DistUpgrade/DistUpgradeController.py:2344
+#: ../DistUpgrade/DistUpgradeController.py:2350
 msgid ""
 "Preparing the system for the upgrade failed so a bug reporting process is "
 "being started."
@@ -732,7 +732,7 @@ msgstr ""
 "A preparação do sistema para a atualização falhou, por isso um processo de "
 "denúncia de bug foi iniciado."
 
-#: ../DistUpgrade/DistUpgradeController.py:2350
+#: ../DistUpgrade/DistUpgradeController.py:2356
 msgid ""
 "Preparing the system for the upgrade failed. To report a bug install apport "
 "and then execute 'apport-bug ubuntu-release-upgrader'."
@@ -740,12 +740,12 @@ msgstr ""
 "A preparação do sistema para a atualização, falhou. Para reportar um bug "
 "instale o apport e de seguida execute o 'apport-bug ubuntu-release-upgrader'."
 
-#: ../DistUpgrade/DistUpgradeController.py:2367
-#: ../DistUpgrade/DistUpgradeController.py:2377
+#: ../DistUpgrade/DistUpgradeController.py:2373
+#: ../DistUpgrade/DistUpgradeController.py:2383
 msgid "Getting upgrade prerequisites failed"
 msgstr "Falhou a obtenção do pré-requisitos da atualização de versão"
 
-#: ../DistUpgrade/DistUpgradeController.py:2368
+#: ../DistUpgrade/DistUpgradeController.py:2374
 msgid ""
 "The system was unable to get the prerequisites for the upgrade. The upgrade "
 "will abort now and restore the original system state.\n"
@@ -757,7 +757,7 @@ msgstr ""
 "\n"
 "Adicionalmente, um processo de denúncia de bug foi iniciado."
 
-#: ../DistUpgrade/DistUpgradeController.py:2378
+#: ../DistUpgrade/DistUpgradeController.py:2384
 msgid ""
 "The system was unable to get the prerequisites for the upgrade. The upgrade "
 "will abort now and restore the original system state.\n"
@@ -772,15 +772,15 @@ msgstr ""
 "Para reportar um bug instale o apport e de seguida execute o 'apport-bug "
 "ubuntu-release-upgrader'."
 
-#: ../DistUpgrade/DistUpgradeController.py:2412
+#: ../DistUpgrade/DistUpgradeController.py:2418
 msgid "Updating repository information"
 msgstr "A atualizar informação de repositórios"
 
-#: ../DistUpgrade/DistUpgradeController.py:2474
+#: ../DistUpgrade/DistUpgradeController.py:2480
 msgid "Invalid package information"
 msgstr "Informação de pacotes inválida"
 
-#: ../DistUpgrade/DistUpgradeController.py:2475
+#: ../DistUpgrade/DistUpgradeController.py:2481
 #, python-format
 msgid ""
 "After updating your package information, the essential package '%s' could "
@@ -798,23 +798,23 @@ msgstr ""
 "No caso de ser tráfego excessivo na fonte, poderá tentar novamente mais "
 "tarde."
 
-#: ../DistUpgrade/DistUpgradeController.py:2504
-#: ../DistUpgrade/DistUpgradeController.py:2615
+#: ../DistUpgrade/DistUpgradeController.py:2510
+#: ../DistUpgrade/DistUpgradeController.py:2621
 msgid "Fetching"
 msgstr "A recolher"
 
-#: ../DistUpgrade/DistUpgradeController.py:2511
-#: ../DistUpgrade/DistUpgradeController.py:2534
-#: ../DistUpgrade/DistUpgradeController.py:2564
-#: ../DistUpgrade/DistUpgradeController.py:2619
+#: ../DistUpgrade/DistUpgradeController.py:2517
+#: ../DistUpgrade/DistUpgradeController.py:2540
+#: ../DistUpgrade/DistUpgradeController.py:2570
+#: ../DistUpgrade/DistUpgradeController.py:2625
 msgid "Upgrading"
 msgstr "A atualizar"
 
-#: ../DistUpgrade/DistUpgradeController.py:2513
+#: ../DistUpgrade/DistUpgradeController.py:2519
 msgid "Upgrade infeasible"
 msgstr "Atualização inviável"
 
-#: ../DistUpgrade/DistUpgradeController.py:2514
+#: ../DistUpgrade/DistUpgradeController.py:2520
 msgid ""
 "The upgrade could not be completed, there were errors during the upgrade "
 "process."
@@ -823,13 +823,13 @@ msgstr ""
 "atualização."
 
 #. don't abort here, because it would restore the sources.list
-#: ../DistUpgrade/DistUpgradeController.py:2537
-#: ../DistUpgrade/DistUpgradeController.py:2553
+#: ../DistUpgrade/DistUpgradeController.py:2543
+#: ../DistUpgrade/DistUpgradeController.py:2559
 msgid "Upgrade incomplete"
 msgstr "Atualização incompleta"
 
-#: ../DistUpgrade/DistUpgradeController.py:2538
-#: ../DistUpgrade/DistUpgradeController.py:2554
+#: ../DistUpgrade/DistUpgradeController.py:2544
+#: ../DistUpgrade/DistUpgradeController.py:2560
 msgid ""
 "The upgrade has partially completed but there were errors during the upgrade "
 "process."
@@ -838,35 +838,35 @@ msgstr ""
 "de atualização."
 
 #. don't abort here, because it would restore the sources.list
-#: ../DistUpgrade/DistUpgradeController.py:2569
-#: ../DistUpgrade/DistUpgradeController.py:2621
+#: ../DistUpgrade/DistUpgradeController.py:2575
 #: ../DistUpgrade/DistUpgradeController.py:2627
-#: ../DistUpgrade/DistUpgradeController.py:2638
+#: ../DistUpgrade/DistUpgradeController.py:2633
+#: ../DistUpgrade/DistUpgradeController.py:2644
 msgid "Upgrade complete"
 msgstr "Atualização concluída"
 
-#: ../DistUpgrade/DistUpgradeController.py:2570
-#: ../DistUpgrade/DistUpgradeController.py:2622
+#: ../DistUpgrade/DistUpgradeController.py:2576
 #: ../DistUpgrade/DistUpgradeController.py:2628
+#: ../DistUpgrade/DistUpgradeController.py:2634
 msgid ""
 "The upgrade has completed but there were errors during the upgrade process."
 msgstr ""
 "A atualização da versão do sistema foi concluída, mas ocorreram erros "
 "durante o processo."
 
-#: ../DistUpgrade/DistUpgradeController.py:2585
+#: ../DistUpgrade/DistUpgradeController.py:2591
 msgid "System upgrade is complete."
 msgstr "A atualização da versão do sistema foi concluída."
 
-#: ../DistUpgrade/DistUpgradeController.py:2639
+#: ../DistUpgrade/DistUpgradeController.py:2645
 msgid "The partial upgrade was completed."
 msgstr "A atualização parcial de versão foi concluída."
 
-#: ../DistUpgrade/DistUpgradeController.py:2660
+#: ../DistUpgrade/DistUpgradeController.py:2666
 msgid "Lock screen disabled"
 msgstr "Bloqueio de ecrã desligado"
 
-#: ../DistUpgrade/DistUpgradeController.py:2661
+#: ../DistUpgrade/DistUpgradeController.py:2667
 #, fuzzy
 msgid ""
 "Your lock screen has been disabled and will remain disabled during the "
@@ -874,11 +874,11 @@ msgid ""
 msgstr ""
 "O seu bloqueador de ecrã foi desligado e permanecerá assim até reiniciar."
 
-#: ../DistUpgrade/DistUpgradeController.py:2669
+#: ../DistUpgrade/DistUpgradeController.py:2675
 msgid "Unable to disable lock screen"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:2670
+#: ../DistUpgrade/DistUpgradeController.py:2676
 msgid ""
 "It is highly recommended that the lock screen be disabled during the upgrade "
 "to prevent later issues. Please ensure your screen lock is disabled before "
@@ -1079,12 +1079,12 @@ msgstr "Por favor, insira '%s' no leitor '%s'"
 msgid "Media Change"
 msgstr "Alterar Media"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:247
+#: ../DistUpgrade/DistUpgradeQuirks.py:248
 msgid "Your graphics hardware may not be fully supported in Ubuntu 14.04."
 msgstr ""
 "O seu hardware gráfico pode não ser completamente suportado no Ubuntu 14.04."
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:249
+#: ../DistUpgrade/DistUpgradeQuirks.py:250
 msgid ""
 "Running the 'unity' desktop environment is not fully supported by your "
 "graphics hardware. You will maybe end up in a very slow environment after "
@@ -1099,12 +1099,12 @@ msgstr ""
 "informações consultar https://wiki.ubuntu.com/X/Bugs/"
 "UpdateManagerWarningForUnity3D Deseja ainda continuar com a atualização?"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:273
+#: ../DistUpgrade/DistUpgradeQuirks.py:274
 msgid "Your graphics hardware may not be fully supported in Ubuntu 12.04 LTS."
 msgstr ""
 "A sua placa gráfica pode não ser totalmente suportada no Ubuntu 12.04 LTS."
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:275
+#: ../DistUpgrade/DistUpgradeQuirks.py:276
 msgid ""
 "The support in Ubuntu 12.04 LTS for your Intel graphics hardware is limited "
 "and you may encounter problems after the upgrade. For more information see "
@@ -1116,7 +1116,7 @@ msgstr ""
 "consulte https://wiki.ubuntu.com/X/Bugs/UpdateManagerWarningForI8xx Deseja "
 "prosseguir com a atualização?"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:295
+#: ../DistUpgrade/DistUpgradeQuirks.py:296
 msgid ""
 "Upgrading may reduce desktop effects, and performance in games and other "
 "graphically intensive programs."
@@ -1124,7 +1124,7 @@ msgstr ""
 "Atualizar pode reduzir os efeitos do ambiente de trabalho, bem como o "
 "desempenho em jogos e outros programas graficamente exigentes."
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:299
+#: ../DistUpgrade/DistUpgradeQuirks.py:300
 msgid ""
 "This computer is currently using the AMD 'fglrx' graphics driver. No version "
 "of this driver is available that works with your hardware in Ubuntu 10.04 "
@@ -1138,12 +1138,12 @@ msgstr ""
 "\n"
 "Pretende continuar?"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:338
-#: ../DistUpgrade/DistUpgradeQuirks.py:407
+#: ../DistUpgrade/DistUpgradeQuirks.py:339
+#: ../DistUpgrade/DistUpgradeQuirks.py:408
 msgid "Sorry, no more upgrades for this system"
 msgstr "Desculpe, não há mais atualizações para este sistema"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:339
+#: ../DistUpgrade/DistUpgradeQuirks.py:340
 #, python-format
 msgid ""
 "There will not be any further Ubuntu releases for this system's 'i386' "
@@ -1155,11 +1155,11 @@ msgstr ""
 "\n"
 "As atualizações para o Ubuntu %s continuarão até %s."
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:354
+#: ../DistUpgrade/DistUpgradeQuirks.py:355
 msgid "No ARMv6 CPU"
 msgstr "Sem CPU ARMv6"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:355
+#: ../DistUpgrade/DistUpgradeQuirks.py:356
 msgid ""
 "Your system uses an ARM CPU that is older than the ARMv6 architecture. All "
 "packages in karmic were built with optimizations requiring ARMv6 as the "
@@ -1171,12 +1171,12 @@ msgstr ""
 "mínima. Não é possível fazer upgrade para uma nova versão de Ubuntu com este "
 "hardware."
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:375
+#: ../DistUpgrade/DistUpgradeQuirks.py:376
 msgid ""
 "Sorry, this storage driver is not supported in kernels for newer releases"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:377
+#: ../DistUpgrade/DistUpgradeQuirks.py:378
 #, python-format
 msgid ""
 "There will not be any further Ubuntu releases that provide kernel support "
@@ -1186,7 +1186,7 @@ msgid ""
 "driver, remove the directory %s and try again."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:408
+#: ../DistUpgrade/DistUpgradeQuirks.py:409
 #, fuzzy, python-format
 msgid ""
 "There will not be any further Ubuntu releases for this system's POWER8 "
@@ -1198,11 +1198,11 @@ msgstr ""
 "\n"
 "As atualizações para o Ubuntu %s continuarão até %s."
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:426
+#: ../DistUpgrade/DistUpgradeQuirks.py:427
 msgid "No init available"
 msgstr "Sem inicialização disponível"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:427
+#: ../DistUpgrade/DistUpgradeQuirks.py:428
 msgid ""
 "Your system appears to be a virtualised environment without an init daemon, "
 "e.g. Linux-VServer. Ubuntu 10.04 LTS cannot function within this type of "
@@ -1218,11 +1218,11 @@ msgstr ""
 "\n"
 "De certeza que quer continuar?"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:468
+#: ../DistUpgrade/DistUpgradeQuirks.py:469
 msgid "The Robot Operating System (ROS) is installed"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:469
+#: ../DistUpgrade/DistUpgradeQuirks.py:470
 msgid ""
 "It appears that ROS is currently installed. Each ROS release is very strict "
 "about the versions of Ubuntu it supports, and Ubuntu upgrades can fail if "
@@ -1239,12 +1239,12 @@ msgid ""
 "Are you sure you want to continue?"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:669
+#: ../DistUpgrade/DistUpgradeQuirks.py:670
 #, fuzzy
 msgid "Connection to the Snap Store failed"
 msgstr "Falhou a ligação com a \"Snap Store\""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:670
+#: ../DistUpgrade/DistUpgradeQuirks.py:671
 msgid ""
 "You have the package lxd installed but your system is unable to reach the "
 "Snap Store. lxd is now provided via a snap and the release upgrade will fail "
@@ -1254,11 +1254,11 @@ msgid ""
 "may want to configure a Snap Store proxy."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:685
+#: ../DistUpgrade/DistUpgradeQuirks.py:686
 msgid "Connection to Snap Store failed"
 msgstr "Falhou a ligação com a \"Snap Store\""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:686
+#: ../DistUpgrade/DistUpgradeQuirks.py:687
 msgid ""
 "Your system does not have a connection to the Snap Store. For the best "
 "upgrade experience make sure that your system can connect to api.snapcraft."
@@ -1270,11 +1270,11 @@ msgstr ""
 "io.\n"
 "Ainda deseja continuar com a atualização?"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:695
+#: ../DistUpgrade/DistUpgradeQuirks.py:696
 msgid "Outdated snapd package"
 msgstr "Pacote snapd desatualizado"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:696
+#: ../DistUpgrade/DistUpgradeQuirks.py:697
 msgid ""
 "Your system does not have the latest version of snapd. Please update the "
 "version of snapd on your system to improve the upgrade experience.\n"
@@ -1286,36 +1286,36 @@ msgstr ""
 
 #. now perform direct API calls to the store, requesting size
 #. information for each of the snaps needing installation
-#: ../DistUpgrade/DistUpgradeQuirks.py:721
+#: ../DistUpgrade/DistUpgradeQuirks.py:722
 msgid "Calculating snap size requirements"
 msgstr "Calculando requisitos de tamanho de encaixe"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:752
+#: ../DistUpgrade/DistUpgradeQuirks.py:753
 msgid "Processing snap replacements"
 msgstr "Processando substituições de encaixe"
 
 #. TODO: This status should be updated, but the time of
 #. this change to snap switch is post-translation freeze.
-#: ../DistUpgrade/DistUpgradeQuirks.py:760
+#: ../DistUpgrade/DistUpgradeQuirks.py:761
 #, python-format
 msgid "refreshing snap %s"
 msgstr "a atualizar o snap %s"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:764
+#: ../DistUpgrade/DistUpgradeQuirks.py:765
 #, fuzzy, python-format
 msgid "removing snap %s"
 msgstr "a atualizar o snap %s"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:767
+#: ../DistUpgrade/DistUpgradeQuirks.py:768
 #, python-format
 msgid "installing snap %s"
 msgstr "a instalar o snap %s"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:796
+#: ../DistUpgrade/DistUpgradeQuirks.py:797
 msgid "PAE not enabled"
 msgstr "PAE não ativo"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:797
+#: ../DistUpgrade/DistUpgradeQuirks.py:798
 msgid ""
 "Your system uses a CPU that does not have PAE enabled. Ubuntu only supports "
 "non-PAE systems up to Ubuntu 12.04. To upgrade to a later version of Ubuntu, "
@@ -1327,11 +1327,11 @@ msgstr ""
 "posterior, tem de ativar PAE (se isso for possível) veja:\n"
 "http://help.ubuntu.com/community/EnablingPAE"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1093
+#: ../DistUpgrade/DistUpgradeQuirks.py:1094
 msgid "universe component not enabled"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1094
+#: ../DistUpgrade/DistUpgradeQuirks.py:1095
 #, python-format
 msgid ""
 "You have the package %s installed which is a python2 package. python2 has "
@@ -1343,33 +1343,33 @@ msgid ""
 "universe component in /etc/apt/sources.list or remove %s"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1206
+#: ../DistUpgrade/DistUpgradeQuirks.py:1207
 msgid "Checking for installed snaps"
 msgstr "Procurar por snaps instalados"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1653
+#: ../DistUpgrade/DistUpgradeQuirks.py:1654
 #, fuzzy
 msgid "Cannot upgrade this system"
 msgstr "Impossível atualizar a versão"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1654
+#: ../DistUpgrade/DistUpgradeQuirks.py:1655
 msgid ""
 "Due to a bug in grub, this system cannot be safely upgraded at this time.\n"
 "\n"
 "See https://launchpad.net/bugs/2039172."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1720
+#: ../DistUpgrade/DistUpgradeQuirks.py:1721
 #, python-brace-format
 msgid "Updates for Ubuntu {from_release.version} will "
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1730
+#: ../DistUpgrade/DistUpgradeQuirks.py:1731
 #, fuzzy
 msgid "Sorry, cannot upgrade this system to 24.04 LTS"
 msgstr "Impossível atualizar a versão"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1733
+#: ../DistUpgrade/DistUpgradeQuirks.py:1734
 msgid ""
 "The Raspberry Pi kernel for Ubuntu 24.04 LTS does not support the armhf "
 "architecture.\n"
