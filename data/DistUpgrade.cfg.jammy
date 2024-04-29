@@ -34,7 +34,7 @@ PurgeObsoletes=yes
 #PostUpgradePurge=linux-restricted-modules-common
 #PostUpgradeRemove=xsettings-kde
 #PostUpgradeUpgrade=brasero,edubuntu-desktop
-#PostUpgradeInstall=apt
+PostUpgradeInstall=systemd-resolved
 PostInstallScripts=./xorg_fix_proprietary.py
 EnableApport=yes
 # this supported deny listing certain versions to ensure we do not upgrade
