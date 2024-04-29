@@ -1786,7 +1786,8 @@ class DistUpgradeQuirks(object):
 
                 # Transition the automatically installed bit
                 from_user = not package.is_auto_installed
-                replacement.mark_install(auto_fix=False, auto_inst=False, from_user=from_user)
+                replacement.mark_install(auto_fix=False, auto_inst=False,
+                                         from_user=from_user)
                 package.mark_delete(auto_fix=False)
                 apt.ProblemResolver(self.controller.cache).protect(package)
 
