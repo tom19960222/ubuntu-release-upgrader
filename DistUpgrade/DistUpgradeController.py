@@ -1998,13 +1998,41 @@ class DistUpgradeController(object):
         logging.debug("remove_candidates: '%s'" % remove_candidates)
         logging.debug("Start checking for obsolete pkgs")
         progress = self._view.getOpCacheProgress()
+        scheduled_remove = set()
+
         with self.cache.actiongroup():
+            # Forced obsoletes we remove, removing any of their dependencies, hence do a first loop with auto_fix=True
             for (i, pkgname) in enumerate(remove_candidates):
-                progress.update((i/float(len(remove_candidates)))*100.0)
+                progress.update((i/float(len(remove_candidates)))*100.0 / 2)
+                if pkgname in self.foreign_pkgs and pkgname in self.force_obsoletes:
+                    self._view.processEvents()
+                    if not self.cache.tryMarkObsoleteForRemoval(pkgname, remove_candidates, self.forced_obsoletes, self.foreign_pkgs, auto_fix=True):
+                        logging.debug("'%s' scheduled for remove but not safe to remove, skipping", pkgname)
+                    else:
+                        scheduled_remove.add(pkgname)
+
+            # Now let's try to remove other packages
+            for (i, pkgname) in enumerate(remove_candidates):
+                progress.update((i/float(len(remove_candidates)))*100.0 / 2 + 50)
                 if pkgname not in self.foreign_pkgs:
                     self._view.processEvents()
-                    if not self.cache.tryMarkObsoleteForRemoval(pkgname, remove_candidates, self.forced_obsoletes, self.foreign_pkgs):
+                    if not self.cache.tryMarkObsoleteForRemoval(pkgname, remove_candidates, self.forced_obsoletes, self.foreign_pkgs, auto_fix=False):
                         logging.debug("'%s' scheduled for remove but not safe to remove, skipping", pkgname)
+                    else:
+                        scheduled_remove.add(pkgname)
+
+            # We have scheduled their removals, but not any reverse-dependencies. If anything is broken now,
+            # resolve them by keeping back the obsolete packages.
+            self.cache._startAptResolverLog()
+            pr = apt.ProblemResolver(self.cache)
+            pr.resolve_by_keep()
+            self.cache._stopAptResolverLog()
+
+            # resolve_by_keep() will revert any unsafe removals, so we need to list them here again.
+            for pkgname in scheduled_remove:
+                if not self.cache[pkgname].marked_delete:
+                    logging.debug("obsolete package '%s' could not be removed", pkgname)
+
         logging.debug("Finish checking for obsolete pkgs")
         progress.done()
 

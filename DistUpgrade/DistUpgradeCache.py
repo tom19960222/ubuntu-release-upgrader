@@ -940,7 +940,7 @@ class MyCache(apt.Cache):
         return False
 
     @withResolverLog
-    def tryMarkObsoleteForRemoval(self, pkgname, remove_candidates, forced_obsoletes, foreign_pkgs):
+    def tryMarkObsoleteForRemoval(self, pkgname, remove_candidates, forced_obsoletes, foreign_pkgs, auto_fix):
         #logging.debug("tryMarkObsoleteForRemoval(): %s" % pkgname)
         # coherence check, first see if it looks like a running kernel pkg
         if pkgname.endswith(self.uname):
@@ -972,24 +972,27 @@ class MyCache(apt.Cache):
         # if this package has not been forced obsolete, only
         # delete it if it doesn't remove other dependents
         # that are not obsolete as well
-        self.create_snapshot()
+        if auto_fix:
+            self.create_snapshot()
         try:
-            self[pkgname].mark_delete(purge=purge)
+            self[pkgname].mark_delete(purge=purge, auto_fix=auto_fix)
             self.view.processEvents()
-            if pkgname in forced_obsoletes:
-                return True
-            #logging.debug("marking '%s' for removal" % pkgname)
-            for pkg in self.get_changes():
-                if (pkg.name not in remove_candidates or
-                      pkg.name in foreign_pkgs or
-                      self._inRemovalDenylist(pkg.name) or
-                      pkg.name == self.linux_metapackage):
-                    logging.debug("package '%s' produces an unwanted removal '%s', skipping" % (pkgname, pkg.name))
-                    self.restore_snapshot()
-                    return False
+            if auto_fix:
+                if pkgname in forced_obsoletes:
+                    return True
+                #logging.debug("marking '%s' for removal" % pkgname)
+                for pkg in self.get_changes():
+                    if (pkg.name not in remove_candidates or
+                          pkg.name in foreign_pkgs or
+                          self._inRemovalDenylist(pkg.name) or
+                          pkg.name == self.linux_metapackage):
+                        logging.debug("package '%s' produces an unwanted removal '%s', skipping" % (pkgname, pkg.name))
+                        self.restore_snapshot()
+                        return False
         except (SystemError, KeyError) as e:
             logging.warning("_tryMarkObsoleteForRemoval failed for '%s' (%s: %s)" % (pkgname, repr(e), e))
-            self.restore_snapshot()
+            if auto_fix:
+                self.restore_snapshot()
             return False
         return True
 
