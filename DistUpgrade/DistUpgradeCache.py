@@ -972,10 +972,6 @@ class MyCache(apt.Cache):
         # if this package has not been forced obsolete, only
         # delete it if it doesn't remove other dependents
         # that are not obsolete as well
-        actiongroup = apt_pkg.ActionGroup(self._depcache)
-        # just make pyflakes shut up, later we should use
-        # with self.actiongroup():
-        actiongroup
         self.create_snapshot()
         try:
             self[pkgname].mark_delete(purge=purge)

@@ -1998,12 +1998,13 @@ class DistUpgradeController(object):
         logging.debug("remove_candidates: '%s'" % remove_candidates)
         logging.debug("Start checking for obsolete pkgs")
         progress = self._view.getOpCacheProgress()
-        for (i, pkgname) in enumerate(remove_candidates):
-            progress.update((i/float(len(remove_candidates)))*100.0)
-            if pkgname not in self.foreign_pkgs:
-                self._view.processEvents()
-                if not self.cache.tryMarkObsoleteForRemoval(pkgname, remove_candidates, self.forced_obsoletes, self.foreign_pkgs):
-                    logging.debug("'%s' scheduled for remove but not safe to remove, skipping", pkgname)
+        with self.cache.actiongroup():
+            for (i, pkgname) in enumerate(remove_candidates):
+                progress.update((i/float(len(remove_candidates)))*100.0)
+                if pkgname not in self.foreign_pkgs:
+                    self._view.processEvents()
+                    if not self.cache.tryMarkObsoleteForRemoval(pkgname, remove_candidates, self.forced_obsoletes, self.foreign_pkgs):
+                        logging.debug("'%s' scheduled for remove but not safe to remove, skipping", pkgname)
         logging.debug("Finish checking for obsolete pkgs")
         progress.done()
 
