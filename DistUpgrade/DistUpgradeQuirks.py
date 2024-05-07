@@ -157,6 +157,9 @@ class DistUpgradeQuirks(object):
         if 'ubuntu-desktop-raspi' in cache:
             if cache['ubuntu-desktop-raspi'].is_installed:
                 self._replace_fkms_overlay()
+        if 'ubuntu-server-raspi' in cache:
+            if cache['ubuntu-server-raspi'].is_installed:
+                self._add_kms_overlay()
         if 'linux-firmware-raspi2' in cache:
             if cache['linux-firmware-raspi2'].is_installed:
                 self._remove_uboot_on_rpi()
@@ -1285,6 +1288,23 @@ class DistUpgradeQuirks(object):
                 self._snap_list[snap] = snap_object
         return self._snap_list
 
+    def _replace_pi_boot_config(self, old_config, new_config,
+                                boot_config_filename, failure_action):
+        try:
+            boot_backup_filename = boot_config_filename + '.distUpgrade'
+            with open(boot_backup_filename, 'w', encoding='utf-8') as f:
+                f.write(old_config)
+        except IOError as exc:
+            logging.error("unable to write boot config backup to %s: %s; %s",
+                          boot_backup_filename, exc, failure_action)
+            return
+        try:
+            with open(boot_config_filename, 'w', encoding='utf-8') as f:
+                f.write(new_config)
+        except IOError as exc:
+            logging.error("unable to write new boot config to %s: %s; %s",
+                          boot_config_filename, exc, failure_action)
+
     def _replace_fkms_overlay(self, boot_dir='/boot/firmware'):
         failure_action = (
             "You may need to replace the vc4-fkms-v3d overlay with "
@@ -1319,22 +1339,80 @@ class DistUpgradeQuirks(object):
             logging.warning("no fkms overlay or camera firmware line found "
                             "in %s", boot_config_filename)
             return
+        self._replace_pi_boot_config(
+            boot_config, new_config, boot_config_filename, failure_action)
 
+    def _add_kms_overlay(self, boot_dir='/boot/firmware'):
+        failure_action = (
+            "You may need to add dtoverlay=vc4-kms-v3d to an [all] section "
+            "in config.txt on your boot partition")
+        added_lines = [
+            '# added by do-release-upgrade (LP: #2065051)',
+            'dtoverlay=vc4-kms-v3d',
+            'disable_fw_kms_setup=1',
+            '',
+            '[pi3+]',
+            'dtoverlay=vc4-kms-v3d,cma-128',
+            '',
+            '[pi02]',
+            'dtoverlay=vc4-kms-v3d,cma-128',
+            '',
+            '[all]',
+        ]
         try:
-            boot_backup_filename = os.path.join(
-                boot_dir, 'config.txt.distUpgrade')
-            with open(boot_backup_filename, 'w', encoding='utf-8') as f:
-                f.write(boot_config)
-        except IOError as exc:
-            logging.error("unable to write boot config backup to %s: %s; %s",
-                          boot_backup_filename, exc, failure_action)
+            boot_config_filename = os.path.join(boot_dir, 'config.txt')
+            with open(boot_config_filename, 'r', encoding='utf-8') as f:
+                boot_config = f.read()
+        except FileNotFoundError:
+            logging.error("failed to open boot configuration in %s; %s",
+                          boot_config_filename, failure_action)
             return
-        try:
-            with open(boot_config_filename, 'w', encoding='utf-8') as f:
-                f.write(new_config)
-        except IOError as exc:
-            logging.error("unable to write new boot config to %s: %s; %s",
-                          boot_config_filename, exc, failure_action)
+
+        def find_insertion_point(lines):
+            # Returns the zero-based index of the dtoverlay=vc4-kms-v3d line in
+            # an [all] section, if one exists, or the last line of the last
+            # [all] section of the file, if one does not exist
+            in_all = True
+            last = 0
+            for index, line in enumerate(lines):
+                line = line.rstrip()
+                if in_all:
+                    last = index
+                    # startswith used to cope with any trailing dtparams
+                    if line.startswith('dtoverlay=vc4-kms-v3d'):
+                        return last
+                    elif line.startswith('[') and line.endswith(']'):
+                        in_all = line == '[all]'
+                    elif line.startswith('include '):
+                        # [sections] are included from includes verbatim, hence
+                        # (without reading the included file) we must assume
+                        # we're no longer in an [all] section
+                        in_all = False
+                else:
+                    in_all = line == '[all]'
+            return last
+
+        def add_kms_overlay(lines):
+            insert_point = find_insertion_point(lines)
+            try:
+                if lines[insert_point].startswith('dtoverlay=vc4-kms-v3d'):
+                    return lines
+            except IndexError:
+                # Empty config, apparently!
+                pass
+            lines[insert_point:insert_point] = added_lines
+            return lines
+
+        lines = [line.rstrip() for line in boot_config.splitlines()]
+        lines = add_kms_overlay(lines)
+        new_config = ''.join(line + '\n' for line in lines)
+
+        if new_config == boot_config:
+            logging.warning("no addition of KMS overlay required in %s",
+                            boot_config_filename)
+            return
+        self._replace_pi_boot_config(
+            boot_config, new_config, boot_config_filename, failure_action)
 
     def _remove_uboot_on_rpi(self, boot_dir='/boot/firmware'):
         kernel_line = 'kernel=vmlinuz'
@@ -1453,21 +1531,8 @@ class DistUpgradeQuirks(object):
             logging.warning("no u-boot removal performed in %s",
                             boot_config_filename)
             return
-
-        try:
-            boot_backup_filename = boot_config_filename + '.distUpgrade'
-            with open(boot_backup_filename, 'w', encoding='utf-8') as f:
-                f.write(boot_config)
-        except IOError as exc:
-            logging.error("unable to write boot config backup to %s: %s; %s",
-                          boot_backup_filename, exc, failure_action)
-            return
-        try:
-            with open(boot_config_filename, 'w', encoding='utf-8') as f:
-                f.write(new_config)
-        except IOError as exc:
-            logging.error("unable to write new boot config to %s: %s; %s",
-                          boot_config_filename, exc, failure_action)
+        self._replace_pi_boot_config(
+            boot_config, new_config, boot_config_filename, failure_action)
 
     def _set_generic_font(self):
         """ Due to changes to the Ubuntu font we enable a generic font

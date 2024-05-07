@@ -522,6 +522,85 @@ dtoverlay=vc4-kms-v3d,cma-256
             with open(os.path.join(boot_dir, 'config.txt')) as f:
                 self.assertTrue(f.read() == expected_config)
 
+    def test_add_kms_overlay_no_config(self):
+        with tempfile.TemporaryDirectory() as boot_dir:
+            mock_controller = mock.Mock()
+
+            q = DistUpgradeQuirks(mock_controller, mock.Mock())
+
+            q._add_kms_overlay(boot_dir)
+            self.assertFalse(os.path.exists(os.path.join(
+                boot_dir, 'config.txt.distUpgrade')))
+
+    def test_add_kms_overlay_no_changes(self):
+        with tempfile.TemporaryDirectory() as boot_dir:
+            boot_config = """\
+arm_64bit=1
+kernel=vmlinuz
+initramfs initrd.img followkernel
+
+# This line is implicitly in an [all] section and
+# should prevent the quirk from doing anything
+dtoverlay=vc4-kms-v3d,cma-128
+
+[pi4]
+max_framebuffers=2
+"""
+            with open(os.path.join(boot_dir, 'config.txt'), 'w') as f:
+                f.write(boot_config)
+
+            mock_controller = mock.Mock()
+            q = DistUpgradeQuirks(mock_controller, mock.Mock())
+            q._add_kms_overlay(boot_dir)
+
+            self.assertFalse(os.path.exists(os.path.join(
+                boot_dir, 'config.txt.distUpgrade')))
+            with open(os.path.join(boot_dir, 'config.txt')) as f:
+                self.assertTrue(f.read() == boot_config)
+
+    def test_add_kms_overlay_with_changes(self):
+        with tempfile.TemporaryDirectory() as boot_dir:
+            config_txt = """\
+arm_64bit=1
+kernel=vmlinuz
+initramfs initrd.img followkernel
+
+[pi4]
+max_framebuffers=2
+"""
+            expected_config_txt = """\
+arm_64bit=1
+kernel=vmlinuz
+initramfs initrd.img followkernel
+
+# added by do-release-upgrade (LP: #2065051)
+dtoverlay=vc4-kms-v3d
+disable_fw_kms_setup=1
+
+[pi3+]
+dtoverlay=vc4-kms-v3d,cma-128
+
+[pi02]
+dtoverlay=vc4-kms-v3d,cma-128
+
+[all]
+[pi4]
+max_framebuffers=2
+"""
+            with open(os.path.join(boot_dir, 'config.txt'), 'w') as f:
+                f.write(config_txt)
+
+            mock_controller = mock.Mock()
+            q = DistUpgradeQuirks(mock_controller, mock.Mock())
+            q._add_kms_overlay(boot_dir)
+
+            self.assertTrue(os.path.exists(os.path.join(
+                boot_dir, 'config.txt.distUpgrade')))
+            self.assertTrue(os.path.exists(os.path.join(
+                boot_dir, 'config.txt')))
+            with open(os.path.join(boot_dir, 'config.txt')) as f:
+                self.assertTrue(f.read() == expected_config_txt)
+
     def test_remove_uboot_no_config(self):
         with tempfile.TemporaryDirectory() as boot_dir:
             mock_controller = mock.Mock()
