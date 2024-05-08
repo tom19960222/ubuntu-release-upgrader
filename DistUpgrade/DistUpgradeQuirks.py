@@ -125,6 +125,7 @@ class DistUpgradeQuirks(object):
         self._test_and_fail_on_power8()
         self._test_and_fail_on_bios_with_xfs_boot()
         self._test_and_fail_on_armhf_raspi()
+        self._test_and_fail_on_tpm_fde()
 
         cache = self.controller.cache
         self._test_and_warn_if_ros_installed(cache)
@@ -1835,3 +1836,38 @@ class DistUpgradeQuirks(object):
         if remove_ufw:
             ufw.mark_delete(auto_fix=False)
             apt.ProblemResolver(self.controller.cache).protect(ufw)
+
+    def _test_and_fail_on_tpm_fde(self):
+        """
+        LP: #2065229
+        """
+        try:
+            snap_list = subprocess.check_output(['snap', 'list'])
+            snaps = [s.decode().split()[0] for s in snap_list.splitlines()]
+        except FileNotFoundError:
+            # snapd not installed?
+            return
+
+        if (
+            'pc-kernel' in snaps and
+            'ubuntu-desktop-minimal' in self.controller.cache and
+            self.controller.cache['ubuntu-desktop-minimal'].is_installed
+        ):
+            logging.debug('Detected TPM FDE system')
+
+            di = distro_info.UbuntuDistroInfo()
+            version = di.version(self.controller.toDist) or 'next release'
+
+            self._view.error(
+                _(
+                    f'Sorry, cannot upgrade this system to {version}'
+                ),
+                _(
+                    'Upgrades for desktop systems running TPM FDE are not '
+                    'currently supported. '
+                    'Please see https://launchpad.net/bugs/2065229 '
+                    'for more information.'
+
+                ),
+            )
+            self.controller.abort()
