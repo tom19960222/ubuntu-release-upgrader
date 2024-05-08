@@ -1,5 +1,5 @@
 Types: deb
 URIs: http://ports.ubuntu.com/ubuntu-ports
-Suites: mantic mantic-updates mantic-security mantic-backports
+Suites: {dist} {dist}-updates {dist}-security {dist}-backports
 Components: main restricted universe multiverse
 Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
