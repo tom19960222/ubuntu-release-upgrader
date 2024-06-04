@@ -31,6 +31,7 @@ import locale
 import logging
 import shutil
 import glob
+import tempfile
 import time
 import copy
 from configparser import NoOptionError
@@ -1807,18 +1808,20 @@ class DistUpgradeController(object):
         # here in the simulation as we'd write the simulated end result to the file, so let's
         # not write the file for the simulation.
         backups["Dir::State::extended_states"] = [apt_pkg.config["Dir::State::extended_states"]]
-        apt_pkg.config["Dir::State::extended_states"] = "/dev/null"
 
-        for lst in "dpkg::pre-invoke", "dpkg::pre-install-pkgs", "dpkg::post-invoke", "dpkg::post-install-pkgs":
-            backups[lst + "::"] = apt_pkg.config.value_list(lst)
-            apt_pkg.config.clear(lst)
+        with tempfile.NamedTemporaryFile(prefix='apt_extended_states_') as f:
+            apt_pkg.config["Dir::State::extended_states"] = f.name
 
-        try:
-            return self.doDistUpgrade()
-        finally:
-            for lst in backups:
-                for item in backups[lst]:
-                    apt_pkg.config.set(lst, item)
+            for lst in "dpkg::pre-invoke", "dpkg::pre-install-pkgs", "dpkg::post-invoke", "dpkg::post-install-pkgs":
+                backups[lst + "::"] = apt_pkg.config.value_list(lst)
+                apt_pkg.config.clear(lst)
+
+            try:
+                return self.doDistUpgrade()
+            finally:
+                for lst in backups:
+                    for item in backups[lst]:
+                        apt_pkg.config.set(lst, item)
 
     def doDistUpgrade(self):
         # add debug code only here
