@@ -1797,6 +1797,9 @@ class DistUpgradeQuirks(object):
                     ver.parent_pkg
                 )
 
+                if replacement.candidate is None:
+                    continue
+
                 if replacement.candidate._cand != ver:
                     continue
 
