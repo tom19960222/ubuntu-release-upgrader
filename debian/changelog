@@ -1,3 +1,14 @@
+ubuntu-release-upgrader (1:24.04.19) noble; urgency=medium
+
+  * DistUpgrade: drop quirk for systems with BIOS and XFS /boot (LP: #2067886)
+  * DistUpgradeQuirks: make sure replacement.candidate is not None
+    (LP: #2067071)
+  * DistUpgrade: use tempfile for apt extended_states during simulation
+    (LP: #2067585)
+  * Run pre-build.sh: updating mirrors, demotions, and translations.
+
+ -- Nick Rosbrook <enr0n@ubuntu.com>  Tue, 04 Jun 2024 11:55:51 -0400
+
 ubuntu-release-upgrader (1:24.04.18) noble; urgency=medium
 
   [ Nick Rosbrook ]
