@@ -123,7 +123,6 @@ class DistUpgradeQuirks(object):
         self._test_and_fail_on_i386()
         self._test_and_fail_on_aufs()
         self._test_and_fail_on_power8()
-        self._test_and_fail_on_bios_with_xfs_boot()
         self._test_and_fail_on_armhf_raspi()
         self._test_and_fail_on_tpm_fde()
 
@@ -1679,50 +1678,6 @@ class DistUpgradeQuirks(object):
         if r.returncode != 0:
             logging.debug(f'Failed to enable {os.path.basename(unit_file)}. '
                           'Font will not be restored on reboot')
-
-    def _test_and_fail_on_bios_with_xfs_boot(self):
-        """
-        If this system is BIOS and has XFS on /boot, do not allow the upgrade
-        to happen (LP: #2039172).
-        """
-        if os.path.isdir('/sys/firmware/efi'):
-            # UEFI boot, nothing to do.
-            return
-
-        boot_fs = None
-        root_fs = None
-        with open('/proc/mounts') as f:
-            for line in f.readlines():
-                try:
-                    (what, where, fs, opts, a, b) = line.strip().split()
-                    where = where.lower()
-                    fs = fs.lower()
-                except ValueError:
-                    logging.debug(
-                        f'line \'{line}\' in /proc/mounts not understood'
-                    )
-                    continue
-
-                if where == '/':
-                    root_fs = fs
-                elif where == '/boot':
-                    boot_fs = fs
-
-                if boot_fs and root_fs:
-                    break
-
-        if boot_fs == 'xfs' or (boot_fs is None and root_fs == 'xfs'):
-            # If we got to this point, then this is a BIOS system, and /boot is
-            # XFS or / is XFS and there is no separate /boot partition. Do not
-            # allow the upgrade to happen.
-            logging.error('Cannot upgrade system with BIOS and XFS /boot')
-            self._view.error(
-                _("Cannot upgrade this system"),
-                _("Due to a bug in grub, this system cannot "
-                  "be safely upgraded at this time.\n\n"
-                  "See https://launchpad.net/bugs/2039172.")
-            )
-            self.controller.abort()
 
     def _maybe_remove_gpg_wks_server(self):
         """

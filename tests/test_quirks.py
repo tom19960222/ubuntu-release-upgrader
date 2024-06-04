@@ -1053,55 +1053,6 @@ MMU             : Hash
 
         mock_file.assert_called_with("/proc/cpuinfo")
 
-    @mock.patch('os.path.isdir')
-    def test_bios_with_xfs_boot_fail(self, mock_is_dir):
-        proc_mounts = """\
-sysfs /sys sysfs rw,nosuid,nodev,noexec,relatime 0 0
-proc /proc proc rw,nosuid,nodev,noexec,relatime 0 0
-{boot}
-/dev/mapper/vgubuntu-root / {fs} rw,relatime,errors=remount-ro 0 0
-securityfs /sys/kernel/security securityfs rw,nosuid,nodev,noexec,relatime 0 0
-tmpfs /dev/shm tmpfs rw,nosuid,nodev,inode64 0 0
-tmpfs /run/lock tmpfs rw,nosuid,nodev,noexec,relatime,size=5120k,inode64 0 0
-cgroup2 /sys/fs/cgroup cgroup2 rw,nosuid,nodev,noexec,relatime 0 0
-"""
-        boot_line = '/dev/nvme0n1p2 /boot {fs} rw,relatime 0 0'
-
-        test_table = [
-            # / fs, /boot fs, expected abort calls if BIOS
-            ('xfs', None, 1),
-            ('ext4', None, 0),
-            ('xfs', 'xfs', 1),
-            ('ext4', 'xfs', 1),
-            ('xfs', 'ext4', 0),
-            ('ext4', 'ext4', 0),
-        ]
-
-        for (root_fs, boot_fs, num_abort_calls) in test_table:
-            boot = boot_line.format(fs=boot_fs) if boot_fs else ''
-            m = mock.mock_open(
-                read_data=proc_mounts.format(fs=root_fs, boot=boot)
-            )
-            with mock.patch('builtins.open', m) as mock_file:
-                controller = mock.Mock()
-                config = mock.Mock()
-                q = DistUpgradeQuirks(controller, config)
-
-                # UEFI
-                mock_is_dir.return_value = True  # /sys/firmware/efi
-                q._test_and_fail_on_bios_with_xfs_boot()
-                self.assertEqual(len(controller.abort.mock_calls), 0)
-
-                # BIOS
-                mock_is_dir.return_value = False  # /sys/firmware/efi
-                q._test_and_fail_on_bios_with_xfs_boot()
-                self.assertEqual(
-                    len(controller.abort.mock_calls),
-                    num_abort_calls,
-                    f'root_fs = {root_fs}, boot_fs = {boot_fs}',
-                )
-                mock_file.assert_called_with('/proc/mounts')
-
     def test_raspi_armhf_abort_upgrade(self):
         for arch in ('armhf', 'arm64'):
             with mock.patch(
