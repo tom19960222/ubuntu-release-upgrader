@@ -125,6 +125,7 @@ class DistUpgradeQuirks(object):
         self._test_and_fail_on_power8()
         self._test_and_fail_on_armhf_raspi()
         self._test_and_fail_on_tpm_fde()
+        self._set_grub_cloud_style_installation_on_cloud_installs()
 
         cache = self.controller.cache
         self._test_and_warn_if_ros_installed(cache)
@@ -1894,3 +1895,26 @@ class DistUpgradeQuirks(object):
                 ),
             )
             self.controller.abort()
+
+    def _set_grub_cloud_style_installation_on_cloud_installs(self):
+        """
+        LP: #2054103
+        """
+
+        if (
+            os.access("/etc/cloud/build.info", os.R_OK) and
+            "grub-pc" in self.controller.cache and
+            self.controller.cache["grub-pc"].is_installed
+        ):
+            logging.debug('Detected cloud image with grub-pc installed')
+
+            cmds = (
+                'echo "grub-pc grub-efi/cloud_style_installation boolean true" | debconf-set-selections',
+                'echo "grub-pc grub-pc/cloud_style_installation boolean true" | debconf-set-selections',
+            )
+
+            for cmd in cmds:
+                r = subprocess.run(('sh', '-c', cmd,))
+                if r.returncode != 0:
+                    logging.debug(f'Failed to run \'{cmd}\'. '
+                                  'grub-pc package upgrades will continue to not update the bootloader.')
