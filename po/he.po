@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: update-manager.HEAD\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2024-06-04 11:54-0400\n"
+"POT-Creation-Date: 2024-07-12 12:29-0400\n"
 "PO-Revision-Date: 2019-06-18 17:55+0000\n"
 "Last-Translator: Yaron <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <he@li.org>\n"
@@ -548,8 +548,8 @@ msgstr "יש להפעיל מחדש כדי לנקות את הקבצים תחת �
 #. calc the dist-upgrade and see if the removals are ok/expected
 #. do the dist-upgrade
 #: ../DistUpgrade/DistUpgradeController.py:1625
-#: ../DistUpgrade/DistUpgradeController.py:2506
-#: ../DistUpgrade/DistUpgradeController.py:2558
+#: ../DistUpgrade/DistUpgradeController.py:2535
+#: ../DistUpgrade/DistUpgradeController.py:2587
 msgid "Calculating the changes"
 msgstr "השינויים מחושבים"
 
@@ -596,14 +596,14 @@ msgstr ""
 #. currently
 #: ../DistUpgrade/DistUpgradeController.py:1869
 #: ../DistUpgrade/DistUpgradeController.py:1908
-#: ../DistUpgrade/DistUpgradeController.py:2025
+#: ../DistUpgrade/DistUpgradeController.py:2054
 msgid "Error during commit"
 msgstr "שגיאה במהלך הביצוע"
 
 #. generate a new cache
 #: ../DistUpgrade/DistUpgradeController.py:1871
 #: ../DistUpgrade/DistUpgradeController.py:1910
-#: ../DistUpgrade/DistUpgradeController.py:2074
+#: ../DistUpgrade/DistUpgradeController.py:2103
 msgid "Restoring original system state"
 msgstr "המערכת מוחזרת למצבה המקורי"
 
@@ -649,20 +649,20 @@ msgstr "השדרוג בוטל. נא לבדוק את החיבור לאינטרנ�
 msgid "Searching for obsolete software"
 msgstr "מתבצע חיפוש אחר תכנה מיושנת"
 
-#: ../DistUpgrade/DistUpgradeController.py:2013
+#: ../DistUpgrade/DistUpgradeController.py:2042
 msgid "Remove obsolete packages?"
 msgstr "האם להסיר חבילות מיושנות?"
 
-#: ../DistUpgrade/DistUpgradeController.py:2014
+#: ../DistUpgrade/DistUpgradeController.py:2043
 #: ../data/gtkbuilder/DistUpgrade.ui.h:8
 msgid "_Keep"
 msgstr "_שמירה"
 
-#: ../DistUpgrade/DistUpgradeController.py:2014
+#: ../DistUpgrade/DistUpgradeController.py:2043
 msgid "_Remove"
 msgstr "ה_סרה"
 
-#: ../DistUpgrade/DistUpgradeController.py:2026
+#: ../DistUpgrade/DistUpgradeController.py:2055
 msgid ""
 "A problem occurred during the clean-up. Please see the below message for "
 "more information. "
@@ -670,34 +670,34 @@ msgstr "התרחשה תקלה במהלך הפינוי. נא לעיין בהוד�
 
 #. FIXME: instead of error out, fetch and install it
 #. here
-#: ../DistUpgrade/DistUpgradeController.py:2112
+#: ../DistUpgrade/DistUpgradeController.py:2141
 msgid "Required depends is not installed"
 msgstr "החבילות הדרושות להתקנה אינן מותקנות"
 
-#: ../DistUpgrade/DistUpgradeController.py:2113
+#: ../DistUpgrade/DistUpgradeController.py:2142
 #, python-format
 msgid "The required dependency '%s' is not installed. "
 msgstr "החבילה '%s' הדרושה להתקנה אינה מותקנת "
 
 #. coherence check (check for ubuntu-desktop, brokenCache etc)
 #. then open the cache (again)
-#: ../DistUpgrade/DistUpgradeController.py:2346
-#: ../DistUpgrade/DistUpgradeController.py:2454
+#: ../DistUpgrade/DistUpgradeController.py:2375
+#: ../DistUpgrade/DistUpgradeController.py:2483
 msgid "Checking package manager"
 msgstr "מנהל החבילות נבדק"
 
-#: ../DistUpgrade/DistUpgradeController.py:2352
-#: ../DistUpgrade/DistUpgradeController.py:2358
+#: ../DistUpgrade/DistUpgradeController.py:2381
+#: ../DistUpgrade/DistUpgradeController.py:2387
 msgid "Preparing the upgrade failed"
 msgstr "תהליך הכנת השדרוג נכשל"
 
-#: ../DistUpgrade/DistUpgradeController.py:2353
+#: ../DistUpgrade/DistUpgradeController.py:2382
 msgid ""
 "Preparing the system for the upgrade failed so a bug reporting process is "
 "being started."
 msgstr "תהליך הכנת המערכת לשדרוג נכשל ולכן יופעל תהליך דיווח על תקלה."
 
-#: ../DistUpgrade/DistUpgradeController.py:2359
+#: ../DistUpgrade/DistUpgradeController.py:2388
 msgid ""
 "Preparing the system for the upgrade failed. To report a bug install apport "
 "and then execute 'apport-bug ubuntu-release-upgrader'."
@@ -705,12 +705,12 @@ msgstr ""
 "הכנת המערכת לשדרוג נכשלה. כדי לדווח על תקלה יש להתקין את apport ואז להריץ את "
 "הפקודה 'apport-bug ubuntu-release-upgrader'."
 
-#: ../DistUpgrade/DistUpgradeController.py:2376
-#: ../DistUpgrade/DistUpgradeController.py:2386
+#: ../DistUpgrade/DistUpgradeController.py:2405
+#: ../DistUpgrade/DistUpgradeController.py:2415
 msgid "Getting upgrade prerequisites failed"
 msgstr "קבלת דרישות הקדם לשדרוג נכשלה"
 
-#: ../DistUpgrade/DistUpgradeController.py:2377
+#: ../DistUpgrade/DistUpgradeController.py:2406
 msgid ""
 "The system was unable to get the prerequisites for the upgrade. The upgrade "
 "will abort now and restore the original system state.\n"
@@ -722,7 +722,7 @@ msgstr ""
 "\n"
 "בנוסף על כך, יופעל תהליך הדיווח על תקלות."
 
-#: ../DistUpgrade/DistUpgradeController.py:2387
+#: ../DistUpgrade/DistUpgradeController.py:2416
 msgid ""
 "The system was unable to get the prerequisites for the upgrade. The upgrade "
 "will abort now and restore the original system state.\n"
@@ -736,15 +736,15 @@ msgstr ""
 "כדי לדווח על תקלה יש להתקין את apport ואז להריץ את הפקודה 'apport-bug ubuntu-"
 "release-upgrader'."
 
-#: ../DistUpgrade/DistUpgradeController.py:2421
+#: ../DistUpgrade/DistUpgradeController.py:2450
 msgid "Updating repository information"
 msgstr "נתוני המאגרים מתעדכנים"
 
-#: ../DistUpgrade/DistUpgradeController.py:2483
+#: ../DistUpgrade/DistUpgradeController.py:2512
 msgid "Invalid package information"
 msgstr "פרטי החבילה אינם תקינים"
 
-#: ../DistUpgrade/DistUpgradeController.py:2484
+#: ../DistUpgrade/DistUpgradeController.py:2513
 #, python-format
 msgid ""
 "After updating your package information, the essential package '%s' could "
@@ -756,80 +756,80 @@ msgid ""
 "later."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:2513
-#: ../DistUpgrade/DistUpgradeController.py:2624
+#: ../DistUpgrade/DistUpgradeController.py:2542
+#: ../DistUpgrade/DistUpgradeController.py:2653
 msgid "Fetching"
 msgstr "מתקבל"
 
-#: ../DistUpgrade/DistUpgradeController.py:2520
-#: ../DistUpgrade/DistUpgradeController.py:2543
-#: ../DistUpgrade/DistUpgradeController.py:2573
-#: ../DistUpgrade/DistUpgradeController.py:2628
+#: ../DistUpgrade/DistUpgradeController.py:2549
+#: ../DistUpgrade/DistUpgradeController.py:2572
+#: ../DistUpgrade/DistUpgradeController.py:2602
+#: ../DistUpgrade/DistUpgradeController.py:2657
 msgid "Upgrading"
 msgstr "בשדרוג"
 
-#: ../DistUpgrade/DistUpgradeController.py:2522
+#: ../DistUpgrade/DistUpgradeController.py:2551
 msgid "Upgrade infeasible"
 msgstr "אין אפשרות לשדרג"
 
-#: ../DistUpgrade/DistUpgradeController.py:2523
+#: ../DistUpgrade/DistUpgradeController.py:2552
 msgid ""
 "The upgrade could not be completed, there were errors during the upgrade "
 "process."
 msgstr "לא ניתן להשלים את השדרוג, אירעו שגיאות במהלך השדרוג."
 
 #. don't abort here, because it would restore the sources.list
-#: ../DistUpgrade/DistUpgradeController.py:2546
-#: ../DistUpgrade/DistUpgradeController.py:2562
+#: ../DistUpgrade/DistUpgradeController.py:2575
+#: ../DistUpgrade/DistUpgradeController.py:2591
 msgid "Upgrade incomplete"
 msgstr "השדרוג לא הסתיים"
 
-#: ../DistUpgrade/DistUpgradeController.py:2547
-#: ../DistUpgrade/DistUpgradeController.py:2563
+#: ../DistUpgrade/DistUpgradeController.py:2576
+#: ../DistUpgrade/DistUpgradeController.py:2592
 msgid ""
 "The upgrade has partially completed but there were errors during the upgrade "
 "process."
 msgstr "השדרוג הושלם באופן חלקי אך אירעו שגיאות במהלך השדרוג."
 
 #. don't abort here, because it would restore the sources.list
-#: ../DistUpgrade/DistUpgradeController.py:2578
-#: ../DistUpgrade/DistUpgradeController.py:2630
-#: ../DistUpgrade/DistUpgradeController.py:2636
-#: ../DistUpgrade/DistUpgradeController.py:2647
+#: ../DistUpgrade/DistUpgradeController.py:2607
+#: ../DistUpgrade/DistUpgradeController.py:2659
+#: ../DistUpgrade/DistUpgradeController.py:2665
+#: ../DistUpgrade/DistUpgradeController.py:2676
 msgid "Upgrade complete"
 msgstr "השדרוג הושלם"
 
-#: ../DistUpgrade/DistUpgradeController.py:2579
-#: ../DistUpgrade/DistUpgradeController.py:2631
-#: ../DistUpgrade/DistUpgradeController.py:2637
+#: ../DistUpgrade/DistUpgradeController.py:2608
+#: ../DistUpgrade/DistUpgradeController.py:2660
+#: ../DistUpgrade/DistUpgradeController.py:2666
 msgid ""
 "The upgrade has completed but there were errors during the upgrade process."
 msgstr "השדרוג הושלם אך צצו שגיאות במהלך השדרוג."
 
-#: ../DistUpgrade/DistUpgradeController.py:2594
+#: ../DistUpgrade/DistUpgradeController.py:2623
 msgid "System upgrade is complete."
 msgstr "שדרוג המערכת הושלם."
 
-#: ../DistUpgrade/DistUpgradeController.py:2648
+#: ../DistUpgrade/DistUpgradeController.py:2677
 msgid "The partial upgrade was completed."
 msgstr "השדרוג החלקי הושלם."
 
-#: ../DistUpgrade/DistUpgradeController.py:2669
+#: ../DistUpgrade/DistUpgradeController.py:2698
 msgid "Lock screen disabled"
 msgstr "מסך הנעילה בוטל"
 
-#: ../DistUpgrade/DistUpgradeController.py:2670
+#: ../DistUpgrade/DistUpgradeController.py:2699
 #, fuzzy
 msgid ""
 "Your lock screen has been disabled and will remain disabled during the "
 "upgrade."
 msgstr "מסך הנעילה שלך הושבת ויישאר מושבת עד להפעלה מחדש."
 
-#: ../DistUpgrade/DistUpgradeController.py:2678
+#: ../DistUpgrade/DistUpgradeController.py:2707
 msgid "Unable to disable lock screen"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeController.py:2679
+#: ../DistUpgrade/DistUpgradeController.py:2708
 msgid ""
 "It is highly recommended that the lock screen be disabled during the upgrade "
 "to prevent later issues. Please ensure your screen lock is disabled before "
@@ -1022,11 +1022,11 @@ msgstr "נא להכניס את '%s' לכונן '%s'."
 msgid "Media Change"
 msgstr "החלפת מדיה"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:251
+#: ../DistUpgrade/DistUpgradeQuirks.py:252
 msgid "Your graphics hardware may not be fully supported in Ubuntu 14.04."
 msgstr "יתכן שהחומרה הגרפית שלך אינה נתמכת במלואה באובונטו 14.04."
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:253
+#: ../DistUpgrade/DistUpgradeQuirks.py:254
 msgid ""
 "Running the 'unity' desktop environment is not fully supported by your "
 "graphics hardware. You will maybe end up in a very slow environment after "
@@ -1041,13 +1041,13 @@ msgstr ""
 "wiki.ubuntu.com/X/Bugs/UpdateManagerWarningForUnity3D, האם בכל זאת להמשיך "
 "בשדרוג?"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:277
+#: ../DistUpgrade/DistUpgradeQuirks.py:278
 msgid "Your graphics hardware may not be fully supported in Ubuntu 12.04 LTS."
 msgstr ""
 "חומרת הגרפיקה שלך אינה נתמכת במלואה על ידי אובונטו 12.04 עם תמיכה לטווח ארוך "
 "(LTS)."
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:279
+#: ../DistUpgrade/DistUpgradeQuirks.py:280
 msgid ""
 "The support in Ubuntu 12.04 LTS for your Intel graphics hardware is limited "
 "and you may encounter problems after the upgrade. For more information see "
@@ -1058,7 +1058,7 @@ msgstr ""
 "בעיות לאחר השדרוג. למידע נוסף יש לעיין בכתובת https://wiki.ubuntu.com/X/Bugs/"
 "UpdateManagerWarningForI8xx האם ברצונך להמשיך בשדרוג?"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:299
+#: ../DistUpgrade/DistUpgradeQuirks.py:300
 msgid ""
 "Upgrading may reduce desktop effects, and performance in games and other "
 "graphically intensive programs."
@@ -1066,7 +1066,7 @@ msgstr ""
 "שדרוג עלול לפגוע באפקטים של שולחן העבודה ובביצועים של משחקים ותכניות עמוסות "
 "מבחינה גרפית."
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:303
+#: ../DistUpgrade/DistUpgradeQuirks.py:304
 msgid ""
 "This computer is currently using the AMD 'fglrx' graphics driver. No version "
 "of this driver is available that works with your hardware in Ubuntu 10.04 "
@@ -1079,12 +1079,12 @@ msgstr ""
 "\n"
 "האם ברצונך להמשיך?"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:342
-#: ../DistUpgrade/DistUpgradeQuirks.py:411
+#: ../DistUpgrade/DistUpgradeQuirks.py:343
+#: ../DistUpgrade/DistUpgradeQuirks.py:412
 msgid "Sorry, no more upgrades for this system"
 msgstr "אין עוד עדכונים למערכת הזאת, עמך הסליחה"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:343
+#: ../DistUpgrade/DistUpgradeQuirks.py:344
 #, python-format
 msgid ""
 "There will not be any further Ubuntu releases for this system's 'i386' "
@@ -1096,11 +1096,11 @@ msgstr ""
 "\n"
 "עדכונים לאובונטו %s יימשכו עד %s."
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:358
+#: ../DistUpgrade/DistUpgradeQuirks.py:359
 msgid "No ARMv6 CPU"
 msgstr "אין מעבד מסוג ARMv6"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:359
+#: ../DistUpgrade/DistUpgradeQuirks.py:360
 msgid ""
 "Your system uses an ARM CPU that is older than the ARMv6 architecture. All "
 "packages in karmic were built with optimizations requiring ARMv6 as the "
@@ -1111,12 +1111,12 @@ msgstr ""
 "החבילות ב־Karmic נבנו עם שיפורים מיוחדים הדורשים את ARMv6 כארכיטקטורה "
 "מינימלית. לא ניתן לשדרג את המערכת להפצת אובונטו חדשה עם חומרה זו."
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:379
+#: ../DistUpgrade/DistUpgradeQuirks.py:380
 msgid ""
 "Sorry, this storage driver is not supported in kernels for newer releases"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:381
+#: ../DistUpgrade/DistUpgradeQuirks.py:382
 #, python-format
 msgid ""
 "There will not be any further Ubuntu releases that provide kernel support "
@@ -1126,7 +1126,7 @@ msgid ""
 "driver, remove the directory %s and try again."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:412
+#: ../DistUpgrade/DistUpgradeQuirks.py:413
 #, fuzzy, python-format
 msgid ""
 "There will not be any further Ubuntu releases for this system's POWER8 "
@@ -1138,11 +1138,11 @@ msgstr ""
 "\n"
 "עדכונים לאובונטו %s יימשכו עד %s."
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:430
+#: ../DistUpgrade/DistUpgradeQuirks.py:431
 msgid "No init available"
 msgstr "אין init זמין"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:431
+#: ../DistUpgrade/DistUpgradeQuirks.py:432
 msgid ""
 "Your system appears to be a virtualised environment without an init daemon, "
 "e.g. Linux-VServer. Ubuntu 10.04 LTS cannot function within this type of "
@@ -1157,11 +1157,11 @@ msgstr ""
 "\n"
 "האם ברצונך להמשיך?"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:472
+#: ../DistUpgrade/DistUpgradeQuirks.py:473
 msgid "The Robot Operating System (ROS) is installed"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:473
+#: ../DistUpgrade/DistUpgradeQuirks.py:474
 msgid ""
 "It appears that ROS is currently installed. Each ROS release is very strict "
 "about the versions of Ubuntu it supports, and Ubuntu upgrades can fail if "
@@ -1178,12 +1178,12 @@ msgid ""
 "Are you sure you want to continue?"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:673
+#: ../DistUpgrade/DistUpgradeQuirks.py:674
 #, fuzzy
 msgid "Connection to the Snap Store failed"
 msgstr "החיבור לחנות ה־Snap נכשלה"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:674
+#: ../DistUpgrade/DistUpgradeQuirks.py:675
 msgid ""
 "You have the package lxd installed but your system is unable to reach the "
 "Snap Store. lxd is now provided via a snap and the release upgrade will fail "
@@ -1193,11 +1193,11 @@ msgid ""
 "may want to configure a Snap Store proxy."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:689
+#: ../DistUpgrade/DistUpgradeQuirks.py:690
 msgid "Connection to Snap Store failed"
 msgstr "החיבור לחנות ה־Snap נכשלה"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:690
+#: ../DistUpgrade/DistUpgradeQuirks.py:691
 msgid ""
 "Your system does not have a connection to the Snap Store. For the best "
 "upgrade experience make sure that your system can connect to api.snapcraft."
@@ -1207,11 +1207,11 @@ msgstr ""
 "למערכת שלך אין קשר אל חנות ה־Snap. לקבלת חוויית השדרוג הטובה ביותר נא לוודא "
 "שלמערכת שלך יש גישה אל api.snapcraft.io.ֿ"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:699
+#: ../DistUpgrade/DistUpgradeQuirks.py:700
 msgid "Outdated snapd package"
 msgstr "חבילת snapd שתוקפה פג."
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:700
+#: ../DistUpgrade/DistUpgradeQuirks.py:701
 msgid ""
 "Your system does not have the latest version of snapd. Please update the "
 "version of snapd on your system to improve the upgrade experience.\n"
@@ -1223,36 +1223,36 @@ msgstr ""
 
 #. now perform direct API calls to the store, requesting size
 #. information for each of the snaps needing installation
-#: ../DistUpgrade/DistUpgradeQuirks.py:725
+#: ../DistUpgrade/DistUpgradeQuirks.py:726
 msgid "Calculating snap size requirements"
 msgstr "דרישות גודל ה־snap מחושבות"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:756
+#: ../DistUpgrade/DistUpgradeQuirks.py:757
 msgid "Processing snap replacements"
 msgstr "החלפות ה־snap עוברות עיבוד"
 
 #. TODO: This status should be updated, but the time of
 #. this change to snap switch is post-translation freeze.
-#: ../DistUpgrade/DistUpgradeQuirks.py:764
+#: ../DistUpgrade/DistUpgradeQuirks.py:765
 #, python-format
 msgid "refreshing snap %s"
 msgstr "ה־snap‏ %s מתרענן"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:768
+#: ../DistUpgrade/DistUpgradeQuirks.py:769
 #, fuzzy, python-format
 msgid "removing snap %s"
 msgstr "ה־snap‏ %s מתרענן"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:771
+#: ../DistUpgrade/DistUpgradeQuirks.py:772
 #, python-format
 msgid "installing snap %s"
 msgstr "ה־snap‏ %s מותקן"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:800
+#: ../DistUpgrade/DistUpgradeQuirks.py:801
 msgid "PAE not enabled"
 msgstr "PAE לא מופעל"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:801
+#: ../DistUpgrade/DistUpgradeQuirks.py:802
 msgid ""
 "Your system uses a CPU that does not have PAE enabled. Ubuntu only supports "
 "non-PAE systems up to Ubuntu 12.04. To upgrade to a later version of Ubuntu, "
@@ -1264,11 +1264,11 @@ msgstr ""
 "להפעיל PAE (אם ניתן) בעזרת ההנחיות הבאות:\n"
 "http://help.ubuntu.com/community/EnablingPAE"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1097
+#: ../DistUpgrade/DistUpgradeQuirks.py:1098
 msgid "universe component not enabled"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1098
+#: ../DistUpgrade/DistUpgradeQuirks.py:1099
 #, python-format
 msgid ""
 "You have the package %s installed which is a python2 package. python2 has "
@@ -1280,33 +1280,33 @@ msgid ""
 "universe component in /etc/apt/sources.list or remove %s"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1210
+#: ../DistUpgrade/DistUpgradeQuirks.py:1211
 msgid "Checking for installed snaps"
 msgstr "ה־snaps המותקנים שלך נבדקים"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1742
+#: ../DistUpgrade/DistUpgradeQuirks.py:1743
 #, python-brace-format
 msgid "Updates for Ubuntu {from_release.version} will "
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1752
+#: ../DistUpgrade/DistUpgradeQuirks.py:1753
 #, fuzzy
 msgid "Sorry, cannot upgrade this system to 24.04 LTS"
 msgstr "לא ניתן לשדרג"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1755
+#: ../DistUpgrade/DistUpgradeQuirks.py:1756
 msgid ""
 "The Raspberry Pi kernel for Ubuntu 24.04 LTS does not support the armhf "
 "architecture.\n"
 "\n"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1886
+#: ../DistUpgrade/DistUpgradeQuirks.py:1887
 #, fuzzy, python-brace-format
 msgid "Sorry, cannot upgrade this system to {version}"
 msgstr "לא ניתן לשדרג"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1889
+#: ../DistUpgrade/DistUpgradeQuirks.py:1890
 msgid ""
 "Upgrades for desktop systems running TPM FDE are not currently supported. "
 "Please see https://launchpad.net/bugs/2065229 for more information."
