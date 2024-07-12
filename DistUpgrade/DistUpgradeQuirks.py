@@ -1909,12 +1909,16 @@ class DistUpgradeQuirks(object):
             logging.debug('Detected cloud image with grub-pc installed')
 
             cmds = (
-                'echo "grub-pc grub-efi/cloud_style_installation boolean true" | debconf-set-selections',
-                'echo "grub-pc grub-pc/cloud_style_installation boolean true" | debconf-set-selections',
+                'echo "grub-pc grub-efi/cloud_style_installation '
+                'boolean true" | debconf-set-selections',
+                'echo "grub-pc grub-pc/cloud_style_installation '
+                'boolean true" | debconf-set-selections',
             )
 
             for cmd in cmds:
                 r = subprocess.run(('sh', '-c', cmd,))
                 if r.returncode != 0:
-                    logging.debug(f'Failed to run \'{cmd}\'. '
-                                  'grub-pc package upgrades will continue to not update the bootloader.')
+                    logging.debug(
+                        f'Failed to run \'{cmd}\'. grub-pc package upgrades '
+                        'will continue to not update the bootloader.'
+                    )
