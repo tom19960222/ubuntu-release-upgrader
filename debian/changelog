@@ -1,3 +1,17 @@
+ubuntu-release-upgrader (1:24.04.20) noble; urgency=medium
+
+  [ Mate Kukri ]
+  * DistUpgradeQuirks: make sure GRUB "cloud_style_installation" is set in cloud images (LP: #2054103)
+
+  [ Julian Andres Klode ]
+  * Move the actiongroup out of the obsoletes loop
+  * Reimplement obsolete removal with resolve_by_keep (LP: #1874272)
+
+  [ Nick Rosbrook ]
+  * Run pre-build.sh: updating mirrors, demotions, and translations.
+
+ -- Nick Rosbrook <enr0n@ubuntu.com>  Fri, 12 Jul 2024 12:29:55 -0400
+
 ubuntu-release-upgrader (1:24.04.19) noble; urgency=medium
 
   * DistUpgrade: drop quirk for systems with BIOS and XFS /boot (LP: #2067886)
