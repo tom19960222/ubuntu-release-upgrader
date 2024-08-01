@@ -180,6 +180,7 @@ class DistUpgradeQuirks(object):
         self._pokeScreensaver()
         self._stopDocvertConverter()
         self._set_generic_font()
+        self._disable_stub_resolver()
 
     # individual quirks handler that run *right before* the dist-upgrade
     # is calculated in the cache
@@ -1922,3 +1923,33 @@ class DistUpgradeQuirks(object):
                         f'Failed to run \'{cmd}\'. grub-pc package upgrades '
                         'will continue to not update the bootloader.'
                     )
+
+    def _disable_stub_resolver(self):
+        """
+        LP: #2043820
+        """
+
+        # This is only required for upgrades from jammy.
+        if self.controller.fromDist != 'jammy':
+            return
+
+        logging.debug(
+            'Disabling systemd-resolved stub resolver during upgrade'
+        )
+
+        os.makedirs('/run/systemd/resolved.conf.d', exist_ok=True)
+
+        with open(
+            '/run/systemd/resolved.conf.d/dist-upgrade-no-stub-resolver.conf',
+            'w'
+        ) as conf:
+            conf.write('# Temporarily disable stub resolver during upgrade\n')
+            conf.write('[Resolve]\n')
+            conf.write('DNSStubListener=no\n')
+
+        try:
+            subprocess.check_call(
+                ['systemctl', 'restart', 'systemd-resolved']
+            )
+        except subprocess.CalledProcessError as e:
+            logging.debug(f'Failed to disable stub resolver: {e}')
