@@ -49,6 +49,27 @@ class CacheExceptionDpkgInterrupted(CacheException):
     pass
 
 
+class PackageRemovalDeniedException(Exception):
+    def __init__(self, package):
+        self.package = package
+
+        msg = _(
+            f'The package {self.package} is marked for removal '
+            'but it is in the removal deny list.'
+        )
+
+        # If additional details can be given to the user explaining the
+        # situtation, provide them here.
+        if re.compile(r'^postgresql-[0-9]*$').match(self.package):
+            msg += _(
+                '\n\nTo prevent data loss, postgresql packages are not removed '
+                'automatically during the upgrade. If you are certain you '
+                f'no longer need {self.package}, you can manually remove it '
+                'and try the upgrade again.'
+            )
+
+        super().__init__(msg)
+
 def estimate_kernel_initrd_size_in_boot():
     """estimate the amount of space used by the kernel and initramfs in /boot,
     including a safety margin
@@ -659,12 +680,14 @@ class MyCache(apt.Cache):
             if self.is_broken:
                 raise SystemError(_("Broken packages after upgrade: %s") % ", ".join(p.name for p in self if p.is_inst_broken or p.is_now_broken))
 
-        except SystemError as e:
+        except (SystemError, PackageRemovalDeniedException) as e:
             # the most likely problem is the 3rd party pkgs so don't address
             # foreignPkgs and devRelease being True
             details =  _("An unresolvable problem occurred while "
                          "calculating the upgrade.\n\n ")
-            if self.config.get("Options", "foreignPkgs") == "True":
+            if isinstance(e, PackageRemovalDeniedException):
+                details += str(e) + '\n\n'
+            elif self.config.get("Options", "foreignPkgs") == "True":
                 details += _("This was likely caused by:\n"
                              " * Unofficial software packages not provided by Ubuntu\n"
                              "Please use the tool 'ppa-purge' from the ppa-purge \n"
@@ -770,7 +793,7 @@ class MyCache(apt.Cache):
         for pkg in self.get_changes():
             if pkg.marked_delete and self._inRemovalDenylist(pkg.name):
                 logging.debug("The package '%s' is marked for removal but it's in the removal deny list", pkg.name)
-                raise SystemError(_("The package '%s' is marked for removal but it is in the removal deny list.") % pkg.name)
+                raise PackageRemovalDeniedException(pkg.name)
             if pkg.marked_delete and (
                     pkg._pkg.essential == True and
                     pkg.installed.architecture in (main_arch, "all") and
