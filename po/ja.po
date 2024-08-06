@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: update-manager 0.42.4\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2024-07-12 12:29-0400\n"
+"POT-Creation-Date: 2024-08-06 16:25-0400\n"
 "PO-Revision-Date: 2019-06-18 17:54+0000\n"
 "Last-Translator: Mitsuya Shibata <mty.shibata@gmail.com>\n"
 "Language-Team: Ubuntu Japanese Team <ubuntu-ja-users@freeml.com>\n"
@@ -40,12 +40,29 @@ msgstr "メインサーバー"
 msgid "Custom servers"
 msgstr "カスタムサーバー群"
 
-#: ../DistUpgrade/DistUpgradeCache.py:182
+#: ../DistUpgrade/DistUpgradeCache.py:57
+#, fuzzy, python-brace-format
+msgid ""
+"The package {self.package} is marked for removal but it is in the removal "
+"deny list."
+msgstr ""
+"パッケージ'%s'は「削除」と指定されていますが、削除ブラックリストに入っていま"
+"す。"
+
+#: ../DistUpgrade/DistUpgradeCache.py:65
+msgid ""
+"\n"
+"\n"
+"To prevent data loss, postgresql packages are not removed automatically "
+"during the upgrade. If you are certain you "
+msgstr ""
+
+#: ../DistUpgrade/DistUpgradeCache.py:203
 msgid "Remove package in bad state"
 msgid_plural "Remove packages in bad state"
 msgstr[0] "壊れた状態のパッケージを削除する"
 
-#: ../DistUpgrade/DistUpgradeCache.py:185
+#: ../DistUpgrade/DistUpgradeCache.py:206
 #, python-format
 msgid ""
 "The package '%s' is in an inconsistent state and needs to be reinstalled, "
@@ -62,15 +79,15 @@ msgstr[0] ""
 
 #. FIXME: not ideal error message, but we just reuse a
 #. existing one here to avoid a new string
-#: ../DistUpgrade/DistUpgradeCache.py:301
+#: ../DistUpgrade/DistUpgradeCache.py:322
 msgid "The server may be overloaded"
 msgstr "サーバーが過負荷状態にある可能性があります"
 
-#: ../DistUpgrade/DistUpgradeCache.py:414
+#: ../DistUpgrade/DistUpgradeCache.py:435
 msgid "Broken packages"
 msgstr "壊れたパッケージ"
 
-#: ../DistUpgrade/DistUpgradeCache.py:415
+#: ../DistUpgrade/DistUpgradeCache.py:436
 msgid ""
 "Your system contains broken packages that couldn't be fixed with this "
 "software. Please fix them first using synaptic or apt-get before proceeding."
@@ -78,21 +95,21 @@ msgstr ""
 "システムにはこのソフトウェアでは修復できない壊れたパッケージが含まれていま"
 "す。 Synaptic や apt-get を使って最初に修正してください。"
 
-#: ../DistUpgrade/DistUpgradeCache.py:660
+#: ../DistUpgrade/DistUpgradeCache.py:681
 #, fuzzy, python-format
 msgid "Broken packages after upgrade: %s"
 msgstr "壊れたパッケージ"
 
 #. the most likely problem is the 3rd party pkgs so don't address
 #. foreignPkgs and devRelease being True
-#: ../DistUpgrade/DistUpgradeCache.py:665
+#: ../DistUpgrade/DistUpgradeCache.py:686
 msgid ""
 "An unresolvable problem occurred while calculating the upgrade.\n"
 "\n"
 " "
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeCache.py:668
+#: ../DistUpgrade/DistUpgradeCache.py:691
 msgid ""
 "This was likely caused by:\n"
 " * Unofficial software packages not provided by Ubuntu\n"
@@ -102,7 +119,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeCache.py:676
+#: ../DistUpgrade/DistUpgradeCache.py:699
 msgid ""
 "This was caused by:\n"
 " * Upgrading to a pre-release version of Ubuntu\n"
@@ -110,11 +127,11 @@ msgid ""
 "please try again later.\n"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeCache.py:683
+#: ../DistUpgrade/DistUpgradeCache.py:706
 msgid "This is most likely a transient problem, please try again later."
 msgstr "これは一時的な問題のようです。後でもう一度試してください。"
 
-#: ../DistUpgrade/DistUpgradeCache.py:686
+#: ../DistUpgrade/DistUpgradeCache.py:709
 msgid ""
 "If none of this applies, then please report this bug using the command "
 "'ubuntu-bug ubuntu-release-upgrader-core' in a terminal. "
@@ -122,22 +139,22 @@ msgstr ""
 "上記のいずれにも当てはまらない場合は、端末でコマンド 'ubuntu-bug ubuntu-"
 "release-upgrader-core'を使用してこのバグを報告してください。 "
 
-#: ../DistUpgrade/DistUpgradeCache.py:688
+#: ../DistUpgrade/DistUpgradeCache.py:711
 msgid ""
 "If you want to investigate this yourself the log files in '/var/log/dist-"
 "upgrade' will contain details about the upgrade. Specifically, look at 'main."
 "log' and 'apt.log'."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeCache.py:694
+#: ../DistUpgrade/DistUpgradeCache.py:717
 msgid "Could not calculate the upgrade"
 msgstr "アップグレード作業を見積もれません"
 
-#: ../DistUpgrade/DistUpgradeCache.py:751
+#: ../DistUpgrade/DistUpgradeCache.py:774
 msgid "Error authenticating some packages"
 msgstr "パッケージの認証において、エラーがありました"
 
-#: ../DistUpgrade/DistUpgradeCache.py:752
+#: ../DistUpgrade/DistUpgradeCache.py:775
 msgid ""
 "It was not possible to authenticate some packages. This may be a transient "
 "network problem. You may want to try again later. See below for a list of "
@@ -147,31 +164,23 @@ msgstr ""
 "かもしれません。あとで再び試してみてください。以下に認証できなかったパッケー"
 "ジのリストが表示されます。"
 
-#: ../DistUpgrade/DistUpgradeCache.py:773
-#, fuzzy, python-format
-msgid ""
-"The package '%s' is marked for removal but it is in the removal deny list."
-msgstr ""
-"パッケージ'%s'は「削除」と指定されていますが、削除ブラックリストに入っていま"
-"す。"
-
-#: ../DistUpgrade/DistUpgradeCache.py:779
+#: ../DistUpgrade/DistUpgradeCache.py:802
 #, python-format
 msgid "The essential package '%s' is marked for removal."
 msgstr "必須パッケージ'%s'に「削除」マークがついています。"
 
-#: ../DistUpgrade/DistUpgradeCache.py:788
+#: ../DistUpgrade/DistUpgradeCache.py:811
 #, fuzzy, python-format
 msgid "Trying to install deny listed version '%s'"
 msgstr ""
 "ブラックリストに入っているバージョン '%s' をインストールしようとしています"
 
-#: ../DistUpgrade/DistUpgradeCache.py:910
+#: ../DistUpgrade/DistUpgradeCache.py:933
 #, python-format
 msgid "Can't install '%s'"
 msgstr "'%s'をインストールすることができません。"
 
-#: ../DistUpgrade/DistUpgradeCache.py:911
+#: ../DistUpgrade/DistUpgradeCache.py:934
 msgid ""
 "It was impossible to install a required package. Please report this as a bug "
 "using 'ubuntu-bug ubuntu-release-upgrader-core' in a terminal."
@@ -179,11 +188,11 @@ msgstr ""
 "必要なパッケージをインストールできませんでした。端末上から 'ubuntu-bug "
 "ubuntu-release-upgrader-core' を実行し、これをバグとして報告してください。"
 
-#: ../DistUpgrade/DistUpgradeCache.py:922
+#: ../DistUpgrade/DistUpgradeCache.py:945
 msgid "Can't guess meta-package"
 msgstr "メタパッケージを推測できません"
 
-#: ../DistUpgrade/DistUpgradeCache.py:923
+#: ../DistUpgrade/DistUpgradeCache.py:946
 #, python-format
 msgid ""
 "Your system does not contain a %s or %s package and it was not possible to "
@@ -1042,13 +1051,13 @@ msgstr "メディア '%s' をドライブ '%s' に挿入してください"
 msgid "Media Change"
 msgstr "メディアの交換"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:252
+#: ../DistUpgrade/DistUpgradeQuirks.py:253
 msgid "Your graphics hardware may not be fully supported in Ubuntu 14.04."
 msgstr ""
 "あなたが使用中のグラフィックハードウェアはUbuntu 14.04では完全にサポートされ"
 "ない場合があります。"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:254
+#: ../DistUpgrade/DistUpgradeQuirks.py:255
 msgid ""
 "Running the 'unity' desktop environment is not fully supported by your "
 "graphics hardware. You will maybe end up in a very slow environment after "
@@ -1063,13 +1072,13 @@ msgstr ""
 "wiki.ubuntu.com/X/Bugs/UpdateManagerWarningForUnity3D を確認してください。そ"
 "れでもアップグレードを続けますか？"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:278
+#: ../DistUpgrade/DistUpgradeQuirks.py:279
 msgid "Your graphics hardware may not be fully supported in Ubuntu 12.04 LTS."
 msgstr ""
 "現在使用中のグラフィックハードウェアのサポートは Ubuntu 12.04 LTS では不完全"
 "な可能性があります。"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:280
+#: ../DistUpgrade/DistUpgradeQuirks.py:281
 msgid ""
 "The support in Ubuntu 12.04 LTS for your Intel graphics hardware is limited "
 "and you may encounter problems after the upgrade. For more information see "
@@ -1081,7 +1090,7 @@ msgstr ""
 "す。詳しくは https://wiki.ubuntu.com/X/Bugs/UpdateManagerWarningForI8xx をご"
 "覧ください。アップグレードを続行しますか?"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:300
+#: ../DistUpgrade/DistUpgradeQuirks.py:301
 msgid ""
 "Upgrading may reduce desktop effects, and performance in games and other "
 "graphically intensive programs."
@@ -1090,7 +1099,7 @@ msgstr ""
 "フィックに強く依存するその他のプログラムなどのパフォーマンスが低下するかもし"
 "れません。"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:304
+#: ../DistUpgrade/DistUpgradeQuirks.py:305
 msgid ""
 "This computer is currently using the AMD 'fglrx' graphics driver. No version "
 "of this driver is available that works with your hardware in Ubuntu 10.04 "
@@ -1104,12 +1113,12 @@ msgstr ""
 "\n"
 "作業を続けますか？"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:343
-#: ../DistUpgrade/DistUpgradeQuirks.py:412
+#: ../DistUpgrade/DistUpgradeQuirks.py:344
+#: ../DistUpgrade/DistUpgradeQuirks.py:413
 msgid "Sorry, no more upgrades for this system"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:344
+#: ../DistUpgrade/DistUpgradeQuirks.py:345
 #, python-format
 msgid ""
 "There will not be any further Ubuntu releases for this system's 'i386' "
@@ -1118,11 +1127,11 @@ msgid ""
 "Updates for Ubuntu %s will continue until %s."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:359
+#: ../DistUpgrade/DistUpgradeQuirks.py:360
 msgid "No ARMv6 CPU"
 msgstr "ARMv6 準拠ではない CPU です"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:360
+#: ../DistUpgrade/DistUpgradeQuirks.py:361
 msgid ""
 "Your system uses an ARM CPU that is older than the ARMv6 architecture. All "
 "packages in karmic were built with optimizations requiring ARMv6 as the "
@@ -1134,12 +1143,12 @@ msgstr ""
 "最適化オプションを利用してビルドされています。このハードウェアでは新しい "
 "Ubuntu のリリースにアップグレードできません。"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:380
+#: ../DistUpgrade/DistUpgradeQuirks.py:381
 msgid ""
 "Sorry, this storage driver is not supported in kernels for newer releases"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:382
+#: ../DistUpgrade/DistUpgradeQuirks.py:383
 #, python-format
 msgid ""
 "There will not be any further Ubuntu releases that provide kernel support "
@@ -1149,7 +1158,7 @@ msgid ""
 "driver, remove the directory %s and try again."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:413
+#: ../DistUpgrade/DistUpgradeQuirks.py:414
 #, python-format
 msgid ""
 "There will not be any further Ubuntu releases for this system's POWER8 "
@@ -1158,11 +1167,11 @@ msgid ""
 "Updates for Ubuntu %s will continue until %s."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:431
+#: ../DistUpgrade/DistUpgradeQuirks.py:432
 msgid "No init available"
 msgstr "initデーモンが見つかりません"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:432
+#: ../DistUpgrade/DistUpgradeQuirks.py:433
 msgid ""
 "Your system appears to be a virtualised environment without an init daemon, "
 "e.g. Linux-VServer. Ubuntu 10.04 LTS cannot function within this type of "
@@ -1177,11 +1186,11 @@ msgstr ""
 "\n"
 "本当に作業を進めてよろしいですか？"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:473
+#: ../DistUpgrade/DistUpgradeQuirks.py:474
 msgid "The Robot Operating System (ROS) is installed"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:474
+#: ../DistUpgrade/DistUpgradeQuirks.py:475
 msgid ""
 "It appears that ROS is currently installed. Each ROS release is very strict "
 "about the versions of Ubuntu it supports, and Ubuntu upgrades can fail if "
@@ -1198,12 +1207,12 @@ msgid ""
 "Are you sure you want to continue?"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:674
+#: ../DistUpgrade/DistUpgradeQuirks.py:675
 #, fuzzy
 msgid "Connection to the Snap Store failed"
 msgstr "Snap Store への接続に失敗しました"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:675
+#: ../DistUpgrade/DistUpgradeQuirks.py:676
 msgid ""
 "You have the package lxd installed but your system is unable to reach the "
 "Snap Store. lxd is now provided via a snap and the release upgrade will fail "
@@ -1213,11 +1222,11 @@ msgid ""
 "may want to configure a Snap Store proxy."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:690
+#: ../DistUpgrade/DistUpgradeQuirks.py:691
 msgid "Connection to Snap Store failed"
 msgstr "Snap Store への接続に失敗しました"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:691
+#: ../DistUpgrade/DistUpgradeQuirks.py:692
 msgid ""
 "Your system does not have a connection to the Snap Store. For the best "
 "upgrade experience make sure that your system can connect to api.snapcraft."
@@ -1225,11 +1234,11 @@ msgid ""
 "Do you still want to continue with the upgrade?"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:700
+#: ../DistUpgrade/DistUpgradeQuirks.py:701
 msgid "Outdated snapd package"
 msgstr "期限切れの snapd パッケージ"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:701
+#: ../DistUpgrade/DistUpgradeQuirks.py:702
 msgid ""
 "Your system does not have the latest version of snapd. Please update the "
 "version of snapd on your system to improve the upgrade experience.\n"
@@ -1238,36 +1247,36 @@ msgstr ""
 
 #. now perform direct API calls to the store, requesting size
 #. information for each of the snaps needing installation
-#: ../DistUpgrade/DistUpgradeQuirks.py:726
+#: ../DistUpgrade/DistUpgradeQuirks.py:727
 msgid "Calculating snap size requirements"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:757
+#: ../DistUpgrade/DistUpgradeQuirks.py:758
 msgid "Processing snap replacements"
 msgstr ""
 
 #. TODO: This status should be updated, but the time of
 #. this change to snap switch is post-translation freeze.
-#: ../DistUpgrade/DistUpgradeQuirks.py:765
+#: ../DistUpgrade/DistUpgradeQuirks.py:766
 #, python-format
 msgid "refreshing snap %s"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:769
+#: ../DistUpgrade/DistUpgradeQuirks.py:770
 #, python-format
 msgid "removing snap %s"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:772
+#: ../DistUpgrade/DistUpgradeQuirks.py:773
 #, python-format
 msgid "installing snap %s"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:801
+#: ../DistUpgrade/DistUpgradeQuirks.py:802
 msgid "PAE not enabled"
 msgstr "PAEが有効になっていません"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:802
+#: ../DistUpgrade/DistUpgradeQuirks.py:803
 msgid ""
 "Your system uses a CPU that does not have PAE enabled. Ubuntu only supports "
 "non-PAE systems up to Ubuntu 12.04. To upgrade to a later version of Ubuntu, "
@@ -1279,11 +1288,11 @@ msgstr ""
 "アップグレードするには、PAEを有効にする必要があります。(可能であれば)次をご覧"
 "ください: http://help.ubuntu.com/community/EnablingPAE"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1098
+#: ../DistUpgrade/DistUpgradeQuirks.py:1099
 msgid "universe component not enabled"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1099
+#: ../DistUpgrade/DistUpgradeQuirks.py:1100
 #, python-format
 msgid ""
 "You have the package %s installed which is a python2 package. python2 has "
@@ -1295,33 +1304,33 @@ msgid ""
 "universe component in /etc/apt/sources.list or remove %s"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1211
+#: ../DistUpgrade/DistUpgradeQuirks.py:1212
 msgid "Checking for installed snaps"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1743
+#: ../DistUpgrade/DistUpgradeQuirks.py:1744
 #, python-brace-format
 msgid "Updates for Ubuntu {from_release.version} will "
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1753
+#: ../DistUpgrade/DistUpgradeQuirks.py:1754
 #, fuzzy
 msgid "Sorry, cannot upgrade this system to 24.04 LTS"
 msgstr "アップグレードできません"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1756
+#: ../DistUpgrade/DistUpgradeQuirks.py:1757
 msgid ""
 "The Raspberry Pi kernel for Ubuntu 24.04 LTS does not support the armhf "
 "architecture.\n"
 "\n"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1887
+#: ../DistUpgrade/DistUpgradeQuirks.py:1888
 #, fuzzy, python-brace-format
 msgid "Sorry, cannot upgrade this system to {version}"
 msgstr "アップグレードできません"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1890
+#: ../DistUpgrade/DistUpgradeQuirks.py:1891
 msgid ""
 "Upgrades for desktop systems running TPM FDE are not currently supported. "
 "Please see https://launchpad.net/bugs/2065229 for more information."
