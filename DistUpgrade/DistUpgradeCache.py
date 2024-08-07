@@ -53,10 +53,8 @@ class PackageRemovalDeniedException(Exception):
     def __init__(self, package):
         self.package = package
 
-        msg = _(
-            f'The package {self.package} is marked for removal '
-            'but it is in the removal deny list.'
-        )
+        msg = _("The package '%s' is marked for removal but it is in the removal deny list.") % package
+
 
         # If additional details can be given to the user explaining the
         # situtation, provide them here.
