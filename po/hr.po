@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: update-manager\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2024-07-12 12:29-0400\n"
+"POT-Creation-Date: 2024-08-07 09:06-0400\n"
 "PO-Revision-Date: 2019-06-18 17:51+0000\n"
 "Last-Translator: Brian Murray <brian@ubuntu.com>\n"
 "Language-Team: Croatian <hr@li.org>\n"
@@ -39,14 +39,30 @@ msgstr "Glavni poslužitelj"
 msgid "Custom servers"
 msgstr "Prilagođeni poslužitelji"
 
-#: ../DistUpgrade/DistUpgradeCache.py:182
+#: ../DistUpgrade/DistUpgradeCache.py:56
+#, fuzzy, python-format
+msgid ""
+"The package '%s' is marked for removal but it is in the removal deny list."
+msgstr ""
+"Paket '%s' je označen za uklanjanje, ali se nalazi na nedopuštenom popisu "
+"uklanjanja."
+
+#: ../DistUpgrade/DistUpgradeCache.py:63
+msgid ""
+"\n"
+"\n"
+"To prevent data loss, postgresql packages are not removed automatically "
+"during the upgrade. If you are certain you "
+msgstr ""
+
+#: ../DistUpgrade/DistUpgradeCache.py:201
 msgid "Remove package in bad state"
 msgid_plural "Remove packages in bad state"
 msgstr[0] "Ukloni paket koji je u lošem stanju"
 msgstr[1] "Ukloni pakete koji su u lošem stanju"
 msgstr[2] "Ukloni pakete koji su u lošem stanju"
 
-#: ../DistUpgrade/DistUpgradeCache.py:185
+#: ../DistUpgrade/DistUpgradeCache.py:204
 #, python-format
 msgid ""
 "The package '%s' is in an inconsistent state and needs to be reinstalled, "
@@ -71,15 +87,15 @@ msgstr[2] ""
 
 #. FIXME: not ideal error message, but we just reuse a
 #. existing one here to avoid a new string
-#: ../DistUpgrade/DistUpgradeCache.py:301
+#: ../DistUpgrade/DistUpgradeCache.py:320
 msgid "The server may be overloaded"
 msgstr "Poslužitelj je možda preopterećen"
 
-#: ../DistUpgrade/DistUpgradeCache.py:414
+#: ../DistUpgrade/DistUpgradeCache.py:433
 msgid "Broken packages"
 msgstr "Neispravni paketi"
 
-#: ../DistUpgrade/DistUpgradeCache.py:415
+#: ../DistUpgrade/DistUpgradeCache.py:434
 msgid ""
 "Your system contains broken packages that couldn't be fixed with this "
 "software. Please fix them first using synaptic or apt-get before proceeding."
@@ -87,14 +103,14 @@ msgstr ""
 "Vaš sustav sadrži neispravne pakete koji nisu mogli biti popravljeni ovim "
 "softverom. Prije nastavljanja, popravite ih koristeći synaptic ili apt-get."
 
-#: ../DistUpgrade/DistUpgradeCache.py:660
+#: ../DistUpgrade/DistUpgradeCache.py:679
 #, fuzzy, python-format
 msgid "Broken packages after upgrade: %s"
 msgstr "Neispravni paketi"
 
 #. the most likely problem is the 3rd party pkgs so don't address
 #. foreignPkgs and devRelease being True
-#: ../DistUpgrade/DistUpgradeCache.py:665
+#: ../DistUpgrade/DistUpgradeCache.py:684
 msgid ""
 "An unresolvable problem occurred while calculating the upgrade.\n"
 "\n"
@@ -104,7 +120,7 @@ msgstr ""
 "\n"
 " "
 
-#: ../DistUpgrade/DistUpgradeCache.py:668
+#: ../DistUpgrade/DistUpgradeCache.py:689
 msgid ""
 "This was likely caused by:\n"
 " * Unofficial software packages not provided by Ubuntu\n"
@@ -121,7 +137,7 @@ msgstr ""
 "i pokušajte ponovno pokrenuti nadogradnju.\n"
 "\n"
 
-#: ../DistUpgrade/DistUpgradeCache.py:676
+#: ../DistUpgrade/DistUpgradeCache.py:697
 msgid ""
 "This was caused by:\n"
 " * Upgrading to a pre-release version of Ubuntu\n"
@@ -133,11 +149,11 @@ msgstr ""
 "To je najvjerojatnije prijelazni problem, \n"
 "pokušajte ponovno kasnije.\n"
 
-#: ../DistUpgrade/DistUpgradeCache.py:683
+#: ../DistUpgrade/DistUpgradeCache.py:704
 msgid "This is most likely a transient problem, please try again later."
 msgstr "Ovo je vjerojatno privremeni problem, pokušajte ponovno kasnije."
 
-#: ../DistUpgrade/DistUpgradeCache.py:686
+#: ../DistUpgrade/DistUpgradeCache.py:707
 msgid ""
 "If none of this applies, then please report this bug using the command "
 "'ubuntu-bug ubuntu-release-upgrader-core' in a terminal. "
@@ -145,7 +161,7 @@ msgstr ""
 "Ako se ništa od ovoga ne primijeni, tada prijavite ovu grešku upotrebom "
 "naredbe 'ubuntu-bug ubuntu-release-upgrader-core' u terminalu. "
 
-#: ../DistUpgrade/DistUpgradeCache.py:688
+#: ../DistUpgrade/DistUpgradeCache.py:709
 msgid ""
 "If you want to investigate this yourself the log files in '/var/log/dist-"
 "upgrade' will contain details about the upgrade. Specifically, look at 'main."
@@ -155,15 +171,15 @@ msgstr ""
 "pojedinosti o nadogradnji. Posebno, pogledajte u 'main.log' i 'apt.log' "
 "zapise."
 
-#: ../DistUpgrade/DistUpgradeCache.py:694
+#: ../DistUpgrade/DistUpgradeCache.py:715
 msgid "Could not calculate the upgrade"
 msgstr "Izračunavanje nadogradnje nije bilo moguće"
 
-#: ../DistUpgrade/DistUpgradeCache.py:751
+#: ../DistUpgrade/DistUpgradeCache.py:772
 msgid "Error authenticating some packages"
 msgstr "Greška pri ovjeri nekih paketa"
 
-#: ../DistUpgrade/DistUpgradeCache.py:752
+#: ../DistUpgrade/DistUpgradeCache.py:773
 msgid ""
 "It was not possible to authenticate some packages. This may be a transient "
 "network problem. You may want to try again later. See below for a list of "
@@ -173,30 +189,22 @@ msgstr ""
 "mrežom, stoga pokušajte ponovno kasnije. Popis neovjerenih paketa dostupan "
 "je u nastavku."
 
-#: ../DistUpgrade/DistUpgradeCache.py:773
-#, fuzzy, python-format
-msgid ""
-"The package '%s' is marked for removal but it is in the removal deny list."
-msgstr ""
-"Paket '%s' je označen za uklanjanje, ali se nalazi na nedopuštenom popisu "
-"uklanjanja."
-
-#: ../DistUpgrade/DistUpgradeCache.py:779
+#: ../DistUpgrade/DistUpgradeCache.py:800
 #, python-format
 msgid "The essential package '%s' is marked for removal."
 msgstr "Neophodan paket '%s' je označen za uklanjanje."
 
-#: ../DistUpgrade/DistUpgradeCache.py:788
+#: ../DistUpgrade/DistUpgradeCache.py:809
 #, fuzzy, python-format
 msgid "Trying to install deny listed version '%s'"
 msgstr "Pokušaj instalacije inačice '%s' s nedopuštenog popisa"
 
-#: ../DistUpgrade/DistUpgradeCache.py:910
+#: ../DistUpgrade/DistUpgradeCache.py:931
 #, python-format
 msgid "Can't install '%s'"
 msgstr "Ne mogu instalirati '%s'"
 
-#: ../DistUpgrade/DistUpgradeCache.py:911
+#: ../DistUpgrade/DistUpgradeCache.py:932
 msgid ""
 "It was impossible to install a required package. Please report this as a bug "
 "using 'ubuntu-bug ubuntu-release-upgrader-core' in a terminal."
@@ -204,11 +212,11 @@ msgstr ""
 "Nemoguće je instalirati potreban paket. Prijavite ovu grešku koristeći "
 "naredbu 'ubuntu-bug ubuntu-release-upgrader-core' u terminalu."
 
-#: ../DistUpgrade/DistUpgradeCache.py:922
+#: ../DistUpgrade/DistUpgradeCache.py:943
 msgid "Can't guess meta-package"
 msgstr "Nemoguće pretpostavljanje meta-paketa"
 
-#: ../DistUpgrade/DistUpgradeCache.py:923
+#: ../DistUpgrade/DistUpgradeCache.py:944
 #, python-format
 msgid ""
 "Your system does not contain a %s or %s package and it was not possible to "
@@ -1087,11 +1095,11 @@ msgstr "Umetnite '%s' u uređaj '%s'"
 msgid "Media Change"
 msgstr "Promjena medija"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:252
+#: ../DistUpgrade/DistUpgradeQuirks.py:253
 msgid "Your graphics hardware may not be fully supported in Ubuntu 14.04."
 msgstr "Vaš grafički hardver možda neće biti potpuno podržan u  Ubuntu 14.04."
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:254
+#: ../DistUpgrade/DistUpgradeQuirks.py:255
 msgid ""
 "Running the 'unity' desktop environment is not fully supported by your "
 "graphics hardware. You will maybe end up in a very slow environment after "
@@ -1106,13 +1114,13 @@ msgstr ""
 "informacija pogledajte https://wiki.ubuntu.com/X/Bugs/"
 "UpdateManagerWarningForUnity3D Želite li još uvijek nastaviti s nadogradnjom?"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:278
+#: ../DistUpgrade/DistUpgradeQuirks.py:279
 msgid "Your graphics hardware may not be fully supported in Ubuntu 12.04 LTS."
 msgstr ""
 "Vaš grafički hardver možda neće biti u potpunosti podržan u Ubuntuu 12.04 "
 "LTS."
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:280
+#: ../DistUpgrade/DistUpgradeQuirks.py:281
 msgid ""
 "The support in Ubuntu 12.04 LTS for your Intel graphics hardware is limited "
 "and you may encounter problems after the upgrade. For more information see "
@@ -1124,7 +1132,7 @@ msgstr ""
 "posjetite https://wiki.ubuntu.com/X/Bugs/UpdateManagerWarningForI8xx Želite "
 "li nastaviti s nadogradnjom?"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:300
+#: ../DistUpgrade/DistUpgradeQuirks.py:301
 msgid ""
 "Upgrading may reduce desktop effects, and performance in games and other "
 "graphically intensive programs."
@@ -1132,7 +1140,7 @@ msgstr ""
 "Nadogradnja može umanjiti efekte radne površine i performanse u igrama i "
 "ostalim grafički zahtjevnim programima."
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:304
+#: ../DistUpgrade/DistUpgradeQuirks.py:305
 msgid ""
 "This computer is currently using the AMD 'fglrx' graphics driver. No version "
 "of this driver is available that works with your hardware in Ubuntu 10.04 "
@@ -1146,12 +1154,12 @@ msgstr ""
 "\n"
 "Želite li nastaviti?"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:343
-#: ../DistUpgrade/DistUpgradeQuirks.py:412
+#: ../DistUpgrade/DistUpgradeQuirks.py:344
+#: ../DistUpgrade/DistUpgradeQuirks.py:413
 msgid "Sorry, no more upgrades for this system"
 msgstr "Nažalost, više nema nadopuna za ovaj sustav"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:344
+#: ../DistUpgrade/DistUpgradeQuirks.py:345
 #, python-format
 msgid ""
 "There will not be any further Ubuntu releases for this system's 'i386' "
@@ -1164,11 +1172,11 @@ msgstr ""
 "\n"
 "Nadopune za Ubuntu %s će se nastaviti do %s."
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:359
+#: ../DistUpgrade/DistUpgradeQuirks.py:360
 msgid "No ARMv6 CPU"
 msgstr "Nedostaje ARMv6 procesor"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:360
+#: ../DistUpgrade/DistUpgradeQuirks.py:361
 msgid ""
 "Your system uses an ARM CPU that is older than the ARMv6 architecture. All "
 "packages in karmic were built with optimizations requiring ARMv6 as the "
@@ -1180,12 +1188,12 @@ msgstr ""
 "minimalnu arhitekturu. Nadogradnja vašeg sustava na novo izdanje Ubuntua "
 "nije moguće na ovom hardveru."
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:380
+#: ../DistUpgrade/DistUpgradeQuirks.py:381
 msgid ""
 "Sorry, this storage driver is not supported in kernels for newer releases"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:382
+#: ../DistUpgrade/DistUpgradeQuirks.py:383
 #, python-format
 msgid ""
 "There will not be any further Ubuntu releases that provide kernel support "
@@ -1195,7 +1203,7 @@ msgid ""
 "driver, remove the directory %s and try again."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:413
+#: ../DistUpgrade/DistUpgradeQuirks.py:414
 #, fuzzy, python-format
 msgid ""
 "There will not be any further Ubuntu releases for this system's POWER8 "
@@ -1208,11 +1216,11 @@ msgstr ""
 "\n"
 "Nadopune za Ubuntu %s će se nastaviti do %s."
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:431
+#: ../DistUpgrade/DistUpgradeQuirks.py:432
 msgid "No init available"
 msgstr "Nema dostupnog inita"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:432
+#: ../DistUpgrade/DistUpgradeQuirks.py:433
 msgid ""
 "Your system appears to be a virtualised environment without an init daemon, "
 "e.g. Linux-VServer. Ubuntu 10.04 LTS cannot function within this type of "
@@ -1228,11 +1236,11 @@ msgstr ""
 "\n"
 "Želite li nastaviti?"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:473
+#: ../DistUpgrade/DistUpgradeQuirks.py:474
 msgid "The Robot Operating System (ROS) is installed"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:474
+#: ../DistUpgrade/DistUpgradeQuirks.py:475
 msgid ""
 "It appears that ROS is currently installed. Each ROS release is very strict "
 "about the versions of Ubuntu it supports, and Ubuntu upgrades can fail if "
@@ -1249,12 +1257,12 @@ msgid ""
 "Are you sure you want to continue?"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:674
+#: ../DistUpgrade/DistUpgradeQuirks.py:675
 #, fuzzy
 msgid "Connection to the Snap Store failed"
 msgstr "Povezivanje sa Snap trogvinom neuspjelo"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:675
+#: ../DistUpgrade/DistUpgradeQuirks.py:676
 msgid ""
 "You have the package lxd installed but your system is unable to reach the "
 "Snap Store. lxd is now provided via a snap and the release upgrade will fail "
@@ -1264,11 +1272,11 @@ msgid ""
 "may want to configure a Snap Store proxy."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:690
+#: ../DistUpgrade/DistUpgradeQuirks.py:691
 msgid "Connection to Snap Store failed"
 msgstr "Povezivanje sa Snap trogvinom neuspjelo"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:691
+#: ../DistUpgrade/DistUpgradeQuirks.py:692
 msgid ""
 "Your system does not have a connection to the Snap Store. For the best "
 "upgrade experience make sure that your system can connect to api.snapcraft."
@@ -1279,11 +1287,11 @@ msgstr ""
 "da je vaš sustav povezan sa api.snapcraft.io.\n"
 "Sigurno želite nastaviti sa nadopunom?"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:700
+#: ../DistUpgrade/DistUpgradeQuirks.py:701
 msgid "Outdated snapd package"
 msgstr "Zastarjeli snapd paketi"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:701
+#: ../DistUpgrade/DistUpgradeQuirks.py:702
 msgid ""
 "Your system does not have the latest version of snapd. Please update the "
 "version of snapd on your system to improve the upgrade experience.\n"
@@ -1295,36 +1303,36 @@ msgstr ""
 
 #. now perform direct API calls to the store, requesting size
 #. information for each of the snaps needing installation
-#: ../DistUpgrade/DistUpgradeQuirks.py:726
+#: ../DistUpgrade/DistUpgradeQuirks.py:727
 msgid "Calculating snap size requirements"
 msgstr "Izračunavanje potrebne veličine snap paketa"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:757
+#: ../DistUpgrade/DistUpgradeQuirks.py:758
 msgid "Processing snap replacements"
 msgstr "Obrada zamjene snap paketa"
 
 #. TODO: This status should be updated, but the time of
 #. this change to snap switch is post-translation freeze.
-#: ../DistUpgrade/DistUpgradeQuirks.py:765
+#: ../DistUpgrade/DistUpgradeQuirks.py:766
 #, python-format
 msgid "refreshing snap %s"
 msgstr "osvježavanje snap paketa %s"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:769
+#: ../DistUpgrade/DistUpgradeQuirks.py:770
 #, fuzzy, python-format
 msgid "removing snap %s"
 msgstr "osvježavanje snap paketa %s"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:772
+#: ../DistUpgrade/DistUpgradeQuirks.py:773
 #, python-format
 msgid "installing snap %s"
 msgstr "instalacija snap paketa %s"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:801
+#: ../DistUpgrade/DistUpgradeQuirks.py:802
 msgid "PAE not enabled"
 msgstr "PAE nije omogućen"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:802
+#: ../DistUpgrade/DistUpgradeQuirks.py:803
 msgid ""
 "Your system uses a CPU that does not have PAE enabled. Ubuntu only supports "
 "non-PAE systems up to Ubuntu 12.04. To upgrade to a later version of Ubuntu, "
@@ -1336,11 +1344,11 @@ msgstr ""
 "Ubuntua, morate omogućiti PAE (ako je moguće) pogledajte:\n"
 "http://help.ubuntu.com/community/EnablingPAE"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1098
+#: ../DistUpgrade/DistUpgradeQuirks.py:1099
 msgid "universe component not enabled"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1099
+#: ../DistUpgrade/DistUpgradeQuirks.py:1100
 #, python-format
 msgid ""
 "You have the package %s installed which is a python2 package. python2 has "
@@ -1352,33 +1360,33 @@ msgid ""
 "universe component in /etc/apt/sources.list or remove %s"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1211
+#: ../DistUpgrade/DistUpgradeQuirks.py:1212
 msgid "Checking for installed snaps"
 msgstr "Provjera instaliranih snap paketa"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1743
+#: ../DistUpgrade/DistUpgradeQuirks.py:1744
 #, python-brace-format
 msgid "Updates for Ubuntu {from_release.version} will "
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1753
+#: ../DistUpgrade/DistUpgradeQuirks.py:1754
 #, fuzzy
 msgid "Sorry, cannot upgrade this system to 24.04 LTS"
 msgstr "Nadogradnja nije moguća"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1756
+#: ../DistUpgrade/DistUpgradeQuirks.py:1757
 msgid ""
 "The Raspberry Pi kernel for Ubuntu 24.04 LTS does not support the armhf "
 "architecture.\n"
 "\n"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1887
+#: ../DistUpgrade/DistUpgradeQuirks.py:1888
 #, fuzzy, python-brace-format
 msgid "Sorry, cannot upgrade this system to {version}"
 msgstr "Nadogradnja nije moguća"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1890
+#: ../DistUpgrade/DistUpgradeQuirks.py:1891
 msgid ""
 "Upgrades for desktop systems running TPM FDE are not currently supported. "
 "Please see https://launchpad.net/bugs/2065229 for more information."
