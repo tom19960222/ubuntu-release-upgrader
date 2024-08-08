@@ -1,15 +1,3 @@
-ubuntu-release-upgrader (1:24.04.21) noble; urgency=medium
-
-  * DistUpgradeQuirks: disable stub resolver on upgrades from jammy
-    (LP: #2043820)
-  * DistUpgrade: show a message about denied package removals
-    (LP: #2073278)
-  * data: add cryptsetup-initramfs to removal_denylist.cfg
-    (LP: #2067622)
-  * Run pre-build.sh: updating mirrors, demotions, and translations.
-
- -- Nick Rosbrook <enr0n@ubuntu.com>  Wed, 07 Aug 2024 09:06:32 -0400
-
 ubuntu-release-upgrader (1:24.04.20) noble; urgency=medium
 
   [ Mate Kukri ]
