@@ -126,6 +126,7 @@ class DistUpgradeQuirks(object):
         self._test_and_fail_on_armhf_raspi()
         self._test_and_fail_on_tpm_fde()
         self._set_grub_cloud_style_installation_on_cloud_installs()
+        self._test_and_fail_on_unmerged_usr()
 
         cache = self.controller.cache
         self._test_and_warn_if_ros_installed(cache)
@@ -1953,3 +1954,40 @@ class DistUpgradeQuirks(object):
             )
         except subprocess.CalledProcessError as e:
             logging.debug(f'Failed to disable stub resolver: {e}')
+
+    def _test_and_fail_on_unmerged_usr(self):
+        """
+        LP: #2058648
+        """
+        fail = False
+
+        logging.debug('Checking that system is /usr-merged')
+
+        for d in ('/bin', '/sbin', '/lib'):
+            try:
+                if os.readlink(d) != f'usr{d}':
+                    # The file is a symlink, but it's pointing to the wrong
+                    # place?
+                    fail = True
+                    break
+            except OSError:
+                # The file is not a symlink.
+                fail = True
+                break
+            except FileNotFoundError:
+                # This should not happen. Treat it like a failure just in case.
+                fail = True
+                break
+
+        if fail:
+            logging.debug('System is not /usr-merged!')
+            self._view.error(
+                _(
+                    f'Cannot upgrade system with unmerged /usr'
+                ),
+                _(
+                    'Please install the usrmerge package to fix this, '
+                    'and then try the upgrade again.'
+                ),
+            )
+            self.controller.abort()
