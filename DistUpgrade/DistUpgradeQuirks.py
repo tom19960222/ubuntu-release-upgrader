@@ -199,6 +199,7 @@ class DistUpgradeQuirks(object):
         """ run after calculating the dist-upgrade """
         logging.debug("running Quirks.PostDistUpgradeCache")
         self._install_linux_metapackage()
+        self._disable_cloud_init()
 
     # helpers
     def _get_pci_ids(self):
@@ -1991,3 +1992,25 @@ class DistUpgradeQuirks(object):
                 ),
             )
             self.controller.abort()
+
+    def _disable_cloud_init(self):
+        """
+        LP: #2075968
+
+        Desktop metapackages now have Recommends: cloud-init, so it may be
+        installed for the first time on upgrades to Noble. It will run on the
+        first reboot after the upgrade by default, but we want to prevent that.
+        """
+        try:
+            pkg = self.controller.cache['cloud-init']
+
+            if not pkg.is_installed and pkg.marked_install:
+                os.makedirs('/etc/cloud', exist_ok=True)
+                with open('/etc/cloud/cloud-init.disabled', 'w') as f:
+                    f.write(
+                        'Disabled by ubuntu-release-upgrader. LP: #2075968.'
+                        '\n'
+                    )
+
+        except KeyError:
+            pass
