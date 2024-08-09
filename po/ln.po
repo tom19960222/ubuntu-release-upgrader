@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubuntu-release-upgrader\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2024-07-12 12:29-0400\n"
+"POT-Creation-Date: 2024-08-09 11:47-0400\n"
 "PO-Revision-Date: 2016-10-05 09:46+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Lingala <ln@li.org>\n"
@@ -38,13 +38,27 @@ msgstr ""
 msgid "Custom servers"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeCache.py:182
+#: ../DistUpgrade/DistUpgradeCache.py:56
+#, python-format
+msgid ""
+"The package '%s' is marked for removal but it is in the removal deny list."
+msgstr ""
+
+#: ../DistUpgrade/DistUpgradeCache.py:63
+msgid ""
+"\n"
+"\n"
+"To prevent data loss, postgresql packages are not removed automatically "
+"during the upgrade. If you are certain you "
+msgstr ""
+
+#: ../DistUpgrade/DistUpgradeCache.py:201
 msgid "Remove package in bad state"
 msgid_plural "Remove packages in bad state"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../DistUpgrade/DistUpgradeCache.py:185
+#: ../DistUpgrade/DistUpgradeCache.py:204
 #, python-format
 msgid ""
 "The package '%s' is in an inconsistent state and needs to be reinstalled, "
@@ -59,35 +73,35 @@ msgstr[1] ""
 
 #. FIXME: not ideal error message, but we just reuse a
 #. existing one here to avoid a new string
-#: ../DistUpgrade/DistUpgradeCache.py:301
+#: ../DistUpgrade/DistUpgradeCache.py:320
 msgid "The server may be overloaded"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeCache.py:414
+#: ../DistUpgrade/DistUpgradeCache.py:433
 msgid "Broken packages"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeCache.py:415
+#: ../DistUpgrade/DistUpgradeCache.py:434
 msgid ""
 "Your system contains broken packages that couldn't be fixed with this "
 "software. Please fix them first using synaptic or apt-get before proceeding."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeCache.py:660
+#: ../DistUpgrade/DistUpgradeCache.py:679
 #, python-format
 msgid "Broken packages after upgrade: %s"
 msgstr ""
 
 #. the most likely problem is the 3rd party pkgs so don't address
 #. foreignPkgs and devRelease being True
-#: ../DistUpgrade/DistUpgradeCache.py:665
+#: ../DistUpgrade/DistUpgradeCache.py:684
 msgid ""
 "An unresolvable problem occurred while calculating the upgrade.\n"
 "\n"
 " "
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeCache.py:668
+#: ../DistUpgrade/DistUpgradeCache.py:689
 msgid ""
 "This was likely caused by:\n"
 " * Unofficial software packages not provided by Ubuntu\n"
@@ -97,7 +111,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeCache.py:676
+#: ../DistUpgrade/DistUpgradeCache.py:697
 msgid ""
 "This was caused by:\n"
 " * Upgrading to a pre-release version of Ubuntu\n"
@@ -105,70 +119,64 @@ msgid ""
 "please try again later.\n"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeCache.py:683
+#: ../DistUpgrade/DistUpgradeCache.py:704
 msgid "This is most likely a transient problem, please try again later."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeCache.py:686
+#: ../DistUpgrade/DistUpgradeCache.py:707
 msgid ""
 "If none of this applies, then please report this bug using the command "
 "'ubuntu-bug ubuntu-release-upgrader-core' in a terminal. "
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeCache.py:688
+#: ../DistUpgrade/DistUpgradeCache.py:709
 msgid ""
 "If you want to investigate this yourself the log files in '/var/log/dist-"
 "upgrade' will contain details about the upgrade. Specifically, look at 'main."
 "log' and 'apt.log'."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeCache.py:694
+#: ../DistUpgrade/DistUpgradeCache.py:715
 msgid "Could not calculate the upgrade"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeCache.py:751
+#: ../DistUpgrade/DistUpgradeCache.py:772
 msgid "Error authenticating some packages"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeCache.py:752
+#: ../DistUpgrade/DistUpgradeCache.py:773
 msgid ""
 "It was not possible to authenticate some packages. This may be a transient "
 "network problem. You may want to try again later. See below for a list of "
 "unauthenticated packages."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeCache.py:773
-#, python-format
-msgid ""
-"The package '%s' is marked for removal but it is in the removal deny list."
-msgstr ""
-
-#: ../DistUpgrade/DistUpgradeCache.py:779
+#: ../DistUpgrade/DistUpgradeCache.py:800
 #, python-format
 msgid "The essential package '%s' is marked for removal."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeCache.py:788
+#: ../DistUpgrade/DistUpgradeCache.py:809
 #, python-format
 msgid "Trying to install deny listed version '%s'"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeCache.py:910
+#: ../DistUpgrade/DistUpgradeCache.py:931
 #, python-format
 msgid "Can't install '%s'"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeCache.py:911
+#: ../DistUpgrade/DistUpgradeCache.py:932
 msgid ""
 "It was impossible to install a required package. Please report this as a bug "
 "using 'ubuntu-bug ubuntu-release-upgrader-core' in a terminal."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeCache.py:922
+#: ../DistUpgrade/DistUpgradeCache.py:943
 msgid "Can't guess meta-package"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeCache.py:923
+#: ../DistUpgrade/DistUpgradeCache.py:944
 #, python-format
 msgid ""
 "Your system does not contain a %s or %s package and it was not possible to "
@@ -897,11 +905,11 @@ msgstr ""
 msgid "Media Change"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:252
+#: ../DistUpgrade/DistUpgradeQuirks.py:255
 msgid "Your graphics hardware may not be fully supported in Ubuntu 14.04."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:254
+#: ../DistUpgrade/DistUpgradeQuirks.py:257
 msgid ""
 "Running the 'unity' desktop environment is not fully supported by your "
 "graphics hardware. You will maybe end up in a very slow environment after "
@@ -911,11 +919,11 @@ msgid ""
 "upgrade?"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:278
+#: ../DistUpgrade/DistUpgradeQuirks.py:281
 msgid "Your graphics hardware may not be fully supported in Ubuntu 12.04 LTS."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:280
+#: ../DistUpgrade/DistUpgradeQuirks.py:283
 msgid ""
 "The support in Ubuntu 12.04 LTS for your Intel graphics hardware is limited "
 "and you may encounter problems after the upgrade. For more information see "
@@ -923,13 +931,13 @@ msgid ""
 "continue with the upgrade?"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:300
+#: ../DistUpgrade/DistUpgradeQuirks.py:303
 msgid ""
 "Upgrading may reduce desktop effects, and performance in games and other "
 "graphically intensive programs."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:304
+#: ../DistUpgrade/DistUpgradeQuirks.py:307
 msgid ""
 "This computer is currently using the AMD 'fglrx' graphics driver. No version "
 "of this driver is available that works with your hardware in Ubuntu 10.04 "
@@ -938,12 +946,12 @@ msgid ""
 "Do you want to continue?"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:343
-#: ../DistUpgrade/DistUpgradeQuirks.py:412
+#: ../DistUpgrade/DistUpgradeQuirks.py:346
+#: ../DistUpgrade/DistUpgradeQuirks.py:415
 msgid "Sorry, no more upgrades for this system"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:344
+#: ../DistUpgrade/DistUpgradeQuirks.py:347
 #, python-format
 msgid ""
 "There will not be any further Ubuntu releases for this system's 'i386' "
@@ -952,11 +960,11 @@ msgid ""
 "Updates for Ubuntu %s will continue until %s."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:359
+#: ../DistUpgrade/DistUpgradeQuirks.py:362
 msgid "No ARMv6 CPU"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:360
+#: ../DistUpgrade/DistUpgradeQuirks.py:363
 msgid ""
 "Your system uses an ARM CPU that is older than the ARMv6 architecture. All "
 "packages in karmic were built with optimizations requiring ARMv6 as the "
@@ -964,12 +972,12 @@ msgid ""
 "Ubuntu release with this hardware."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:380
+#: ../DistUpgrade/DistUpgradeQuirks.py:383
 msgid ""
 "Sorry, this storage driver is not supported in kernels for newer releases"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:382
+#: ../DistUpgrade/DistUpgradeQuirks.py:385
 #, python-format
 msgid ""
 "There will not be any further Ubuntu releases that provide kernel support "
@@ -979,7 +987,7 @@ msgid ""
 "driver, remove the directory %s and try again."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:413
+#: ../DistUpgrade/DistUpgradeQuirks.py:416
 #, python-format
 msgid ""
 "There will not be any further Ubuntu releases for this system's POWER8 "
@@ -988,11 +996,11 @@ msgid ""
 "Updates for Ubuntu %s will continue until %s."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:431
+#: ../DistUpgrade/DistUpgradeQuirks.py:434
 msgid "No init available"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:432
+#: ../DistUpgrade/DistUpgradeQuirks.py:435
 msgid ""
 "Your system appears to be a virtualised environment without an init daemon, "
 "e.g. Linux-VServer. Ubuntu 10.04 LTS cannot function within this type of "
@@ -1002,11 +1010,11 @@ msgid ""
 "Are you sure you want to continue?"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:473
+#: ../DistUpgrade/DistUpgradeQuirks.py:476
 msgid "The Robot Operating System (ROS) is installed"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:474
+#: ../DistUpgrade/DistUpgradeQuirks.py:477
 msgid ""
 "It appears that ROS is currently installed. Each ROS release is very strict "
 "about the versions of Ubuntu it supports, and Ubuntu upgrades can fail if "
@@ -1023,11 +1031,11 @@ msgid ""
 "Are you sure you want to continue?"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:674
+#: ../DistUpgrade/DistUpgradeQuirks.py:677
 msgid "Connection to the Snap Store failed"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:675
+#: ../DistUpgrade/DistUpgradeQuirks.py:678
 msgid ""
 "You have the package lxd installed but your system is unable to reach the "
 "Snap Store. lxd is now provided via a snap and the release upgrade will fail "
@@ -1037,11 +1045,11 @@ msgid ""
 "may want to configure a Snap Store proxy."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:690
+#: ../DistUpgrade/DistUpgradeQuirks.py:693
 msgid "Connection to Snap Store failed"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:691
+#: ../DistUpgrade/DistUpgradeQuirks.py:694
 msgid ""
 "Your system does not have a connection to the Snap Store. For the best "
 "upgrade experience make sure that your system can connect to api.snapcraft."
@@ -1049,11 +1057,11 @@ msgid ""
 "Do you still want to continue with the upgrade?"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:700
+#: ../DistUpgrade/DistUpgradeQuirks.py:703
 msgid "Outdated snapd package"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:701
+#: ../DistUpgrade/DistUpgradeQuirks.py:704
 msgid ""
 "Your system does not have the latest version of snapd. Please update the "
 "version of snapd on your system to improve the upgrade experience.\n"
@@ -1062,36 +1070,36 @@ msgstr ""
 
 #. now perform direct API calls to the store, requesting size
 #. information for each of the snaps needing installation
-#: ../DistUpgrade/DistUpgradeQuirks.py:726
+#: ../DistUpgrade/DistUpgradeQuirks.py:729
 msgid "Calculating snap size requirements"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:757
+#: ../DistUpgrade/DistUpgradeQuirks.py:760
 msgid "Processing snap replacements"
 msgstr ""
 
 #. TODO: This status should be updated, but the time of
 #. this change to snap switch is post-translation freeze.
-#: ../DistUpgrade/DistUpgradeQuirks.py:765
+#: ../DistUpgrade/DistUpgradeQuirks.py:768
 #, python-format
 msgid "refreshing snap %s"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:769
+#: ../DistUpgrade/DistUpgradeQuirks.py:772
 #, python-format
 msgid "removing snap %s"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:772
+#: ../DistUpgrade/DistUpgradeQuirks.py:775
 #, python-format
 msgid "installing snap %s"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:801
+#: ../DistUpgrade/DistUpgradeQuirks.py:804
 msgid "PAE not enabled"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:802
+#: ../DistUpgrade/DistUpgradeQuirks.py:805
 msgid ""
 "Your system uses a CPU that does not have PAE enabled. Ubuntu only supports "
 "non-PAE systems up to Ubuntu 12.04. To upgrade to a later version of Ubuntu, "
@@ -1099,11 +1107,11 @@ msgid ""
 "http://help.ubuntu.com/community/EnablingPAE"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1098
+#: ../DistUpgrade/DistUpgradeQuirks.py:1101
 msgid "universe component not enabled"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1099
+#: ../DistUpgrade/DistUpgradeQuirks.py:1102
 #, python-format
 msgid ""
 "You have the package %s installed which is a python2 package. python2 has "
@@ -1115,35 +1123,45 @@ msgid ""
 "universe component in /etc/apt/sources.list or remove %s"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1211
+#: ../DistUpgrade/DistUpgradeQuirks.py:1214
 msgid "Checking for installed snaps"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1743
+#: ../DistUpgrade/DistUpgradeQuirks.py:1746
 #, python-brace-format
 msgid "Updates for Ubuntu {from_release.version} will "
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1753
+#: ../DistUpgrade/DistUpgradeQuirks.py:1756
 msgid "Sorry, cannot upgrade this system to 24.04 LTS"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1756
+#: ../DistUpgrade/DistUpgradeQuirks.py:1759
 msgid ""
 "The Raspberry Pi kernel for Ubuntu 24.04 LTS does not support the armhf "
 "architecture.\n"
 "\n"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1887
+#: ../DistUpgrade/DistUpgradeQuirks.py:1890
 #, python-brace-format
 msgid "Sorry, cannot upgrade this system to {version}"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1890
+#: ../DistUpgrade/DistUpgradeQuirks.py:1893
 msgid ""
 "Upgrades for desktop systems running TPM FDE are not currently supported. "
 "Please see https://launchpad.net/bugs/2065229 for more information."
+msgstr ""
+
+#: ../DistUpgrade/DistUpgradeQuirks.py:1987
+msgid "Cannot upgrade system with unmerged /usr"
+msgstr ""
+
+#: ../DistUpgrade/DistUpgradeQuirks.py:1990
+msgid ""
+"Please install the usrmerge package to fix this, and then try the upgrade "
+"again."
 msgstr ""
 
 #: ../DistUpgrade/DistUpgradeMain.py:62
