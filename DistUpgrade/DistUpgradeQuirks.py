@@ -127,6 +127,7 @@ class DistUpgradeQuirks(object):
         self._test_and_fail_on_tpm_fde()
         self._set_grub_cloud_style_installation_on_cloud_installs()
         self._test_and_fail_on_unmerged_usr()
+        self._test_and_fail_rabbitmq_server_installed()
 
         cache = self.controller.cache
         self._test_and_warn_if_ros_installed(cache)
@@ -2014,3 +2015,30 @@ class DistUpgradeQuirks(object):
 
         except KeyError:
             pass
+
+    def _test_and_fail_rabbitmq_server_installed(self):
+        """"
+        LP: #2074309
+        """
+        # This is only required for upgrades from jammy.
+        if self.controller.fromDist != 'jammy':
+            return
+
+        if (
+            'rabbitmq-server' in self.controller.cache and
+            self.controller.cache['rabbitmq-server'].is_installed
+        ):
+            self._view.error(
+                _(
+                    'Unable to upgrade to Ubuntu 24.04 LTS'
+                ),
+                _(
+                    'Currently, you have RabbitMQ server installed, which is '
+                    'not directly upgradable to the newer version. Upgrading '
+                    'may prevent the server from starting due to missing '
+                    'feature flags.\n\n'
+                    'For more information, please see '
+                    'https://bugs.launchpad.net/bugs/2074309.'
+                )
+            )
+            self.controller.abort()
