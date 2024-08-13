@@ -821,8 +821,8 @@ class TestSnapQuirks(unittest.TestCase):
         controller = mock.Mock()
         config = mock.Mock()
         q = DistUpgradeQuirks(controller, config)
-        q._from_version = "20.04"
-        q._to_version = "22.04"
+        q._from_version = "22.04"
+        q._to_version = "24.04"
         # Call method under test
 
         controller.cache = {
@@ -875,11 +875,11 @@ class TestSnapQuirks(unittest.TestCase):
                 'command': 'install',
                 'deb': None, 'snap-id': '1234'},
              'gnome-42-2204': {
-                'channel': 'stable/ubuntu-22.04',
+                'channel': 'stable/ubuntu-24.04',
                 'command': 'install',
                 'deb': None, 'snap-id': '1234'},
              'snap-store': {
-                'channel': 'stable/ubuntu-22.04',
+                'channel': '2/stable/ubuntu-24.04',
                 'command': 'install',
                 'deb': 'gnome-software',
                 'snap-id': '1234'}})

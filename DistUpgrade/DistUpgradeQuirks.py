@@ -764,11 +764,23 @@ class DistUpgradeQuirks(object):
         for snap, snap_object in self._snap_list.items():
             command = snap_object['command']
             if command == 'switch':
+                channel = snap_object['channel']
                 # TODO: This status should be updated, but the time of
                 # this change to snap switch is post-translation freeze.
                 self._view.updateStatus(_("refreshing snap %s" % snap))
-                popenargs = ["snap", command,
-                             "--channel", snap_object['channel'], snap]
+                popenargs = ["snap", command, "--channel", channel, snap]
+
+                if snap_object.get('switch_is_forced'):
+                    # We are force switching the snap tracking. Highlight this
+                    # to the user LP: #2077344.
+                    self._view.information(
+                        _(f'{snap} is now tracking {channel}'),
+                        _(
+                            'If needed, you can revert to your previous '
+                            f'revision with:\n\n$ snap revert {snap}'
+                        )
+                    )
+
             elif command == 'remove':
                 self._view.updateStatus(_("removing snap %s" % snap))
                 popenargs = ["snap", command, snap]
@@ -1184,7 +1196,8 @@ class DistUpgradeQuirks(object):
                 deb = seed.get("deb", None)
                 from_chan = seed.get("from_channel", from_channel)
                 to_chan = seed.get("to_channel", to_channel)
-                seeded_snaps[snap] = (deb, from_chan, to_chan)
+                force_switch = seed.get("force_switch", False)
+                seeded_snaps[snap] = (deb, from_chan, to_chan, force_switch)
 
             for snap in d2s["unseeded"]:
                 unseed = d2s["unseeded"][snap]
@@ -1210,10 +1223,13 @@ class DistUpgradeQuirks(object):
                 if snap in seeded_snaps or snap in unseeded_snaps:
                     continue
                 else:
-                    seeded_snaps[snap] = (None, from_channel, to_channel)
+                    seeded_snaps[snap] = (
+                        None, from_channel, to_channel, False
+                    )
 
         self._view.updateStatus(_("Checking for installed snaps"))
-        for snap, (deb, from_channel, to_channel) in seeded_snaps.items():
+        for snap, props in seeded_snaps.items():
+            (deb, from_channel, to_channel, force_switch) = props
             snap_object = {}
             # check to see if the snap is already installed
             snap_info = subprocess.Popen(["snap", "info", snap],
@@ -1222,12 +1238,21 @@ class DistUpgradeQuirks(object):
             self._view.processEvents()
             if re.search(r"^installed: ", snap_info[0], re.MULTILINE):
                 logging.debug("Snap %s is installed" % snap)
-                # its not tracking the release channel so don't switch
+
                 if not re.search(r"^tracking:.*%s" % from_channel,
                                  snap_info[0], re.MULTILINE):
                     logging.debug("Snap %s is not tracking the release channel"
                                   % snap)
-                    continue
+
+                    if force_switch:
+                        snap_object['switch_is_forced'] = True
+                    else:
+                        # It is not tracking the release channel, and we were
+                        # not told to force so don't switch.
+                        continue
+                else:
+                    snap_object['switch_is_forced'] = False
+
                 snap_object['command'] = 'switch'
             else:
                 # Do not replace packages not installed
