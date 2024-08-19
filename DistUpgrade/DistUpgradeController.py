@@ -2030,7 +2030,10 @@ class DistUpgradeController(object):
 
             # resolve_by_keep() will revert any unsafe removals, so we need to list them here again.
             for pkgname in scheduled_remove:
-                if not self.cache[pkgname].marked_delete:
+                if (
+                    pkgname in self.cache and
+                    not self.cache[pkgname].marked_delete
+                ):
                     logging.debug("obsolete package '%s' could not be removed", pkgname)
 
         logging.debug("Finish checking for obsolete pkgs")
