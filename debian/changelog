@@ -1,3 +1,17 @@
+ubuntu-release-upgrader (1:24.04.22) noble; urgency=medium
+
+  [ Tobias Heider ]
+  * Fix typo in force_obsoletes. (LP: #2076913)
+
+  [ Nick Rosbrook ]
+  * DistUpgrade: handle cache key error when removing obsolete packages
+    (LP: #2077358)
+  * deb2snap: switch snap-store and firmware-updater tracks
+    (LP: #2077344)
+  * Run pre-build.sh: updating mirrors, demotions, and translations.
+
+ -- Nick Rosbrook <enr0n@ubuntu.com>  Wed, 21 Aug 2024 12:55:15 -0400
+
 ubuntu-release-upgrader (1:24.04.21) noble; urgency=medium
 
   * DistUpgradeQuirks: disable stub resolver on upgrades from jammy
