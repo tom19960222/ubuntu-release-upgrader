@@ -960,10 +960,11 @@ class MyCache(apt.Cache):
                 return True
         return False
 
-    @withResolverLog
-    def tryMarkObsoleteForRemoval(self, pkgname, remove_candidates, forced_obsoletes, foreign_pkgs, auto_fix):
-        #logging.debug("tryMarkObsoleteForRemoval(): %s" % pkgname)
+    def isRemoveCandidate(self, pkgname, foreign_pkgs):
         # coherence check, first see if it looks like a running kernel pkg
+        if pkgname in foreign_pkgs:
+            logging.debug("skipping foreign pkg '%s'" % pkgname)
+            return False
         if pkgname.endswith(self.uname):
             logging.debug("skipping running kernel pkg '%s'" % pkgname)
             return False
@@ -979,8 +980,16 @@ class MyCache(apt.Cache):
                     self[pkgname].installed.section == section):
                 logging.debug("skipping '%s' (in KeepInstalledSection)" % pkgname)
                 return False
+
+        return True
+
+    @withResolverLog
+    def tryMarkObsoleteForRemoval(self, pkgname, remove_candidates, forced_obsoletes, auto_fix):
+        #logging.debug("tryMarkObsoleteForRemoval(): %s" % pkgname)
         # if we don't have the package anyway, we are fine (this can
         # happen when forced_obsoletes are specified in the config file)
+        if pkgname not in remove_candidates:
+            return False
         if pkgname not in self:
             #logging.debug("package '%s' not in cache" % pkgname)
             return True
@@ -1003,10 +1012,7 @@ class MyCache(apt.Cache):
                     return True
                 #logging.debug("marking '%s' for removal" % pkgname)
                 for pkg in self.get_changes():
-                    if (pkg.name not in remove_candidates or
-                          pkg.name in foreign_pkgs or
-                          self._inRemovalDenylist(pkg.name) or
-                          pkg.name == self.linux_metapackage):
+                    if pkg.name not in remove_candidates:
                         logging.debug("package '%s' produces an unwanted removal '%s', skipping" % (pkgname, pkg.name))
                         self.restore_snapshot()
                         return False
