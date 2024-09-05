@@ -2025,8 +2025,25 @@ class DistUpgradeController(object):
             # resolve them by keeping back the obsolete packages.
             self.cache._startAptResolverLog()
             pr = apt.ProblemResolver(self.cache)
-            pr.resolve_by_keep()
+            try:
+                pr.resolve_by_keep()
+            except Exception:
+                pass
             self.cache._stopAptResolverLog()
+
+            if self.cache.broken_count > 0:
+                logging.debug("resolve_by_keep() failed to resolve conflicts from removing obsolete packages, falling back to slower implementation.")
+                self.cache.clear()
+                scheduled_remove = set()
+                with self.cache.actiongroup():
+                    for (i, pkgname) in enumerate(remove_candidates):
+                        progress.update((i/float(len(remove_candidates)))*100.0)
+                        if pkgname not in self.foreign_pkgs:
+                            self._view.processEvents()
+                            if not self.cache.tryMarkObsoleteForRemoval(pkgname, remove_candidates, self.forced_obsoletes, self.foreign_pkgs, auto_fix=True):
+                                logging.debug("'%s' scheduled for remove but not safe to remove, skipping", pkgname)
+                            else:
+                                scheduled_remove.add(pkgname)
 
             # resolve_by_keep() will revert any unsafe removals, so we need to list them here again.
             for pkgname in scheduled_remove:
