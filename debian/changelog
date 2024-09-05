@@ -1,3 +1,14 @@
+ubuntu-release-upgrader (1:24.04.23) noble; urgency=medium
+
+  * Ensure that we remove only the right obsolete packages, specifically
+    not kernel packages  (LP: #2078720):
+    - Revert back to old obsolete logic if new one fails
+    - Force obsolete removals on non-foreign packages
+    - Consistently check that we do not remove protected obsolete packages
+  * Run pre-build.sh: updating mirrors, demotions, and translations.
+
+ -- Julian Andres Klode <juliank@ubuntu.com>  Thu, 05 Sep 2024 21:11:05 +0200
+
 ubuntu-release-upgrader (1:24.04.22) noble; urgency=medium
 
   [ Tobias Heider ]
