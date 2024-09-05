@@ -2004,7 +2004,7 @@ class DistUpgradeController(object):
             # Forced obsoletes we remove, removing any of their dependencies, hence do a first loop with auto_fix=True
             for (i, pkgname) in enumerate(remove_candidates):
                 progress.update((i/float(len(remove_candidates)))*100.0 / 2)
-                if pkgname in self.foreign_pkgs and pkgname in self.forced_obsoletes:
+                if pkgname not in self.foreign_pkgs and pkgname in self.forced_obsoletes:
                     self._view.processEvents()
                     if not self.cache.tryMarkObsoleteForRemoval(pkgname, remove_candidates, self.forced_obsoletes, self.foreign_pkgs, auto_fix=True):
                         logging.debug("'%s' scheduled for remove but not safe to remove, skipping", pkgname)
