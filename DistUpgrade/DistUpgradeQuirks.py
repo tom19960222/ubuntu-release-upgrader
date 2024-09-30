@@ -1822,6 +1822,13 @@ class DistUpgradeQuirks(object):
                 ):
                     continue
 
+                if ver.parent_pkg.architecture != package._pkg.architecture:
+                    logging.debug(
+                        f'Skip cross-grade replacement {ver.parent_pkg.name} '
+                        f'for {package.name}'
+                    )
+                    continue
+
                 replacement = apt.Package(
                     self.controller.cache,
                     ver.parent_pkg
