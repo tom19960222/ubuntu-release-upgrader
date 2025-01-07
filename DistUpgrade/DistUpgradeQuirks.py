@@ -192,6 +192,7 @@ class DistUpgradeQuirks(object):
         # self._install_python_is_python2()
         self._maybe_remove_gpg_wks_server()
         self._install_t64_replacement_packages()
+        self._install_pipewire_audio_on_ubuntu_studio()
         self._handle_ufw_breaks()
 
     # individual quirks handler that run *after* the dist-upgrade was
@@ -2074,3 +2075,34 @@ class DistUpgradeQuirks(object):
                 )
             )
             self.controller.abort()
+
+    def _install_pipewire_audio_on_ubuntu_studio(self):
+        """
+        LP: #2078639
+        """
+        # This is only required for upgrades from jammy.
+        if self.controller.fromDist != 'jammy':
+            return
+
+        if (
+            'ubuntustudio-desktop' in self.controller.cache and
+            self.controller.cache['ubuntustudio-desktop'].is_installed
+        ):
+            logging.debug('Detected Ubuntu Studio, installing pipewire-audio')
+
+            try:
+                self.controller.cache['pipewire-audio'].mark_install(
+                    auto_fix=False
+                )
+                apt.ProblemResolver(self.controller.cache).protect(
+                    self.controller.cache['pipewire-audio']
+                )
+
+                self.controller.cache['pulseaudio'].mark_delete(
+                    auto_fix=False
+                )
+                apt.ProblemResolver(self.controller.cache).protect(
+                    self.controller.cache['pulseaudio']
+                )
+            except KeyError as e:
+                logging.debug(f'Failed to install pipewire-audio: {e}')
