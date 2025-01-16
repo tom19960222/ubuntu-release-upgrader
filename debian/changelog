@@ -1,3 +1,16 @@
+ubuntu-release-upgrader (1:24.04.24) noble; urgency=medium
+
+  [ Julian Andres Klode ]
+  * Avoid breaking upgrade by treating cross-grades as replacements
+    (LP: #2081864)
+
+  [ Nick Rosbrook ]
+  * DistUpgradeQuirks: install pipewire-audio on ubuntu studio upgrades
+    (LP: #2078639)
+  * Run pre-build.sh: updating mirrors and translations.
+
+ -- Nick Rosbrook <enr0n@ubuntu.com>  Thu, 16 Jan 2025 09:49:15 -0500
+
 ubuntu-release-upgrader (1:24.04.23) noble; urgency=medium
 
   * Ensure that we remove only the right obsolete packages, specifically
