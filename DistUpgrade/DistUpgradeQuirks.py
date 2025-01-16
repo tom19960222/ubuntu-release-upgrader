@@ -1969,6 +1969,16 @@ class DistUpgradeQuirks(object):
         if self.controller.fromDist != 'jammy':
             return
 
+        # If systemd-resolved is not in use, we have nothing to do.
+        r = subprocess.run(
+            ['systemctl', 'is-active', '--quiet', 'systemd-resolved.service']
+        )
+        if r.returncode != 0:
+            logging.debug(
+                'systemd-resolved is not running, not disabling stub-resolver'
+            )
+            return
+
         logging.debug(
             'Disabling systemd-resolved stub resolver during upgrade'
         )
