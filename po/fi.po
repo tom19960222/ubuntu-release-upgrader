@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: update-manager\n"
 "Report-Msgid-Bugs-To: sebastian.heinlein@web.de\n"
-"POT-Creation-Date: 2025-01-16 09:48-0500\n"
+"POT-Creation-Date: 2025-01-22 16:04-0500\n"
 "PO-Revision-Date: 2019-06-18 17:53+0000\n"
 "Last-Translator: Brian Murray <brian@ubuntu.com>\n"
 "Language-Team: Finnish <ubuntu-fi@lists.ubuntu.com>\n"
@@ -1070,12 +1070,12 @@ msgstr "Aseta \"%s\" asemaan \"%s\""
 msgid "Media Change"
 msgstr "Median vaihto"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:257
+#: ../DistUpgrade/DistUpgradeQuirks.py:256
 msgid "Your graphics hardware may not be fully supported in Ubuntu 14.04."
 msgstr ""
 "Näytönohjaimesi ei välttämättä ole täysin tuettu Ubuntun 14.04-versiossa."
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:259
+#: ../DistUpgrade/DistUpgradeQuirks.py:258
 msgid ""
 "Running the 'unity' desktop environment is not fully supported by your "
 "graphics hardware. You will maybe end up in a very slow environment after "
@@ -1091,12 +1091,12 @@ msgstr ""
 "UpdateManagerWarningForUnity3D - Haluatko kaikesta huolimatta jatkaa "
 "päivitystä?"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:283
+#: ../DistUpgrade/DistUpgradeQuirks.py:282
 msgid "Your graphics hardware may not be fully supported in Ubuntu 12.04 LTS."
 msgstr ""
 "Näytönohjaimesi ei välttämättä ole täysin tuettu Ubuntu 12.04 LTS -versiossa."
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:285
+#: ../DistUpgrade/DistUpgradeQuirks.py:284
 msgid ""
 "The support in Ubuntu 12.04 LTS for your Intel graphics hardware is limited "
 "and you may encounter problems after the upgrade. For more information see "
@@ -1108,7 +1108,7 @@ msgstr ""
 "https://wiki.ubuntu.com/X/Bugs/UpdateManagerWarningForI8xx - Haluatko jatkaa "
 "päivitystä?"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:305
+#: ../DistUpgrade/DistUpgradeQuirks.py:304
 msgid ""
 "Upgrading may reduce desktop effects, and performance in games and other "
 "graphically intensive programs."
@@ -1116,7 +1116,7 @@ msgstr ""
 "Päivitys saattaa poistaa käytöstä visuaalisia tehosteita ja huonontaa "
 "joidenkin pelien ja graafisesti raskaiden ohjelmien suorituskykyä."
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:309
+#: ../DistUpgrade/DistUpgradeQuirks.py:308
 msgid ""
 "This computer is currently using the AMD 'fglrx' graphics driver. No version "
 "of this driver is available that works with your hardware in Ubuntu 10.04 "
@@ -1130,12 +1130,12 @@ msgstr ""
 "\n"
 "Haluatko jatkaa?"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:348
-#: ../DistUpgrade/DistUpgradeQuirks.py:417
+#: ../DistUpgrade/DistUpgradeQuirks.py:347
+#: ../DistUpgrade/DistUpgradeQuirks.py:416
 msgid "Sorry, no more upgrades for this system"
 msgstr "Valitettavasti tälle järjestelmälle ei enää tarjota versiopäivityksiä"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:349
+#: ../DistUpgrade/DistUpgradeQuirks.py:348
 #, python-format
 msgid ""
 "There will not be any further Ubuntu releases for this system's 'i386' "
@@ -1148,11 +1148,11 @@ msgstr ""
 "\n"
 "Päivitykset Ubuntun versiolle %s jatkuvat aina %s asti."
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:364
+#: ../DistUpgrade/DistUpgradeQuirks.py:363
 msgid "No ARMv6 CPU"
 msgstr "Ei ARMv6-suoritinta"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:365
+#: ../DistUpgrade/DistUpgradeQuirks.py:364
 msgid ""
 "Your system uses an ARM CPU that is older than the ARMv6 architecture. All "
 "packages in karmic were built with optimizations requiring ARMv6 as the "
@@ -1164,12 +1164,12 @@ msgstr ""
 "vähintään ARMv6-arkkitehtuuria tukevan suorittimen. Tästä syystä "
 "järjestelmäsi päivittäminen uuteen Ubuntun julkaisuun ei ole mahdollista."
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:385
+#: ../DistUpgrade/DistUpgradeQuirks.py:384
 msgid ""
 "Sorry, this storage driver is not supported in kernels for newer releases"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:387
+#: ../DistUpgrade/DistUpgradeQuirks.py:386
 #, python-format
 msgid ""
 "There will not be any further Ubuntu releases that provide kernel support "
@@ -1179,7 +1179,7 @@ msgid ""
 "driver, remove the directory %s and try again."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:418
+#: ../DistUpgrade/DistUpgradeQuirks.py:417
 #, fuzzy, python-format
 msgid ""
 "There will not be any further Ubuntu releases for this system's POWER8 "
@@ -1192,11 +1192,11 @@ msgstr ""
 "\n"
 "Päivitykset Ubuntun versiolle %s jatkuvat aina %s asti."
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:436
+#: ../DistUpgrade/DistUpgradeQuirks.py:435
 msgid "No init available"
 msgstr "Init-palvelua ei löydy"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:437
+#: ../DistUpgrade/DistUpgradeQuirks.py:436
 msgid ""
 "Your system appears to be a virtualised environment without an init daemon, "
 "e.g. Linux-VServer. Ubuntu 10.04 LTS cannot function within this type of "
@@ -1212,11 +1212,11 @@ msgstr ""
 "\n"
 "Haluatko varmasti jatkaa?"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:478
+#: ../DistUpgrade/DistUpgradeQuirks.py:477
 msgid "The Robot Operating System (ROS) is installed"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:479
+#: ../DistUpgrade/DistUpgradeQuirks.py:478
 msgid ""
 "It appears that ROS is currently installed. Each ROS release is very strict "
 "about the versions of Ubuntu it supports, and Ubuntu upgrades can fail if "
@@ -1233,12 +1233,12 @@ msgid ""
 "Are you sure you want to continue?"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:679
+#: ../DistUpgrade/DistUpgradeQuirks.py:678
 #, fuzzy
 msgid "Connection to the Snap Store failed"
 msgstr "Yhteys Snap-kauppaan epäonnistui"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:680
+#: ../DistUpgrade/DistUpgradeQuirks.py:679
 msgid ""
 "You have the package lxd installed but your system is unable to reach the "
 "Snap Store. lxd is now provided via a snap and the release upgrade will fail "
@@ -1248,11 +1248,11 @@ msgid ""
 "may want to configure a Snap Store proxy."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:695
+#: ../DistUpgrade/DistUpgradeQuirks.py:694
 msgid "Connection to Snap Store failed"
 msgstr "Yhteys Snap-kauppaan epäonnistui"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:696
+#: ../DistUpgrade/DistUpgradeQuirks.py:695
 msgid ""
 "Your system does not have a connection to the Snap Store. For the best "
 "upgrade experience make sure that your system can connect to api.snapcraft."
@@ -1264,11 +1264,11 @@ msgstr ""
 "osoitteeseen api.snapraft.io.\n"
 "Haluatko silti jatkaa päivitystä?"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:705
+#: ../DistUpgrade/DistUpgradeQuirks.py:704
 msgid "Outdated snapd package"
 msgstr "Vanhentunut snapd-paketti"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:706
+#: ../DistUpgrade/DistUpgradeQuirks.py:705
 msgid ""
 "Your system does not have the latest version of snapd. Please update the "
 "version of snapd on your system to improve the upgrade experience.\n"
@@ -1280,45 +1280,45 @@ msgstr ""
 
 #. now perform direct API calls to the store, requesting size
 #. information for each of the snaps needing installation
-#: ../DistUpgrade/DistUpgradeQuirks.py:731
+#: ../DistUpgrade/DistUpgradeQuirks.py:730
 msgid "Calculating snap size requirements"
 msgstr "Lasketaan snap-kokovaatimuksia"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:762
+#: ../DistUpgrade/DistUpgradeQuirks.py:761
 msgid "Processing snap replacements"
 msgstr "Käsitellään snap-korvikkeita"
 
 #. TODO: This status should be updated, but the time of
 #. this change to snap switch is post-translation freeze.
-#: ../DistUpgrade/DistUpgradeQuirks.py:771
+#: ../DistUpgrade/DistUpgradeQuirks.py:770
 #, python-format
 msgid "refreshing snap %s"
 msgstr "virkistetään snap %s"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:778
+#: ../DistUpgrade/DistUpgradeQuirks.py:777
 #, python-brace-format
 msgid "{snap} is now tracking {channel}"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:780
+#: ../DistUpgrade/DistUpgradeQuirks.py:779
 msgid "If needed, you can revert to your previous "
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:786
+#: ../DistUpgrade/DistUpgradeQuirks.py:785
 #, fuzzy, python-format
 msgid "removing snap %s"
 msgstr "virkistetään snap %s"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:789
+#: ../DistUpgrade/DistUpgradeQuirks.py:788
 #, python-format
 msgid "installing snap %s"
 msgstr "asennetaan snap %s"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:818
+#: ../DistUpgrade/DistUpgradeQuirks.py:817
 msgid "PAE not enabled"
 msgstr "PAE ei ole käytössä"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:819
+#: ../DistUpgrade/DistUpgradeQuirks.py:818
 msgid ""
 "Your system uses a CPU that does not have PAE enabled. Ubuntu only supports "
 "non-PAE systems up to Ubuntu 12.04. To upgrade to a later version of Ubuntu, "
@@ -1330,11 +1330,11 @@ msgstr ""
 "Ubuntun uudempaan versioon, ota PAE käyttöön, jos mahdollista. Lisätietoja:\n"
 "http://help.ubuntu.com/community/EnablingPAE"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1115
+#: ../DistUpgrade/DistUpgradeQuirks.py:1114
 msgid "universe component not enabled"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1116
+#: ../DistUpgrade/DistUpgradeQuirks.py:1115
 #, python-format
 msgid ""
 "You have the package %s installed which is a python2 package. python2 has "
@@ -1346,55 +1346,55 @@ msgid ""
 "universe component in /etc/apt/sources.list or remove %s"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1231
+#: ../DistUpgrade/DistUpgradeQuirks.py:1230
 msgid "Checking for installed snaps"
 msgstr "Tarkistetaan asennettuja snap-paketteja"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1773
+#: ../DistUpgrade/DistUpgradeQuirks.py:1772
 #, python-brace-format
 msgid "Updates for Ubuntu {from_release.version} will "
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1783
+#: ../DistUpgrade/DistUpgradeQuirks.py:1782
 #, fuzzy
 msgid "Sorry, cannot upgrade this system to 24.04 LTS"
 msgstr "Päivitys ei onnistu"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1786
+#: ../DistUpgrade/DistUpgradeQuirks.py:1785
 msgid ""
 "The Raspberry Pi kernel for Ubuntu 24.04 LTS does not support the armhf "
 "architecture.\n"
 "\n"
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1924
+#: ../DistUpgrade/DistUpgradeQuirks.py:1923
 #, fuzzy, python-brace-format
 msgid "Sorry, cannot upgrade this system to {version}"
 msgstr "Päivitys ei onnistu"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:1927
+#: ../DistUpgrade/DistUpgradeQuirks.py:1926
 msgid ""
 "Upgrades for desktop systems running TPM FDE are not currently supported. "
 "Please see https://launchpad.net/bugs/2065229 for more information."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:2021
+#: ../DistUpgrade/DistUpgradeQuirks.py:2030
 #, fuzzy
 msgid "Cannot upgrade system with unmerged /usr"
 msgstr "Päivitys ei onnistu"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:2024
+#: ../DistUpgrade/DistUpgradeQuirks.py:2033
 msgid ""
 "Please install the usrmerge package to fix this, and then try the upgrade "
 "again."
 msgstr ""
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:2066
+#: ../DistUpgrade/DistUpgradeQuirks.py:2075
 #, fuzzy
 msgid "Unable to upgrade to Ubuntu 24.04 LTS"
 msgstr "Voit valita päivityksen Ubuntun versioon %s"
 
-#: ../DistUpgrade/DistUpgradeQuirks.py:2069
+#: ../DistUpgrade/DistUpgradeQuirks.py:2078
 msgid ""
 "Currently, you have RabbitMQ server installed, which is not directly "
 "upgradable to the newer version. Upgrading may prevent the server from "
