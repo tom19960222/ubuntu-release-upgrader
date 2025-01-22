@@ -1,3 +1,11 @@
+ubuntu-release-upgrader (1:24.04.25) noble; urgency=medium
+
+  * DistUpgradeQuirks: skip sd-resolved quirk if it's not running (LP: #2078555)
+  * Revert "DistUpgradeQuirks: install pipewire-audio on ubuntu studio upgrades"
+  * Run pre-build.sh: updating mirrors and translations.
+
+ -- Nick Rosbrook <enr0n@ubuntu.com>  Wed, 22 Jan 2025 16:05:37 -0500
+
 ubuntu-release-upgrader (1:24.04.24) noble; urgency=medium
 
   [ Julian Andres Klode ]
