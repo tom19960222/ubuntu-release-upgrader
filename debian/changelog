@@ -1,4 +1,4 @@
-ubuntu-release-upgrader (1:24.04.26) plucky; urgency=medium
+ubuntu-release-upgrader (1:24.04.26) noble; urgency=medium
 
   [ Erich Eickmeyer ]
   * DistUpgradeQuirks: install pipewire-audio on ubuntu studio upgrades,
