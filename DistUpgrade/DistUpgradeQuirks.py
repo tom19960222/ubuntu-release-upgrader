@@ -2101,7 +2101,8 @@ class DistUpgradeQuirks(object):
             self.controller.cache['ubuntustudio-desktop'].is_installed
         ):
             logging.debug(
-                'Detected Ubuntu Studio, installing pipewire-audio, removing pulseaudio'
+                'Detected Ubuntu Studio, installing pipewire-audio, '
+                'removing pulseaudio'
             )
 
             try:
