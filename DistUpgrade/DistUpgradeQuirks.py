@@ -84,8 +84,8 @@ class DistUpgradeQuirks(object):
         if self.controller._partialUpgrade:
             logging.info("not running quirks in partialUpgrade mode")
             return
-        to_release = self.config.get("Sources", "To")
-        from_release = self.config.get("Sources", "From")
+        to_release = self.controller.toDist
+        from_release = self.controller.fromDist
 
         # run the handler that is common to all dists
         funcname = "%s" % quirksName

@@ -164,11 +164,6 @@ class MyCache(apt.Cache):
         self.uname = Popen(["uname", "-r"], stdout=PIPE,
                            universal_newlines=True).communicate()[0].strip()
         self._initAptLog()
-        # from hardy on we use recommends by default, so for the
-        # transition to the new dist we need to enable them now
-        if (config.get("Sources", "From") == "hardy" and
-            not "RELEASE_UPGRADE_NO_RECOMMENDS" in os.environ):
-            apt_pkg.config.set("APT::Install-Recommends", "true")
 
 
         apt_pkg.config.set("APT::AutoRemove::SuggestsImportant", "false")
