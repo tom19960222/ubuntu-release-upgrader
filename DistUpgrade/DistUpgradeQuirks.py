@@ -658,9 +658,17 @@ class DistUpgradeQuirks(object):
         res = False
         snap_env = os.environ.copy()
         snap_env["LANG"] = "C.UTF-8"
-        connected = Popen(["snap", "debug", "connectivity"], stdout=PIPE,
-                          stderr=PIPE, env=snap_env,
-                          universal_newlines=True).communicate()
+        try:
+            connected = Popen(["snap", "debug", "connectivity"], stdout=PIPE,
+                              stderr=PIPE, env=snap_env,
+                              universal_newlines=True).communicate()
+        except Exception as e:
+            logging.debug(
+                f'Failed to check snap store connectivity, assuming none: {e}'
+            )
+            self._snapstore_reachable = False
+            return
+
         if re.search(r"^ \* PASS", connected[0], re.MULTILINE):
             self._snapstore_reachable = True
             return
