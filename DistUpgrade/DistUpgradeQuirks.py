@@ -1902,15 +1902,8 @@ class DistUpgradeQuirks(object):
         """
         LP: #2065229
         """
-        try:
-            snap_list = subprocess.check_output(['snap', 'list'])
-            snaps = [s.decode().split()[0] for s in snap_list.splitlines()]
-        except FileNotFoundError:
-            # snapd not installed?
-            return
-
         if (
-            'pc-kernel' in snaps and
+            os.path.exists('/snap/pc-kernel') and
             'ubuntu-desktop-minimal' in self.controller.cache and
             self.controller.cache['ubuntu-desktop-minimal'].is_installed
         ):
