@@ -2,6 +2,7 @@
 import os
 import logging
 import subprocess
+import sys
 import gettext
 import errno
 
@@ -52,7 +53,8 @@ def apport_crash(type, value, tb):
         return False
     from .DistUpgradeVersion import VERSION
     # we pretend we are do-release-upgrade
-    apport_excepthook('/usr/bin/do-release-upgrade', type, value, tb)
+    sys.argv[0] = "/usr/bin/do-release-upgrade"
+    apport_excepthook(type, value, tb)
     # now add the files in /var/log/dist-upgrade/*
     if os.path.exists('/var/crash/_usr_bin_do-release-upgrade.0.crash'):
         report = Report()
