@@ -115,7 +115,6 @@ deb http://security.ubuntu.com/ubuntu/ gutsy-security main restricted universe m
         apt_pkg.config.set("Dir::Etc::sourcelist", "sources.list")
         v = DistUpgradeViewNonInteractive()
         d = DistUpgradeController(v, datadir=self.testdir)
-        d.fromDist = "feisty"
         d.config.set("Distro", "BaseMetaPkgs", "ubuntu-minimal")
         mock_get_distro.return_value = UbuntuDistribution("Ubuntu", "feisty",
                                                           "Ubuntu Feisty Fawn",
@@ -165,7 +164,6 @@ deb http://ports.ubuntu.com/ubuntu-ports/ gutsy-security universe
         apt_pkg.config.set("Dir::Etc::sourcelist", "sources.list")
         v = DistUpgradeViewNonInteractive()
         d = DistUpgradeController(v, datadir=self.testdir)
-        d.fromDist = "feisty"
         d.config.set("Distro", "BaseMetaPkgs", "ubuntu-minimal")
         mock_get_distro.return_value = UbuntuDistribution("Ubuntu", "feisty",
                                                           "Ubuntu Feisty Fawn",
@@ -212,7 +210,6 @@ deb http://ports.ubuntu.com/ubuntu-ports/ gutsy-security universe
         v.askYesNoQuestion.return_value=False
         d = DistUpgradeController(v, datadir=self.testdir)
         d.config.set("Distro", "BaseMetaPkgs", "ubuntu-minimal")
-        d.fromDist = "feisty"
         mock_get_distro.return_value = UbuntuDistribution("Ubuntu", "feisty",
                                                           "Ubuntu Feisty Fawn",
                                                           "7.04")
@@ -246,7 +243,6 @@ deb http://ports.ubuntu.com/ubuntu-ports/ gutsy-security universe
         v.askYesNoQuestion.return_value=True
         d = DistUpgradeController(v, datadir=self.testdir)
         d.config.set("Distro", "BaseMetaPkgs", "ubuntu-minimal")
-        d.fromDist = "feisty"
         mock_get_distro.return_value = UbuntuDistribution("Ubuntu", "feisty",
                                                           "Ubuntu Feisty Fawn",
                                                           "7.04")
@@ -298,7 +294,6 @@ deb http://archive.ubuntu.com/ubuntu gutsy main
         apt_pkg.config.set("Dir::Etc::sourcelist", "sources.list")
         v = DistUpgradeViewNonInteractive()
         d = DistUpgradeController(v, datadir=self.testdir)
-        d.fromDist = "feisty"
         d.config.set("Distro", "BaseMetaPkgs", "ubuntu-minimal")
         mock_get_distro.return_value = UbuntuDistribution("Ubuntu", "feisty",
                                                           "Ubuntu Feisty Fawn",
@@ -350,7 +345,6 @@ deb-src http://archive.ubuntu.com/ubuntu gutsy-security main restricted universe
         apt_pkg.config.set("Dir::Etc::sourcelist", "sources.list")
         v = DistUpgradeViewNonInteractive()
         d = DistUpgradeController(v, datadir=self.testdir)
-        d.fromDist = "feisty"
         d.config.set("Distro", "BaseMetaPkgs", "ubuntu-minimal")
         mock_get_distro.side_effect = NoDistroTemplateException("No distro template.")
         d.openCache(lock=False)
@@ -416,7 +410,6 @@ deb http://security.ubuntu.com/ubuntu gutsy-security main restricted universe mu
                            os.path.join(self.testdir, "sources.list.d"))
         v = DistUpgradeViewNonInteractive()
         d = DistUpgradeController(v, datadir=self.testdir)
-        d.fromDist = "feisty"
         mock_get_distro.return_value = UbuntuDistribution("Ubuntu", "feisty",
                                                           "Ubuntu Feisty Fawn",
                                                           "7.04")
@@ -446,7 +439,6 @@ deb http://security.ubuntu.com/ubuntu/ gutsy-security main restricted
                            os.path.join(self.testdir, "sources.list.d"))
         v = DistUpgradeViewNonInteractive()
         d = DistUpgradeController(v, datadir=self.testdir)
-        d.fromDist = "feisty"
         d.openCache(lock=False)
         mock_sourcesListEntryDownloadable.return_value = True
         res = d.updateSourcesList()
@@ -646,7 +638,6 @@ deb http://ports.ubuntu.com/ubuntu-ports/ %s-security main restricted universe m
                            os.path.join(self.testdir, "sources.list.d"))
         v = DistUpgradeViewNonInteractive()
         d = DistUpgradeController(v, datadir=self.testdir)
-        d.fromDist = "feisty"
         d.openCache(lock=False)
         mock_sourcesListEntryDownloadable.return_value = True
         res = d.updateSourcesList()
@@ -693,7 +684,6 @@ deb https://user:pass@private-ppa.launchpad.net/commercial-ppa-uploaders gutsy m
                            os.path.join(self.testdir, "sources.list.d"))
         v = DistUpgradeViewNonInteractive()
         d = DistUpgradeController(v, datadir=self.testdir)
-        d.fromDist = "feisty"
         d.openCache(lock=False)
         mock_sourcesListEntryDownloadable.return_value = True
         res = d.updateSourcesList()
@@ -749,7 +739,6 @@ deb http://ppa.launchpad.net/random-ppa quantal main # ppa of Víctor R. Ruiz (v
         apt_pkg.config.set("Dir::Etc::sourcelist", "sources.list")
         v = DistUpgradeViewNonInteractive()
         d = DistUpgradeController(v, datadir=self.testdir)
-        d.fromDist = "feisty"
         d.openCache(lock=False)
         mock_sourcesListEntryDownloadable.return_value = True
         res = d.updateSourcesList()
@@ -786,7 +775,6 @@ deb http://ports.ubuntu.com/ubuntu-ports/ gutsy-backports main restricted univer
         options = mock.Mock()
         options.devel_release = True
         d = DistUpgradeController(v, options, datadir=self.testdir)
-        d.fromDist = "feisty"
         d.openCache(lock=False)
         mock_sourcesListEntryDownloadable.return_value = True
         res = d.updateSourcesList()

@@ -34,8 +34,6 @@ import glob
 import tempfile
 import time
 import copy
-import platform
-
 from configparser import NoOptionError
 from configparser import ConfigParser as SafeConfigParser
 from .telemetry import get as get_telemetry
@@ -50,6 +48,7 @@ from .utils import (country_mirror,
                     inhibit_sleep)
 from string import Template
 from urllib.parse import urlsplit
+
 from .DistUpgradeView import Step
 from .DistUpgradeCache import MyCache
 from .DistUpgradeConfigParser import DistUpgradeConfig
@@ -166,19 +165,11 @@ class DistUpgradeController(object):
             if self.options.devel_release:
                 self.config.set("Options","devRelease", "True")
 
+        # some constants here
+        self.fromDist = self.config.get("Sources","From")
+        self.toDist = self.config.get("Sources","To")
         self.origin = self.config.get("Sources","ValidOrigin")
         self.arch = get_arch()
-        # Add context about the versions we are upgrading from/to.
-        os_release = platform.freedesktop_os_release()
-        self.fromDist = os_release.get('VERSION_CODENAME')
-        self.fromVersion = os_release.get('VERSION_ID')
-
-        di = distro_info.UbuntuDistroInfo()
-        self.toDist = self.config.get('Sources', 'To')
-        self.toVersion = di.version(self.toDist)
-
-        self.isFromDistEOL = self.fromDist not in di.supported()
-        self.supportedFromDists = self.config.getlist('Sources', 'From')
 
         # Defaults for deb sources
         self.default_sources_filepath = os.path.join(
@@ -444,18 +435,16 @@ class DistUpgradeController(object):
     def prepare(self):
         """ initial cache opening, coherence checking, network checking """
         # first check if that is a good upgrade
-        if not (self.fromDist in self.supportedFromDists or self.fromDist == self.toDist):
+        self.release = release = subprocess.Popen(["lsb_release","-c","-s"],
+                                   stdout=subprocess.PIPE,
+                                   universal_newlines=True).communicate()[0].strip()
+        logging.debug("lsb-release: '%s'" % release)
+        if not (release == self.fromDist or release == self.toDist):
+            logging.error("Bad upgrade: '%s' != '%s' " % (release, self.fromDist))
             self._view.error(_("Can not upgrade"),
                              _("An upgrade from '%s' to '%s' is not "
-                               "supported with this tool." % (self.fromDist, self.toDist)))
+                               "supported with this tool." % (release, self.toDist)))
             sys.exit(1)
-
-        logging.debug(
-            'Upgrading from {} to {}'.format(
-                self.fromDist + (' (EOL)' if self.isFromDistEOL else ''),
-                self.toDist,
-            )
-        )
 
         # setup backports (if we have them)
         if self.options and self.options.havePrerequists:
