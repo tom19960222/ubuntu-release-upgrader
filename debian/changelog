@@ -1,3 +1,9 @@
+ubuntu-release-upgrader (1:24.04.27) noble; urgency=medium
+
+  * Run pre-build.sh: updating mirrors for point release (LP: #2118789)
+
+ -- Nick Rosbrook <enr0n@ubuntu.com>  Fri, 25 Jul 2025 12:08:16 -0400
+
 ubuntu-release-upgrader (1:24.04.26) noble; urgency=medium
 
   [ Erich Eickmeyer ]
