@@ -1794,6 +1794,7 @@ class DistUpgradeQuirks(object):
         """
         LP: #2061175
         """
+        marked = []
         for package in self.controller.cache:
             if not package.is_installed:
                 continue
@@ -1852,6 +1853,7 @@ class DistUpgradeQuirks(object):
                                          from_user=from_user)
                 package.mark_delete(auto_fix=False)
                 apt.ProblemResolver(self.controller.cache).protect(package)
+                marked.append((replacement, from_user))
 
                 # We found a replacement. Exit the loop.
                 break
@@ -1861,6 +1863,12 @@ class DistUpgradeQuirks(object):
                 logging.debug(
                     f'Failed to find a replacement for {package.name}'
                 )
+
+        # Install dependencies of replacements otherwise the replacement
+        # is easily triggering the 2nd solver into removals.
+        for replacement, from_user in marked:
+            replacement.mark_install(auto_fix=False, auto_inst=True,
+                                     from_user=from_user)
 
     def _handle_ufw_breaks(self):
         """
